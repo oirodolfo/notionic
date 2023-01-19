@@ -1,6 +1,7 @@
 import BLOG from '@/blog.config'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import { NextSeo } from 'next-seo'
 
 const SEO = ({ meta }) => {
   const ogImage = `https://${BLOG.ogImageGenerateHost}/api/default?logo=${
@@ -20,6 +21,25 @@ const SEO = ({ meta }) => {
   return (
     <Head>
       <title>{meta.title}</title>
+      <NextSeo
+        title={meta.title}
+        description={meta.description}
+        twitter={{
+          handle: '@KistenRod',
+          site: '@KistenRod',
+          cardType: 'summary_large_image'
+        }}
+        titleTemplate={'Rod Kisten | %s'}
+      openGraph={{
+        profile: {
+          firstName: 'Rod',
+          lastName: 'Kisten',
+          username: 'rodkisten',
+          gender: 'male'
+        }
+      }
+        }
+      />
       {/* <meta content={BLOG.darkBackground} name='theme-color' /> */}
       <meta name='robots' content='follow, index' />
       <meta charSet='UTF-8' />
@@ -32,7 +52,7 @@ const SEO = ({ meta }) => {
       {BLOG.seo.keywords && (
         <meta name='keywords' content={BLOG.seo.keywords.join(', ')} />
       )}
-      <meta name='description' content={meta.description} />
+      {/* <meta name='description' content={meta.description} /> */}
       <meta property='og:locale' content={BLOG.lang} />
       <meta property='og:title' content={meta.title} />
       <meta property='og:description' content={meta.description} />
@@ -45,6 +65,7 @@ const SEO = ({ meta }) => {
         content={ogImage || BLOG.defaultCover}
       />
       <meta property='og:type' content={meta.type} />
+
       <meta name='twitter:card' content='summary_large_image' />
       <meta name='twitter:description' content={meta.description} />
       <meta name='twitter:title' content={meta.title} />

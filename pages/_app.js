@@ -26,7 +26,7 @@ import Footer from '@/components/NavBar/Footer'
 import { Inter } from '@next/font/google'
 
 // If loading a variable font, you don't need to specify the font weight
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--inter-font' })
 
 const Ackee = dynamic(() => import('@/components/Common/Ackee'), { ssr: false })
 const Gtag = dynamic(() => import('@/components/Common/Gtag'), { ssr: false })
@@ -57,7 +57,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <main className={inter.className}>
+      <main className={`${inter.variable} font-sans`}>
       <Scripts />
       {BLOG.isProd && BLOG?.analytics?.provider === 'ackee' && (
         <Ackee

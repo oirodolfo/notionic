@@ -5,14 +5,21 @@ import formatDate from '@/lib/formatDate'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 
+const articleTestClassName= "group flex flex-col relative mb-5 md:mb-8 p:5 overflow-hidden shadow-xl  bg-slate-800" +
+  "sm:rounded-xl dark:bg-slate-900/70 dark:backdrop-blur dark:ring-1 dark:ring-inset" +
+  " dark:ring-white/10 !h-auto max-h-[none]";
+
 const BlogPost = ({ post }) => {
   const { locale } = useRouter()
   return (
-    <motion.div>
+    <motion.div
+      className={articleTestClassName}
+    >
       <Link passHref href={`${BLOG.path}/${post.slug}`} scroll={false} legacyBehavior>
         <article
           key={post.id}
-          className='group flex flex-col overflow-hidden relative mb-5 md:mb-8 cursor-pointer rounded-lg p-5'
+          className={articleTestClassName}
+          // className='group flex flex-col overflow-hidden relative mb-5 md:mb-8 cursor-pointer rounded-lg p-5'
         >
           <Image
             className='w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200'

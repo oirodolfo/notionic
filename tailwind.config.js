@@ -8,6 +8,9 @@ const fontSerifCJK = !CJK()
   ? []
   : [`"Noto Serif CJK ${CJK()}"`, `"Noto Serif ${CJK()}"`]
 
+
+// If loading a variable font, you don't need to specify the font weight
+
 module.exports = {
   mode: 'jit',
   content: ['./pages/**/*.js', './components/**/*.js', './layouts/**/*.js'],
@@ -27,7 +30,7 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: [...fontFamily.sans, ...fontSansCJK],
+        sans: ['var(--inter-font)', ...fontFamily.sans, ...fontSansCJK],
         serif: [...fontFamily.serif, ...fontSerifCJK],
         noEmoji: [
           'ui-sans-serif',

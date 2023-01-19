@@ -1,4 +1,10 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+const withPWA = require('next-pwa')({
+  dest: 'public',
+})
+
+
+module.exports = withPWA({
   // webpack5: true,
   eslint: {
     dirs: ['components', 'layouts', 'lib', 'pages']
@@ -80,4 +86,4 @@ module.exports = {
       }
     ]
   }
-}
+})
