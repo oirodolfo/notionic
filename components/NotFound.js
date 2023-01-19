@@ -48,7 +48,7 @@ const Page404 = ({ statusCode }) => {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default Page404

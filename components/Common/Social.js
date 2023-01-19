@@ -65,7 +65,7 @@ const Social = () => {
 
       </Link>
     </div>
-  );
+  )
 }
 
 export default Social

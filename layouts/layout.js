@@ -111,9 +111,9 @@ const Layout = ({ children, blockMap, frontMatter, fullWidth = false, subPage = 
   const mapPageUrl = (id) => {
     // console.log('mapPageUrl', BLOG.lang.split('-')[0])
     if (locale === BLOG.lang.split('-')[0]) {
-      return '/s/' + id.replace(/-/g, '');
+      return '/s/' + id.replace(/-/g, '')
     } else {
-      return '/' + locale + '/s/' + id.replace(/-/g, '');
+      return '/' + locale + '/s/' + id.replace(/-/g, '')
     }
   }
 
@@ -195,7 +195,7 @@ const Layout = ({ children, blockMap, frontMatter, fullWidth = false, subPage = 
       <PostFooter />
       <Comments frontMatter={frontMatter} />
     </Container>
-  );
+  )
 }
 
 export default Layout

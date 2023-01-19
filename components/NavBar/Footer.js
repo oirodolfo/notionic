@@ -10,7 +10,7 @@ import {
 } from '@heroicons/react/outline'
 import Social from '../Common/Social.js'
 import { motion } from 'framer-motion'
-import Image from "next/image";
+import Image from 'next/image'
 
 const Footer = ({ fullWidth }) => {
   const router = useRouter()
@@ -143,12 +143,11 @@ const Footer = ({ fullWidth }) => {
               width={266}
               sizes="100vw"
               style={{
-                width: "100%",
-                height: "auto"
+                width: '100%',
+                height: 'auto'
               }} />
           </div>
         </div>
-
 
         <div className='text-gray-400 text-xs font-light py-4'>
           © {from === y || !from ? y : `${from} - ${y}`} | {BLOG.author}
@@ -162,7 +161,7 @@ const Footer = ({ fullWidth }) => {
         </div>
       </footer>
     </motion.div>
-  );
+  )
 }
 
 export default Footer

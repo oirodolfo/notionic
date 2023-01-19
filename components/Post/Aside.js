@@ -67,7 +67,7 @@ const Aside = ({ subPageTitle, frontMatter }) => {
         <ArrowUpIcon className='text-gray-600 dark:text-day w-5 h-5' />
       </button>
     )}
-  </>;
+  </>
 }
 
 export default Aside

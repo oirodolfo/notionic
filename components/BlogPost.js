@@ -1,13 +1,13 @@
 import Link from 'next/link'
-import Image from "next/image";
+import Image from 'next/image'
 import BLOG from '@/blog.config'
 import formatDate from '@/lib/formatDate'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 
-const articleTestClassName= "group flex flex-col relative mb-5 md:mb-8 p:5 overflow-hidden shadow-xl  bg-slate-800" +
-  "sm:rounded-xl dark:bg-slate-900/70 dark:backdrop-blur dark:ring-1 dark:ring-inset" +
-  " dark:ring-white/10 !h-auto max-h-[none]";
+const articleTestClassName = 'group flex flex-col relative mb-5 md:mb-8 p:5 overflow-hidden shadow-xl  bg-slate-800' +
+  'sm:rounded-xl dark:bg-slate-900/70 dark:backdrop-blur dark:ring-1 dark:ring-inset' +
+  ' dark:ring-white/10 !h-auto max-h-[none]'
 
 const BlogPost = ({ post }) => {
   const { locale } = useRouter()
@@ -42,7 +42,7 @@ const BlogPost = ({ post }) => {
         </article>
       </Link>
     </motion.div>
-  );
+  )
 }
 
 export default BlogPost

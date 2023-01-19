@@ -42,7 +42,7 @@ const Pagination = ({ page, showNext }) => {
         </Link>)
       )}
     </div>
-  );
+  )
 }
 
 export default Pagination

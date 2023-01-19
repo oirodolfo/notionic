@@ -57,7 +57,7 @@ export default function Loading({ notionSlug }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // export default Loading

@@ -86,7 +86,7 @@ const Hero = ({ blockMap }) => {
         <Avatar className='text-gray-600 dark:text-gray-300' />
       </div>
     </div>
-  </>;
+  </>
 }
 
 export default Hero

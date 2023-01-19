@@ -130,7 +130,7 @@ const NavBar = () => {
         )}
       </div>
     </motion.div>
-  );
+  )
 }
 
 const Header = ({ navBarTitle, fullWidth }) => {
@@ -214,7 +214,7 @@ const Header = ({ navBarTitle, fullWidth }) => {
       </div>
       <NavBar />
     </div>
-  </>;
+  </>
 }
 
 export default Header

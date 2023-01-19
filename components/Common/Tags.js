@@ -24,11 +24,11 @@ const Tags = ({ tags, currentTag }) => {
                 {`${key} (${tags[key]})`}
               </Link>
             </div>
-          );
+          )
         })}
       </div>
     </div>
-  );
+  )
 }
 
 export default Tags

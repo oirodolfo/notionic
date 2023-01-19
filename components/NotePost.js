@@ -24,7 +24,7 @@ const NotePost = ({ note }) => {
       </div>
 
     </Link>)
-  );
+  )
 }
 
 export default NotePost
