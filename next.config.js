@@ -1,5 +1,5 @@
 module.exports = {
-  webpack5: true,
+  // webpack5: true,
   eslint: {
     dirs: ['components', 'layouts', 'lib', 'pages']
   },
@@ -15,7 +15,7 @@ module.exports = {
     return config
   },
   i18n: {
-    locales: ['en', 'zh'],
+    locales: ['en'],
     defaultLocale: 'en',
     localeDetection: false
   },

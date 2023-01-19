@@ -5,7 +5,7 @@ const BLOG = {
   link: 'https://rodkisten.com',
   newsletter: 'Kisten Weekly',
   description: 'A static blog build on top of Notion and Next.js',
-  lang: 'en-US', //['en-US', 'pt-BR'] , // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
+  lang: 'en-US',
   appearance: 'auto', // ['light', 'dark', 'auto'],
   font: ['Inter', 'ui-sans', 'sans-serif'], // ['sans-serif', 'serif']
   lightBackground: '#F6F8FA', // use hex value, don't forget '#' e.g #fffefc
