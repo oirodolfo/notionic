@@ -7,7 +7,7 @@ const BLOG = {
   description: 'A static blog build on top of Notion and Next.js',
   lang: 'en-US',
   appearance: 'auto', // ['light', 'dark', 'auto'],
-  font: ['Inter', 'ui-sans', 'sans-serif'], // ['sans-serif', 'serif']
+  font: [ 'sans-serif'], // ['sans-serif', 'serif']
   lightBackground: '#F6F8FA', // use hex value, don't forget '#' e.g #fffefc
   darkBackground: '#212936', // use hex value, don't forget '#'
   path: '', // leave this empty unless you want to deploy Notionic in a folder
@@ -44,7 +44,7 @@ const BLOG = {
   telegramChatId: '263895784', // The chat id of your Telegram bot
   telegramChannelUrl: 'https://channel.zuolan.me/', // The link of your Telegram channel
   telegramChannelName: 'rodkisten', // The name of your Telegram channel
-  craftConfigShareUrl: 'https://www.craft.do/s/hBE96MwbY0r7aH', // The link to share your craft config
+  craftConfigShareUrl: 'https://www.craft.do/s/nKdMPH9mx1WjH3', // The link to share your craft config
   analytics: {
     provider: '', // Currently we support Google Analytics, Ackee, Umami and Cloudflare Insights, please fill with 'ga' or 'ackee' or 'umami' or 'cf', leave it empty to disable it.
     ackeeConfig: {
