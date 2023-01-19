@@ -23,6 +23,10 @@ import NProgress from 'nprogress'
 import '@/styles/nprogress.css'
 import Header from '@/components/NavBar/Header'
 import Footer from '@/components/NavBar/Footer'
+import { Inter } from '@next/font/google'
+
+// If loading a variable font, you don't need to specify the font weight
+const inter = Inter({ subsets: ['latin'] })
 
 const Ackee = dynamic(() => import('@/components/Common/Ackee'), { ssr: false })
 const Gtag = dynamic(() => import('@/components/Common/Gtag'), { ssr: false })
@@ -53,6 +57,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <main className={inter.className}>
       <Scripts />
       {BLOG.isProd && BLOG?.analytics?.provider === 'ackee' && (
         <Ackee
@@ -77,6 +82,7 @@ function MyApp({ Component, pageProps }) {
         </TransitionEffect>
         <Footer fullWidth={pageProps.post ? pageProps.post.fullWidth : false} />
       </ThemeProvider>
+      </main>
     </>
   )
 }
