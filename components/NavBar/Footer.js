@@ -71,7 +71,7 @@ const Footer = ({ fullWidth }) => {
             {links.map(
               (link) =>
                 link.show && (
-                  <Link passHref key={link.id} href={link.to} scroll={false}>
+                  <Link passHref key={link.id} href={link.to} scroll={false} legacyBehavior>
                     <li key={link.id}
                       className={`${
                         activeMenu === link.to
@@ -154,7 +154,7 @@ const Footer = ({ fullWidth }) => {
         </div>
       </footer>
     </motion.div>
-  )
+  );
 }
 
 export default Footer
