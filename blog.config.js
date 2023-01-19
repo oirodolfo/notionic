@@ -7,7 +7,7 @@ const BLOG = {
   description: 'A static blog build on top of Notion and Next.js',
   lang: ['en-US', 'pt-BR'] , // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
   appearance: 'auto', // ['light', 'dark', 'auto'],
-  font:[ Inter, ui-sans, sans-serif ], // ['sans-serif', 'serif']
+  font:[ 'Inter', 'ui-sans', 'sans-serif' ], // ['sans-serif', 'serif']
   lightBackground: '#F6F8FA', // use hex value, don't forget '#' e.g #fffefc
   darkBackground: '#212936', // use hex value, don't forget '#'
   path: '', // leave this empty unless you want to deploy Notionic in a folder
