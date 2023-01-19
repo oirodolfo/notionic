@@ -1,9 +1,17 @@
-/** @type {import('next').NextConfig} */
-const withPWA = require('next-pwa')({
+
+import runtimeCaching from 'next-pwa/cache.js'
+import nextPWA from "next-pwa";
+
+const withPWA = nextPWA({
+  disable: process.env.NODE_ENV === 'development',
   dest: 'public',
+  register: true,
+  // skipWaiting: true,
+  runtimeCaching,
+  buildExcludes: [/middleware-manifest.json$/]
 })
 
-module.exports = withPWA({
+const nextBaseConfig = {
   // webpack5: true,
   eslint: {
     dirs: ['components', 'layouts', 'lib', 'pages']
@@ -85,4 +93,16 @@ module.exports = withPWA({
       }
     ]
   }
-})
+}
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  ...nextBaseConfig,
+  experimental: {
+    appDir: true
+  }
+}
+
+export default withPWA(nextConfig)
+
+// module.exports = withPWA(nextConfig)

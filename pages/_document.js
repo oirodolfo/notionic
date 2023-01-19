@@ -11,10 +11,10 @@ class MyDocument extends Document {
     return (
       <Html lang={BLOG.lang}>
         <Head>
-          <meta
-            name='viewport'
-            content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover'
-          />
+          {/* <meta */}
+          {/*   name='viewport' */}
+          {/*   content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover' */}
+          {/* /> */}
 
           <link rel='icon' href='/favicon.ico' />
           <link rel='icon' href='/favicon.svg' type='image/svg+xml' />
