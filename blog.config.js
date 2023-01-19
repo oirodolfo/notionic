@@ -9,7 +9,7 @@ const BLOG = {
   appearance: 'auto', // ['light', 'dark', 'auto'],
   font: [ 'sans-serif'], // ['sans-serif', 'serif']
   lightBackground: '#F6F8FA', // use hex value, don't forget '#' e.g #fffefc
-  darkBackground: '#212936', // use hex value, don't forget '#'
+  darkBackground: '#0a0a0d', // use hex value, don't forget '#'
   path: '', // leave this empty unless you want to deploy Notionic in a folder
   since: 2023, // If leave this empty, current year will be used.
   postsPerPage: 10,
