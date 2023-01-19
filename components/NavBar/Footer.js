@@ -10,7 +10,7 @@ import {
 } from '@heroicons/react/outline'
 import Social from '../Common/Social.js'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import Image from "next/legacy/image";
 
 const Footer = ({ fullWidth }) => {
   const router = useRouter()
