@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 // export default function WechatPay() {
 const WechatPay = () => {
@@ -9,9 +9,12 @@ const WechatPay = () => {
         alt='WeChat Pay'
         width={200}
         height={200}
-      />
+        style={{
+          maxWidth: "100%",
+          height: "auto"
+        }} />
     </div>
-  )
+  );
 }
 
 export default WechatPay

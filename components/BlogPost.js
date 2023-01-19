@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from "next/legacy/image";
+import Image from "next/image";
 import BLOG from '@/blog.config'
 import formatDate from '@/lib/formatDate'
 import { useRouter } from 'next/router'
@@ -18,8 +18,8 @@ const BlogPost = ({ post }) => {
             className='w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200'
             src={post?.page_cover}
             alt={`${post.title}`}
-            layout='fill'
-          />
+            fill
+            sizes="100vw" />
           <div className='hidden md:block md-cover absolute inset-0'></div>
           <div className='md:hidden sm-cover absolute inset-0'></div>
           <div className='relative mt-auto'>

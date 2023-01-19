@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { useEffect, useState } from 'react'
 
 export default function ImageFallback({ src, fallbackSrc, alt, ...rest }) {
@@ -22,6 +22,9 @@ export default function ImageFallback({ src, fallbackSrc, alt, ...rest }) {
       onError={() => {
         setImgSrc(fallbackSrc)
       }}
-    />
-  )
+      style={{
+        maxWidth: "100%",
+        height: "auto"
+      }} />
+  );
 }

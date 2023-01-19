@@ -10,7 +10,7 @@ import {
 } from '@heroicons/react/outline'
 import Social from '../Common/Social.js'
 import { motion } from 'framer-motion'
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 const Footer = ({ fullWidth }) => {
   const router = useRouter()
@@ -137,7 +137,15 @@ const Footer = ({ fullWidth }) => {
             </div>
           </div>
           <div className="sc-9fa30a12-4 cfIBlJ">
-            <Image src="/chat.png" height={200} width={266} layout="responsive" />
+            <Image
+              src="/chat.png"
+              height={200}
+              width={266}
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: "auto"
+              }} />
           </div>
         </div>
 
