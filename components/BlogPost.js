@@ -5,7 +5,8 @@ import formatDate from '@/lib/formatDate'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 
-const articleTestClassName = 'group flex flex-col relative m-5 md:mb-8 p-5 overflow-hidden shadow-xl  bg-slate-800' +
+const articleTestClassName =
+  'group flex flex-col relative m-5 md:mb-8 p-5 overflow-hidden shadow-xl  bg-slate-800' +
   'sm:rounded-xl cursor-pointer rounded-lg dark:bg-slate-900/70 dark:backdrop-blur dark:ring-1 dark:ring-inset' +
   ' dark:ring-white/10 '
 
@@ -13,7 +14,12 @@ const BlogPost = ({ post }) => {
   const { locale } = useRouter()
   return (
     <motion.div>
-      <Link passHref href={`${BLOG.path}/${post.slug}`} scroll={false} legacyBehavior>
+      <Link
+        passHref
+        href={`${BLOG.path}/${post.slug}`}
+        scroll={false}
+        legacyBehavior
+      >
         <article
           key={post.id}
           className={articleTestClassName}
@@ -24,17 +30,22 @@ const BlogPost = ({ post }) => {
             src={post?.page_cover}
             alt={`${post.title}`}
             fill
-            sizes="100vw" />
+            sizes='100vw'
+          />
           <div className='hidden md:block md-cover absolute inset-0'></div>
           <div className='md:hidden sm-cover absolute inset-0'></div>
           <div className='relative mt-auto'>
             <header className='flex flex-col justify-between md:flex-row md:items-baseline'>
-              <h2 className='text-lg md:text-xl font-medium mb-2 text-black dark:text-gray-100'>{post.title}</h2>
+              <h2 className='text-lg md:text-xl font-medium mb-2 text-black dark:text-gray-100'>
+                {post.title}
+              </h2>
               <span className='text-color-fix font-light flex-shrink-0 text-gray-600 dark:text-gray-400'>
                 {formatDate(post?.date?.start_date || post.createdTime, locale)}
               </span>
             </header>
-            <p className='font-light hidden md:block leading-8 text-gray-700 dark:text-gray-300'>{post.summary}</p>
+            <p className='font-light hidden md:block leading-8 text-gray-700 dark:text-gray-300'>
+              {post.summary}
+            </p>
             {/* w-4/5  */}
           </div>
         </article>

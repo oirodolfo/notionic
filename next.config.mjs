@@ -1,6 +1,5 @@
-
 import runtimeCaching from 'next-pwa/cache.js'
-import nextPWA from "next-pwa";
+import nextPWA from 'next-pwa'
 
 const withPWA = nextPWA({
   disable: process.env.NODE_ENV === 'development',
@@ -33,7 +32,13 @@ const nextBaseConfig = {
     localeDetection: false
   },
   images: {
-    domains: ['api.craft.do', 'www.notion.so', 'images.unsplash.com', 's3.us-west-2.amazonaws.com']
+    domains: [
+      'api.craft.do',
+      'www.notion.so',
+      'images.unsplash.com',
+      's3.us-west-2.amazonaws.com',
+      'd1fdloi71mui9q.cloudfront.net'
+    ]
   },
   async headers() {
     return [
@@ -106,8 +111,8 @@ const nextConfig = {
     // Dangerously allow production builds to successfully complete even if
     // your project has type errors.
     // !! WARN !!
-    ignoreBuildErrors: true,
-  },
+    ignoreBuildErrors: true
+  }
 }
 
 export default withPWA(nextConfig)

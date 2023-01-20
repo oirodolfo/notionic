@@ -58,20 +58,20 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <main className={`${inter.variable} font-sans`}>
-      <Scripts />
-      {BLOG.isProd && BLOG?.analytics?.provider === 'ackee' && (
-        <Ackee
-          ackeeServerUrl={BLOG.analytics.ackeeConfig.dataAckeeServer}
-          ackeeDomainId={BLOG.analytics.ackeeConfig.domainId}
-        />
-      )}
-      {BLOG.isProd && BLOG?.analytics?.provider === 'ga' && <Gtag />}
-      <ThemeProvider attribute='class'>
-        <Header
-          navBarTitle={pageProps.post ? pageProps.post.title : null}
-          fullWidth={pageProps.post ? pageProps.post.fullWidth : false}
-        />
-        <TransitionEffect>
+        <Scripts />
+        {BLOG.isProd && BLOG?.analytics?.provider === 'ackee' && (
+          <Ackee
+            ackeeServerUrl={BLOG.analytics.ackeeConfig.dataAckeeServer}
+            ackeeDomainId={BLOG.analytics.ackeeConfig.domainId}
+          />
+        )}
+        {BLOG.isProd && BLOG?.analytics?.provider === 'ga' && <Gtag />}
+        <ThemeProvider attribute='class'>
+          <Header
+            navBarTitle={pageProps.post ? pageProps.post.title : null}
+            fullWidth={pageProps.post ? pageProps.post.fullWidth : false}
+          />
+          <TransitionEffect>
             <div
               className={`min-h-[calc(100vh-14rem)] md:min-h-[calc(100vh-18rem)] ${
                 BLOG.font === 'serif' ? 'font-serif' : 'font-sans'
@@ -79,9 +79,11 @@ function MyApp({ Component, pageProps }) {
             >
               <Component {...pageProps} />
             </div>
-        </TransitionEffect>
-        <Footer fullWidth={pageProps.post ? pageProps.post.fullWidth : false} />
-      </ThemeProvider>
+          </TransitionEffect>
+          <Footer
+            fullWidth={pageProps.post ? pageProps.post.fullWidth : false}
+          />
+        </ThemeProvider>
       </main>
     </>
   )

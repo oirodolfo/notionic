@@ -1,7 +1,7 @@
 module.exports = {
   plugins: [
     'tailwindcss',
-    'autoprefixer',
+    'autoprefixer'
     //
     // 'postcss-flexbugs-fixes',
     // [
@@ -28,6 +28,5 @@ module.exports = {
     //     safelist: ['html', 'body']
     //   }
     // ]
-
   ]
 }

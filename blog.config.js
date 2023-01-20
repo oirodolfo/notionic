@@ -7,7 +7,7 @@ const BLOG = {
   description: 'A static blog build on top of Notion and Next.js',
   lang: 'en-US',
   appearance: 'auto', // ['light', 'dark', 'auto'],
-  font: [ 'sans-serif'], // ['sans-serif', 'serif']
+  font: ['sans-serif'], // ['sans-serif', 'serif']
   lightBackground: '#F6F8FA', // use hex value, don't forget '#' e.g #fffefc
   darkBackground: '#0a0a0d', // use hex value, don't forget '#'
   path: '', // leave this empty unless you want to deploy Notionic in a folder
@@ -20,7 +20,7 @@ const BLOG = {
     projects: true,
     contact: true,
     books: true,
-    friends: true,
+    friends: true
   },
   showWeChatPay: false,
   previewImagesEnabled: true,
@@ -30,11 +30,11 @@ const BLOG = {
   socialLink: {
     twitter: 'https://twitter.com/kistenrod',
     github: 'https://github.com/oirodolfo',
-    telegram: 'https://kisten.t.me',
+    telegram: 'https://kisten.t.me'
   },
   seo: {
     keywords: ['Rodolfo Costa', 'Rod Kisten', 'Kisten', 'Blog'],
-    googleSiteVerification: '', // Remove the value or replace it with your own google site verification code
+    googleSiteVerification: '' // Remove the value or replace it with your own google site verification code
   }, // https://rodkisten.notion.site/54bfcfa08cba4d3cbe9a19a71ca09372?v=e2e84c3d89544146af7e815d379105cc
   notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS! Edit .env file!
   notionSpacesId: process.env.NOTION_SPACES_ID, // DO NOT CHANGE THIS! Edit .env file!
@@ -50,32 +50,32 @@ const BLOG = {
     ackeeConfig: {
       tracker: '', // e.g 'https://ackee.example.com/tracker.js'
       dataAckeeServer: '', // e.g https://ackee.example.com , don't end with a slash
-      domainId: '', // e.g '0e2257a8-54d4-4847-91a1-0311ea48cc7b'
+      domainId: '' // e.g '0e2257a8-54d4-4847-91a1-0311ea48cc7b'
     },
     cfConfig: {
       scriptUrl: 'https://static.cloudflareinsights.com/beacon.min.js', // Default
-      token: '', // Like '{"token": "xxxxxxxxxxxxxxxxxx"}'
+      token: '' // Like '{"token": "xxxxxxxxxxxxxxxxxx"}'
     },
     gaConfig: {
-      measurementId: '', // e.g: G-XXXXXXXXXX
+      measurementId: '' // e.g: G-XXXXXXXXXX
     },
     umamiConfig: {
       scriptUrl: '', // The url of your Umami script
-      websiteId: '', // The website id of your Umami instance
-    },
+      websiteId: '' // The website id of your Umami instance
+    }
   },
   comment: {
     // support provider: utterances, supacomments
     provider: '', // leave it empty if you don't need any comment plugin
     supaCommentsConfig: {
       supabaseUrl: '', // The url of your Supabase instance
-      supabaseAnonKey: '', // The anonymous key of your Supabase instance
+      supabaseAnonKey: '' // The anonymous key of your Supabase instance
     },
     utterancesConfig: {
-      repo: '',
-    },
+      repo: ''
+    }
   },
-  isProd: process.env.VERCEL_ENV === 'production', // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
+  isProd: process.env.VERCEL_ENV === 'production' // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
 }
 // export default BLOG
 module.exports = BLOG
