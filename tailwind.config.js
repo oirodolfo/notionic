@@ -26,7 +26,7 @@ module.exports = {
           DEFAULT: BLOG.lightBackground || '#ffffff'
         },
         night: {
-          DEFAULT: BLOG.darkBackground || '#000000'
+          DEFAULT: 'hsl(0deg 0% 14.12%)' || '#000000'
         }
       },
       fontFamily: {

@@ -53,7 +53,7 @@ class MyDocument extends Document {
             />
           )}
         </Head>
-        <body className='bg-day dark:bg-night'>
+        <body className=''>
           <Main />
           <NextScript />
         </body>

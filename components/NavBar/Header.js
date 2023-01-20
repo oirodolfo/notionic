@@ -69,15 +69,23 @@ const NavBar = () => {
   return (
     <motion.div className='flex'>
       {/* Desktop Menu */}
-      <ul className='hidden md:flex md:gap-1'>
+      <button
+        className="header-button-container">
+  <span
+    class="">
+      Pink to orange
+  </span>
+      </button>
+
+      <ul className='hidden md:flex md:gap-1 p-1 rounded bg-gradient-to-r from-rose-500 to-purple-500'>
         {links.map(
           (link) =>
             link.show && (
-              <Link passHref href={link.to} key={link.id} scroll={false} legacyBehavior>
+              <Link href={link.to} key={link.id} scroll={false}>
                 <li
                   className={`${
-                    activeMenu === link.to ? 'bg-gray-200 dark:bg-gray-700' : ''
-                  } hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer rounded-lg block py-1 px-2 nav`}
+                    activeMenu === link.to ? 'bg-slate-200 dark:bg-gray-700' : ''
+                  } hover:bg-gray-200 dark:hover:bg-zinc-900 cursor-pointer rounded-lg block py-1 px-2 nav`}
                 >
                   <div className='font-light'>
                     {link.icon}
