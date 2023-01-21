@@ -22,7 +22,8 @@ module.exports = {
     'indent': 'off',
     'react/prop-types': 'off',
     'space-before-function-paren': 'off',
-    'multiline-ternary': 'off'
+    'multiline-ternary': 'off',
+    'indent': 'off'
   },
   globals: {
     React: true
