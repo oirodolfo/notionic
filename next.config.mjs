@@ -13,7 +13,7 @@ const withPWA = nextPWA({
 const nextBaseConfig = {
   // webpack5: true,
   eslint: {
-    dirs: ['components', 'layouts', 'lib', 'pages']
+    dirs: ['components', 'layouts', 'lib', 'pages', 'app']
   },
   // webpack: (config, { dev, isServer }) => {
   //   // Replace React with Preact only in client production build
@@ -37,7 +37,8 @@ const nextBaseConfig = {
       'www.notion.so',
       'images.unsplash.com',
       's3.us-west-2.amazonaws.com',
-      'd1fdloi71mui9q.cloudfront.net'
+      'd1fdloi71mui9q.cloudfront.net',
+      'onuniverse-assets.imgix.net'
     ]
   },
   async headers() {

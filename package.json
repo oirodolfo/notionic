@@ -19,16 +19,28 @@
     "format": "next lint --fix && prettier --write .",
     "lint": "next lint",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "sanity:dev": "sanity dev",
+    "sanity:start": "sanity start",
+    "sanity:build": "sanity build",
+    "sanity:deploy": "sanity deploy",
+    "sanity:deploy-graphql": "sanity graphql deploy"
   },
   "dependencies": {
     "@next/font": "^13.1.2",
+    "@portabletext/react": "^2.0.0",
+    "@sanity/icons": "^2.2.2",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.0.0",
+    "@vercel/og": "^0.0.27",
+    "date-fns": "^2.29.3",
     "feed": "^4.2.2",
     "framer-motion": "6.4.3",
     "got": "^12.0.2",
     "next": "^13.1.2",
     "next-optimized-images": "3.0.0-canary.10",
     "next-pwa": "^5.6.0",
+    "next-sanity": "^4.1.1",
     "next-seo": "^5.15.0",
     "next-themes": "^0.1.1",
     "notion-client": "^6.13.0",
@@ -43,12 +55,16 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-notion-x": "^6.13.3",
+    "react-social-icons": "^5.15.0",
+    "sanity": "^3.0.0",
     "sharp": "^0.30.5",
+    "styled-components": "^5.2.0",
     "use-ackee": "^3.0.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "@heroicons/react": "^1.0.5",
+    "@sanity/eslint-config-studio": "^2.0.1",
     "@types/react": "^17.0.39",
     "autoprefixer": "^10.4.0",
     "eslint": "^8.26.0",
@@ -62,8 +78,9 @@
     "husky": "^8.0.1",
     "next-sitemap": "^3.1.29",
     "postcss": "^8.4.18",
-    "prettier": "^2.7.1",
-    "tailwindcss": "^3.2.3"
+    "prettier": "^2.8.3",
+    "tailwindcss": "^3.2.3",
+    "typescript": "^4.9.4"
   },
   "bugs": {
     "url": "https://github.com/izuolan/notionic/issues",

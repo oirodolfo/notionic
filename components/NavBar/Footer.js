@@ -11,14 +11,22 @@ import {
 import Social from '../Common/Social.js'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-
+import { SocialIcon } from 'react-social-icons'
 import { links } from '@/lib/links'
 
 const LinksComponent = (props) => {
+  //
+  // <Image
+  //   src={link.thumbnail}
+  //   height={16}
+  //   width={16}
+  //   className='w-[40px] rounded'
+  //   alt={link.title}
+  // />
   return (
     <>
       {links
-        .filter((link) => !!link.url || link.url === '')
+        .filter((link) => !!link.url || link.url === '' || link.type === 'HEADER')
         .map((link) => (
           <li key={`${link.id}`}>
             <Link
@@ -26,21 +34,22 @@ const LinksComponent = (props) => {
               className='flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white'
             >
               {/* icon */}
-              {link.thumbnail && (
-                <Image
-                  src={link.thumbnail}
-                  height={16}
-                  width={16}
-                  className='w-[40px] rounded'
+
+                <SocialIcon
+                  href={link.url}
+                  // src={link.thumbnail}
+                  // height={16}
+                  // width={16}
+                  // className='w-[40px] rounded'
                   alt={link.title}
                 />
-              )}
+
               <span className='flex-1 ml-3 whitespace-nowrap'>
                 {link.title}
               </span>
-              <span className='inline-flex items-center justify-center px-2 py-0.5 ml-3 text-xs font-medium text-gray-500 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-400'>
-                Popular
-              </span>
+              {/* <span className='inline-flex items-center justify-center px-2 py-0.5 ml-3 text-xs font-medium text-gray-500 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-400'> */}
+              {/*   Popular */}
+              {/* </span> */}
             </Link>
           </li>
         ))}
@@ -198,6 +207,8 @@ const Footer = ({ fullWidth }) => {
         </div>
         {/*  */}
         My loved songs Spotify playlist
+        <div className='w-full max-w-sm p-4 bg-white border rounded-lg shadow-md sm:p-6 dark:bg-gray-800 dark:border-gray-700'>
+
         <iframe
           style={{ borderRadius: 12 }}
           src='https://open.spotify.com/embed/playlist/16wLrDUyHWvCYkXj8xX9xH?utm_source=generator'
@@ -208,6 +219,7 @@ const Footer = ({ fullWidth }) => {
           allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
           loading='lazy'
         />
+        </div>
         {/*  */}
         <div className='w-full max-w-sm p-4 bg-white border rounded-lg shadow-md sm:p-6 dark:bg-gray-800 dark:border-gray-700'>
           <h5 className='mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white'>
