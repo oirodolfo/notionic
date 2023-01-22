@@ -2,7 +2,7 @@ const BLOG = {
   title: 'Rod Kisten | Rodolfo Costa',
   author: 'Rod Kisten | Rodolfo Costa | KSTN',
   email: 'hey@rodkisten.com',
-  link: 'https://rodkisten.com',
+  link: 'https://rodkisten.com/',
   newsletter: 'Kisten Weekly',
   description: 'A static blog build on top of Notion and Next.js',
   lang: 'en-US',
