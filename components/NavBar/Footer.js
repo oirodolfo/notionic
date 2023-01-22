@@ -256,7 +256,7 @@ const Footer = ({ fullWidth }) => {
           </div>
         </div>
         <div>
-          <a className='twitter-timeline' data-theme='dark' href='https://twitter.com/KistenRod?ref_src=twsrc%5Etfw'>Tweets by KistenRod</a>
+          <a className='twitter-timeline' data-theme='dark' data-tweet-limit='5' data-chrome='nofooter noborders' href='https://twitter.com/KistenRod?ref_src=twsrc%5Etfw'>Tweets by KistenRod</a>
         </div>
         <div className='text-gray-400 text-xs font-light py-4'>
           © {from === y || !from ? y : `${from} - ${y}`} | {BLOG.author}
