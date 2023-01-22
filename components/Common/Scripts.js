@@ -3,6 +3,7 @@ import BLOG from '@/blog.config'
 
 const Scripts = () => (
   <>
+    <Script strategy='afterInteractive' src='https://platform.twitter.com/widgets.js' />
     <Script strategy='afterInteractive' src='https://assets.pinterest.com/js/pinit.js' />
     {BLOG.analytics && BLOG.analytics.provider === 'cf' && (
       <Script
