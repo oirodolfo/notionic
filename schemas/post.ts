@@ -26,7 +26,7 @@ export default defineType({
             name: 'title',
             title: 'Title',
             type: 'string',
-            validation: (rule) => rule.required(),
+            validation: (rule) => rule.required()
         }),
         defineField({
             name: 'slug',
@@ -35,56 +35,56 @@ export default defineType({
             options: {
                 source: 'title',
                 maxLength: 96,
-                isUnique: (value, context) => context.defaultIsUnique(value, context),
+                isUnique: (value, context) => context.defaultIsUnique(value, context)
             },
-            validation: (rule) => rule.required(),
+            validation: (rule) => rule.required()
         }),
         defineField({
             name: 'content',
             title: 'Content',
             type: 'array',
-            of: [{ type: 'block' }],
+            of: [{ type: 'block' }]
         }),
         defineField({
             name: 'excerpt',
             title: 'Excerpt',
-            type: 'text',
+            type: 'text'
         }),
         defineField({
             name: 'coverImage',
             title: 'Cover Image',
             type: 'image',
             options: {
-                hotspot: true,
-            },
+                hotspot: true
+            }
         }),
         defineField({
             name: 'date',
             title: 'Date',
             type: 'datetime',
-            initialValue: () => new Date().toISOString(),
+            initialValue: () => new Date().toISOString()
         }),
         defineField({
             name: 'author',
             title: 'Author',
             type: 'reference',
-            to: [{ type: authorType.name }],
-        }),
+            to: [{ type: authorType.name }]
+        })
     ],
     preview: {
         select: {
             title: 'title',
             author: 'author.name',
             date: 'date',
-            media: 'coverImage',
+            media: 'coverImage'
         },
         prepare({ title, media, author, date }) {
             const subtitles = [
                 author && `by ${author}`,
-                date && `on ${format(parseISO(date), 'LLL d, yyyy')}`,
+                date && `on ${format(parseISO(date), 'LLL d, yyyy')}`
             ].filter(Boolean)
 
             return { title, media, subtitle: subtitles.join(' ') }
-        },
-    },
+        }
+    }
 })
