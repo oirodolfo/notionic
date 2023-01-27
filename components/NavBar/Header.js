@@ -192,7 +192,7 @@ const Header = ({ navBarTitle, fullWidth }) => {
         <div className='flex items-center'>
           <Link passHref href='/' scroll={false} aria-label={BLOG.title}>
             <motion.div className='h-6 hover:text-blue-500 dark:hover:text-blue-500 fill-current'>
-              <Image src='/kisten-logo.png' width={24} height={24} />
+              <Image src='/kisten-logo.png' width={24} height={24} alt='Rod Kisten' />
               {/* <svg */}
               {/*   xmlns='http://www.w3.org/2000/svg' */}
               {/*   width='24' */}
