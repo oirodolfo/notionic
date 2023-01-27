@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../stablo-blog" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../strapi-next" vcs="Git" />
   </component>
 </project>

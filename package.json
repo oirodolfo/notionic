@@ -13,7 +13,7 @@
     "url": "https://zuolan.me"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo --show-all",
     "build": "next build",
     "start": "next start",
     "format": "next lint --fix && prettier --write .",

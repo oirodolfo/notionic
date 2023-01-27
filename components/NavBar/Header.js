@@ -20,6 +20,8 @@ import { motion } from 'framer-motion'
 const NavBar = () => {
   const router = useRouter()
   const { locale } = useRouter()
+  console.log('--------------------------------')
+  console.log({ lang, locale })
   const t = lang[locale]
   const [showMenu, setShowMenu] = useState(false)
 
@@ -78,7 +80,12 @@ const NavBar = () => {
         {links.map(
           (link) =>
             link.show && (
-              <Link href={link.to} key={link.id} scroll={false} className="header-button-container">
+              <Link
+                href={link.to}
+                key={link.id}
+                scroll={false}
+                className='header-button-container'
+              >
                 <li
                   className={`${
                     activeMenu === link.to
@@ -185,7 +192,7 @@ const Header = ({ navBarTitle, fullWidth }) => {
         <div className='flex items-center'>
           <Link passHref href='/' scroll={false} aria-label={BLOG.title}>
             <motion.div className='h-6 hover:text-blue-500 dark:hover:text-blue-500 fill-current'>
-              <Image src="/kisten-logo.png" width={24} height={24} />
+              <Image src='/kisten-logo.png' width={24} height={24} />
               {/* <svg */}
               {/*   xmlns='http://www.w3.org/2000/svg' */}
               {/*   width='24' */}

@@ -12,9 +12,9 @@ const withPWA = nextPWA({
 
 const nextBaseConfig = {
   // webpack5: true,
-  eslint: {
-    dirs: ['components', 'layouts', 'lib', 'pages', 'app']
-  },
+  // eslint: {
+  //   dirs: ['components', 'layouts', 'lib', 'pages', 'app']
+  // },
   // webpack: (config, { dev, isServer }) => {
   //   // Replace React with Preact only in client production build
   //   if (!dev && !isServer) {
@@ -40,65 +40,65 @@ const nextBaseConfig = {
       'd1fdloi71mui9q.cloudfront.net',
       'onuniverse-assets.imgix.net'
     ]
-  },
-  async headers() {
-    return [
-      {
-        source: '/:path*{/}?',
-        headers: [
-          {
-            key: 'Permissions-Policy',
-            value: 'interest-cohort=()'
-          }
-        ]
-      }
-    ]
-  },
-  async rewrites() {
-    return [
-      {
-        source: '/notes/:pathname',
-        destination: '/api/htmlrewrite?pathname=:pathname'
-      },
-      {
-        source: '/notes/:pathname/b/:slug*',
-        destination: '/api/htmlrewrite?pathname=:pathname&slug=/b/:slug*'
-      },
-      {
-        source: '/notes/:pathname/x/:slug*',
-        destination: '/api/htmlrewrite?pathname=:pathname&slug=/x/:slug*'
-      },
-      {
-        source: '/api/:slug*',
-        destination: 'https://www.craft.do/api/:slug*'
-      },
-      {
-        source: '/share/static/js/:slug*',
-        destination:
-          '/api/jsrewrite?url=https://www.craft.do/share/static/js/:slug*'
-      },
-      {
-        source: '/share/static/css/:slug*',
-        destination: 'https://www.craft.do/share/static/css/:slug*'
-      },
-      {
-        source: '/share/static/fonts/:slug*',
-        destination: 'https://www.craft.do/share/static/fonts/:slug*'
-      },
-      {
-        source: '/share/static/media/:slug*',
-        destination: 'https://www.craft.do/share/static/media/:slug*'
-      },
-      {
-        source: '/share/static/craft.webmanifest',
-        destination: 'https://www.craft.do/share/static/craft.webmanifest'
-      },
-      {
-        source: '/assets/js/analytics2.js',
-        destination: 'https://www.craft.do/404'
-      }
-    ]
   }
+  // async headers() {
+  //   return [
+  //     {
+  //       source: '/:path*{/}?',
+  //       headers: [
+  //         {
+  //           key: 'Permissions-Policy',
+  //           value: 'interest-cohort=()'
+  //         }
+  //       ]
+  //     }
+  //   ]
+  // },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/notes/:pathname',
+  //       destination: '/api/htmlrewrite?pathname=:pathname'
+  //     },
+  //     {
+  //       source: '/notes/:pathname/b/:slug*',
+  //       destination: '/api/htmlrewrite?pathname=:pathname&slug=/b/:slug*'
+  //     },
+  //     {
+  //       source: '/notes/:pathname/x/:slug*',
+  //       destination: '/api/htmlrewrite?pathname=:pathname&slug=/x/:slug*'
+  //     },
+  //     {
+  //       source: '/api/:slug*',
+  //       destination: 'https://www.craft.do/api/:slug*'
+  //     },
+  //     {
+  //       source: '/share/static/js/:slug*',
+  //       destination:
+  //         '/api/jsrewrite?url=https://www.craft.do/share/static/js/:slug*'
+  //     },
+  //     {
+  //       source: '/share/static/css/:slug*',
+  //       destination: 'https://www.craft.do/share/static/css/:slug*'
+  //     },
+  //     {
+  //       source: '/share/static/fonts/:slug*',
+  //       destination: 'https://www.craft.do/share/static/fonts/:slug*'
+  //     },
+  //     {
+  //       source: '/share/static/media/:slug*',
+  //       destination: 'https://www.craft.do/share/static/media/:slug*'
+  //     },
+  //     {
+  //       source: '/share/static/craft.webmanifest',
+  //       destination: 'https://www.craft.do/share/static/craft.webmanifest'
+  //     },
+  //     {
+  //       source: '/assets/js/analytics2.js',
+  //       destination: 'https://www.craft.do/404'
+  //     }
+  //   ]
+  // }
 }
 
 /** @type {import('next').NextConfig} */
@@ -106,16 +106,17 @@ const nextConfig = {
   ...nextBaseConfig,
   experimental: {
     appDir: true
-  },
-  typescript: {
-    // !! WARN !!
-    // Dangerously allow production builds to successfully complete even if
-    // your project has type errors.
-    // !! WARN !!
-    ignoreBuildErrors: true
   }
+  // typescript: {
+  //   // !! WARN !!
+  //   // Dangerously allow production builds to successfully complete even if
+  //   // your project has type errors.
+  //   // !! WARN !!
+  //   ignoreBuildErrors: true
+  // }
 }
 
-export default withPWA(nextConfig)
+export default nextConfig
+// export default withPWA(nextConfig)
 
 // module.exports = withPWA(nextConfig)

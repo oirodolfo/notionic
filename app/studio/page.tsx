@@ -9,11 +9,11 @@ import SanityComponent from '@/components/SanityComponent'
 // }))
 
 export default function StudioPage() {
-    return (
-        <>
-            <SanityComponent />
-                {/* <GlobalStyle /> */}
-            {/* </SanityComponent> */}
-        </>
-    )
+  return (
+    <>
+      <SanityComponent />
+      {/* <GlobalStyle /> */}
+      {/* </SanityComponent> */}
+    </>
+  )
 }

@@ -19,11 +19,11 @@ module.exports = {
     }
   },
   rules: {
-    'indent': 'off',
+    indent: 'off',
     'react/prop-types': 'off',
     'space-before-function-paren': 'off',
     'multiline-ternary': 'off',
-    'indent': 'off'
+    indent: 'off'
   },
   globals: {
     React: true
