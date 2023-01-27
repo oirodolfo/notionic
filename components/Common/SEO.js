@@ -24,6 +24,7 @@ const SEO = ({ meta }) => {
       <NextSeo
         title={meta.title}
         description={meta.description}
+        canonical={meta.slug ? `${url}/${meta.slug}` : `${url}${router.asPath}`}
         twitter={{
           handle: '@KistenRod',
           site: '@KistenRod',
