@@ -6,7 +6,7 @@ const BLOG = {
   newsletter: 'Kisten Weekly',
   description: 'A static blog build on top of Notion and Next.js',
   lang: 'en-US',
-  appearance: 'auto', // ['light', 'dark', 'auto'],
+  appearance: 'dark', // ['light', 'dark', 'auto'],
   font: ['sans-serif'], // ['sans-serif', 'serif']
   lightBackground: '#F6F8FA', // use hex value, don't forget '#' e.g #fffefc
   darkBackground: '#0a0a0d', // use hex value, don't forget '#'
