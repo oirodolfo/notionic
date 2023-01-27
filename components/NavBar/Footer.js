@@ -10,7 +10,6 @@ import {
 } from '@heroicons/react/outline'
 import Social from '../Common/Social.js'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import { SocialIcon } from 'react-social-icons'
 import { links } from '@/lib/links'
 
