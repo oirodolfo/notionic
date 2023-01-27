@@ -235,24 +235,7 @@ const Footer = ({ fullWidth }) => {
           {/*     /> */}
           {/*   </div> */}
           {/* </div> */}
-          <a
-            data-pin-do='embedUser'
-            data-pin-board-width='400'
-            data-pin-scale-height='240'
-            data-pin-scale-width='80'
-            href='https://www.pinterest.com/rodkisten/'
-          />
-          <iframe
-            style={{ borderRadius: 12 }}
-            src='https://open.spotify.com/embed/playlist/16wLrDUyHWvCYkXj8xX9xH?utm_source=generator'
-            width='100%'
-            height={352}
-            frameBorder={0}
-            allowFullScreen=''
-            allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
-            loading='lazy'
-          />
-        </div>
+         
         {/*  */}
         <div>
           <a
