@@ -235,7 +235,7 @@ const Footer = ({ fullWidth }) => {
           {/*     /> */}
           {/*   </div> */}
           {/* </div> */}
-         
+         </div>
         {/*  */}
         <div>
           <a
