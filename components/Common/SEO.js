@@ -4,19 +4,6 @@ import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
 
 const SEO = ({ meta }) => {
-  /**const ogImage = `https://${BLOG.ogImageGenerateHost}/api/default?logo=${
-    BLOG.link
-  }/favicon.png&siteName=${encodeURIComponent(
-    BLOG.title?.trim()
-  )}&description=${encodeURIComponent(
-    BLOG.description?.trim()
-  )}&title=${encodeURIComponent(
-    meta.title?.trim()
-  )}&summary=${encodeURIComponent(
-    meta.description?.trim()
-  )}&theme=light&border=solid`
-**/
-
   // CONSTRUCT IMAGE HERE
   const ogImage2 = `${BLOG.link}/api/og?siteName=${encodeURIComponent(
     BLOG.title?.trim()
