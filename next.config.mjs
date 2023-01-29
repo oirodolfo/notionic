@@ -1,13 +1,15 @@
-import runtimeCaching from 'next-pwa/cache.js'
-import nextPWA from 'next-pwa'
+// import runtimeCaching from 'next-pwa/cache.js'
+// import nextPWA from 'next-pwa'
+import withPWAInit from '@ducanh2912/next-pwa'
+// const withPWAInit = require('@ducanh2912/next-pwa').default();
 
-const withPWA = nextPWA({
+const withPWA = withPWAInit({
   disable: process.env.NODE_ENV === 'development',
   dest: 'public',
-  register: true,
+  // register: true,
   // skipWaiting: true,
-  runtimeCaching,
-  buildExcludes: [/middleware-manifest.json$/]
+  // runtimeCaching,
+  // buildExcludes: [/middleware-manifest.json$/]
 })
 
 const nextBaseConfig = {
@@ -26,21 +28,7 @@ const nextBaseConfig = {
   //   }
   //   return config
   // },
-  i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
-    localeDetection: false
-  },
-  images: {
-    domains: [
-      'api.craft.do',
-      'www.notion.so',
-      'images.unsplash.com',
-      's3.us-west-2.amazonaws.com',
-      'd1fdloi71mui9q.cloudfront.net',
-      'onuniverse-assets.imgix.net'
-    ]
-  }
+
   // async headers() {
   //   return [
   //     {
@@ -102,10 +90,28 @@ const nextBaseConfig = {
 }
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  ...nextBaseConfig,
+const nextConfig = withPWA({
+
+  // ...nextBaseConfig,
+  // i18n: {
+  //   locales: ['en'],
+  //   defaultLocale: 'en',
+  //   localeDetection: false
+  // },
+  images: {
+    domains: [
+      'api.craft.do',
+      'www.notion.so',
+      'images.unsplash.com',
+      's3.us-west-2.amazonaws.com',
+      'd1fdloi71mui9q.cloudfront.net',
+      'onuniverse-assets.imgix.net'
+    ]
+  },
   experimental: {
-    appDir: true
+    appDir: true,
+    // swcMinify: true,
+
   }
   // typescript: {
   //   // !! WARN !!
@@ -114,9 +120,9 @@ const nextConfig = {
   //   // !! WARN !!
   //   ignoreBuildErrors: true
   // }
-}
+})
 
+// export default nextConfig
 export default nextConfig
-// export default withPWA(nextConfig)
 
 // module.exports = withPWA(nextConfig)

@@ -27,6 +27,7 @@
     "sanity:deploy-graphql": "sanity graphql deploy"
   },
   "dependencies": {
+    "@ducanh2912/next-pwa": "^7.3.3",
     "@next/font": "^13.1.2",
     "@portabletext/react": "^2.0.0",
     "@sanity/icons": "^2.2.2",
@@ -80,7 +81,8 @@
     "postcss": "^8.4.18",
     "prettier": "^2.8.3",
     "tailwindcss": "^3.2.3",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "webpack": "^5.75.0"
   },
   "bugs": {
     "url": "https://github.com/izuolan/notionic/issues",

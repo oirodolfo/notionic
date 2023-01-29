@@ -20,8 +20,6 @@ import { motion } from 'framer-motion'
 const NavBar = () => {
   const router = useRouter()
   const { locale } = useRouter()
-  console.log('--------------------------------')
-  console.log({ lang, locale })
   const t = lang[locale]
   const [showMenu, setShowMenu] = useState(false)
 
