@@ -3,14 +3,7 @@ import BLOG from '@/blog.config'
 
 const Scripts = () => (
   <>
-    <Script
-      strategy='lazyOnload'
-      src='https://platform.twitter.com/widgets.js'
-    />
-    <Script
-      strategy='lazyOnload'
-      src='https://assets.pinterest.com/js/pinit.js'
-    />
+
     {BLOG.analytics && BLOG.analytics.provider === 'cf' && (
       <Script
         src={BLOG.analytics.cfConfig.scriptUrl}

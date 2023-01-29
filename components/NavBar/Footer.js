@@ -12,6 +12,7 @@ import Social from '../Common/Social.js'
 import { motion } from 'framer-motion'
 import { SocialIcon } from 'react-social-icons'
 import { links } from '@/lib/links'
+import Script from 'next/script'
 
 const LinksComponent = (props) => {
   //
@@ -247,6 +248,14 @@ const Footer = ({ fullWidth }) => {
           >
             Tweets by KistenRod
           </a>
+          <Script
+            strategy='lazyOnload'
+            src='https://platform.twitter.com/widgets.js'
+          />
+          <Script
+            strategy='lazyOnload'
+            src='https://assets.pinterest.com/js/pinit.js'
+          />
         </div>
         {/* <div className="w-full"> */}
 
