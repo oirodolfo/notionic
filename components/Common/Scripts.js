@@ -3,7 +3,6 @@ import BLOG from '@/blog.config'
 
 const Scripts = () => (
   <>
-
     {BLOG.analytics && BLOG.analytics.provider === 'cf' && (
       <Script
         src={BLOG.analytics.cfConfig.scriptUrl}

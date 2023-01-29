@@ -5,7 +5,7 @@ import withPWAInit from '@ducanh2912/next-pwa'
 
 const withPWA = withPWAInit({
   disable: process.env.NODE_ENV === 'development',
-  dest: 'public',
+  dest: 'public'
   // register: true,
   // skipWaiting: true,
   // runtimeCaching,
@@ -27,7 +27,7 @@ const nextBaseConfig = {
       })
     }
     return config
-  },
+  }
 
   // async headers() {
   //   return [
@@ -91,7 +91,6 @@ const nextBaseConfig = {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withPWA({
-
   // ...nextBaseConfig,
   i18n: {
     locales: ['en'],
@@ -109,9 +108,8 @@ const nextConfig = withPWA({
     ]
   },
   experimental: {
-    appDir: true,
+    appDir: true
     // swcMinify: true,
-
   }
   // typescript: {
   //   // !! WARN !!

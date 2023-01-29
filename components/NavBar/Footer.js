@@ -35,7 +35,6 @@ const LinksComponent = (props) => {
               href={link.url}
               className='flex backdrop-blur flex-row items-center p-2 text-base text-gray-900 rounded-lg bg-fuchsia-50/10 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white'
               // className='w-full min-w-[120px] text-base font-medium no-underline dark:text-black text-white border-transparent bg-black dark:bg-white rounded md:leading-6 transition-all duration-300'
-
             >
               {/* icon */}
 
@@ -203,25 +202,25 @@ const Footer = ({ fullWidth }) => {
           {/*     </div> */}
           {/*   </div> */}
 
-            <div className='w-full p-4 bg-white border rounded-lg shadow-md sm:p-6 dark:bg-gray-800 dark:border-gray-700'>
-              <h5 className='mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white'>
-                My links ✨
-              </h5>
-              <p className='text-sm font-normal text-gray-500 dark:text-gray-400'>
-                You can find me basically everywhere.
-              </p>
-              <ul className='grid grid-cols-2 gap-2 items-stretch w-full'>
-                <LinksComponent />
-              </ul>
-              <div>
-                <a
-                  href='https://linktr.ee/rodkisten'
-                  className='inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400'
-                >
-                  Check out my Linktree!
-                </a>
-              </div>
+          <div className='w-full p-4 bg-white border rounded-lg shadow-md sm:p-6 dark:bg-gray-800 dark:border-gray-700'>
+            <h5 className='mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white'>
+              My links ✨
+            </h5>
+            <p className='text-sm font-normal text-gray-500 dark:text-gray-400'>
+              You can find me basically everywhere.
+            </p>
+            <ul className='grid grid-cols-2 gap-2 items-stretch w-full'>
+              <LinksComponent />
+            </ul>
+            <div>
+              <a
+                href='https://linktr.ee/rodkisten'
+                className='inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400'
+              >
+                Check out my Linktree!
+              </a>
             </div>
+          </div>
 
           {/*   <div className='sc-9fa30a12-4 cfIBlJ'> */}
           {/*     <Image */}
@@ -236,7 +235,7 @@ const Footer = ({ fullWidth }) => {
           {/*     /> */}
           {/*   </div> */}
           {/* </div> */}
-         </div>
+        </div>
         {/*  */}
         <div>
           <a
