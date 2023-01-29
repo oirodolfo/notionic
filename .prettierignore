@@ -8,3 +8,11 @@ public/
 .demo/
 .renderer/
 pnpm-lock.yaml
+
+
+# next-pwa
+**/public/workbox**
+**/public/sw**
+**/public/worker**
+**/public/fallback**
+**/public/precache**
