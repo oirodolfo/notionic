@@ -44,8 +44,6 @@ export default function handler(req: NextRequest) {
                         <img
                             src="https://res.cloudinary.com/oirodolfo/image/upload/v1675012412/LOGO_K_KISTEN_ky0ypt.svg"
                             height={180}
-                            viewBox="0 0 75 65"
-                            fill="black"
                             style={{ margin: '20px 45px' }}
                         />
                     </div>
