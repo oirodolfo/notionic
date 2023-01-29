@@ -16,6 +16,17 @@ const SEO = ({ meta }) => {
     meta.description?.trim()
   )}&theme=light&border=solid`
 
+  // CONSTRUCT IMAGE HERE
+  const ogImage2 = `${BLOG.link}/api/og?siteName=${encodeURIComponent(
+    BLOG.title?.trim()
+  )}&description=${encodeURIComponent(
+    BLOG.description?.trim()
+  )}&title=${encodeURIComponent(
+    meta.title?.trim()
+  )}&summary=${encodeURIComponent(
+    meta.description?.trim()
+  )}&theme=light&border=solid`
+
   const router = useRouter()
   const url = BLOG.path.length ? `${BLOG.link}/${BLOG.path}` : BLOG.link
   return (
@@ -78,13 +89,13 @@ const SEO = ({ meta }) => {
         property='og:url'
         content={meta.slug ? `${url}/${meta.slug}` : `${url}${router.asPath}`}
       />
-      <meta property='og:image' content={ogImage || BLOG.defaultCover} />
+      <meta property='og:image' content={ogImage2} />
       <meta property='og:type' content={meta.type} />
 
       <meta name='twitter:card' content='summary_large_image' />
       <meta name='twitter:description' content={meta.description} />
       <meta name='twitter:title' content={meta.title} />
-      <meta name='twitter:image' content={ogImage || BLOG.defaultCover} />
+      <meta name='twitter:image' content={ogImage2} />
       {meta.type === 'article' && (
         <>
           <meta

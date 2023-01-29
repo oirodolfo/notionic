@@ -1,16 +1,12 @@
 {
-  "background_color": "#383838",
+  "background_color": "#330099",
   "description": "Rod kisten's blog",
   "dir": "ltr",
-  "display": "fullscreen",
-  "name": "Rod Kisten",
-  "orientation": "any",
-  "scope": "/",
+  "display": "standalone",
+  "name":"KISTEN",
   "short_name": "KSTN",
   "start_url": "/",
-  "theme_color": "#fcfcfc",
-  "categories": [],
-  "screenshots": [],
+  "theme_color": "#330099",
   "icons": [
     {
       "src": "/favicon.ico"
@@ -25,7 +21,7 @@
       "sizes": "512x512"
     },
     {
-      "src": "https://og-zl.vercel.app/api/default?logo=https://rodkisten.com/favicon.png&amp;amp;siteName=Rod%20Kisten%20%7C%20Rodolfo%20Costa&amp;amp;description=A%20static%20blog%20build%20on%20top%20of%20Notion%20and%20Next.js&amp;amp;title=Rod%20Kisten%20%7C%20Rodolfo%20Costa&amp;amp;summary=A%20static%20blog%20build%20on%20top%20of%20Notion%20and%20Next.js&amp;amp;theme=light&amp;amp;border=solid",
+      "src": "https://rodkisten.com/api/og",
       "type": "image/png",
       "sizes": "800x400"
     },
@@ -33,7 +29,5 @@
       "src": "/favicon.ico",
       "type": "image/x-icon"
     }
-  ],
-  "shortcuts": [],
-  "lang": "en"
+  ]
 }
