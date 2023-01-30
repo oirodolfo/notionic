@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const BLOG = require('./blog.config')
 const { fontFamily } = require('tailwindcss/defaultTheme')
 const CJK = require('./lib/cjk')
@@ -15,7 +17,10 @@ module.exports = {
     fontSize: false
   },
   mode: 'jit',
-  content: ['./pages/**/*.js', './components/**/*.js', './layouts/**/*.js'],
+
+
+  content: [    "./node_modules/@plaiceholder/ui/**/*.{ts,tsx}",
+    './pages/**/*.js', './components/**/*.js', './layouts/**/*.js' ],
   // darkMode: BLOG.appearance === 'auto' ? 'media' : 'class', // or 'media' or 'class'
   darkMode: 'class', // or 'media' or 'class'
   future: {
@@ -51,7 +56,10 @@ module.exports = {
     extend: {}
   },
   plugins: [
-    require('tailwindcss-fluid-type')({
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    require("@plaiceholder/tailwindcss"),
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+  require('tailwindcss-fluid-type')({
       settings: {
         fontSizeMin: 1,
         fontSizeMax: 1.25,

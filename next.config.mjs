@@ -98,6 +98,7 @@ const nextConfig = withPWA({
     localeDetection: false
   },
   images: {
+    formats: ['image/avif', 'image/webp'],
     domains: [
       'api.craft.do',
       'www.notion.so',

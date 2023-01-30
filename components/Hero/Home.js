@@ -8,7 +8,8 @@ import { useState } from 'react'
 import { MailIcon, RssIcon, ClipboardCheckIcon } from '@heroicons/react/outline'
 import dynamic from 'next/dynamic'
 import { NotionRenderer } from 'react-notion-x'
-import Image from 'next/image'
+// import Image from 'next/image'
+import BlurImage from '@/components/BlurImage'
 
 const Collection = dynamic(
   () =>
@@ -45,7 +46,7 @@ const Hero = ({ blockMap }) => {
           <NotionRenderer
             className='md:ml-0'
             recordMap={blockMap}
-            components={{ Collection }}
+            components={{ Collection, Image: BlurImage }}
           />
           <Social />
           <div className='mt-6 flex flex-col gap-4 sm:flex-row sm:justify-center'>
@@ -96,7 +97,8 @@ const Hero = ({ blockMap }) => {
         {/*     align-self: flex-start;
     margin-top: 3rem; */}
         <div className='w-2/5 self-start md:mt-4'>
-          <Image
+          <BlurImage
+            className={`w-[500px] h-[500px] relative plaiceholder-[/rod-circle-transparent.png] bg-url-[/rod-circle-transparent.png] transform scale-110 filter blur-2xl z-[-1] `}
             src={'/rod-circle-transparent.png'}
             alt={"Rod Kisten's avatar"}
             width={500}

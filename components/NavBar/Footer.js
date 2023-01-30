@@ -190,7 +190,7 @@ const Footer = ({ fullWidth }) => {
 
         {/*  */}
         {/* My loved songs Spotify playlist */}
-        <div className='w-full rounded-lg border bg-white p-4 shadow-md dark:border-gray-700 dark:bg-gray-800 sm:p-6'>
+        <div className='w-full rounded-lg  p-4 shadow-md sm:p-6'>
           {/* <div className='sc-9fa30a12-1 iXFafK'> */}
           {/*   <div className='sc-9fa30a12-3 gPchcu'> */}
           {/*     <h2 className='gradient sunset-2'>Say hi!</h2> */}
@@ -240,7 +240,7 @@ const Footer = ({ fullWidth }) => {
           {/*     </div> */}
           {/*   </div> */}
 
-          <div className='w-full rounded-lg border bg-white p-4 shadow-md dark:border-gray-700 dark:bg-gray-800 sm:p-6'>
+          <div className='w-full rounded-lg  p-4 shadow-md filter backdrop-blur-1 sm:p-6'>
             <h5 className='mb-3 font-semibold text-gray-900 text-base dark:text-white md:text-xl'>
               My links ✨
             </h5>
@@ -278,7 +278,7 @@ const Footer = ({ fullWidth }) => {
         <div>
           <a
             className='twitter-timeline'
-            // data-theme='dark'
+            data-theme='dark'
             data-tweet-limit='5'
             data-chrome='nofooter noborders transparent'
             href='https://twitter.com/KistenRod?ref_src=twsrc%5Etfw'
