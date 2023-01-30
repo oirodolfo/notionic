@@ -30,7 +30,7 @@ const BLOG = {
   socialLink: {
     twitter: 'https://twitter.com/kistenrod',
     github: 'https://github.com/oirodolfo',
-    telegram: 'https://kisten.t.me'
+    telegram: 'https://rodkisten.t.me'
   },
   seo: {
     keywords: ['Rodolfo Costa', 'Rod Kisten', 'Kisten', 'Blog'],

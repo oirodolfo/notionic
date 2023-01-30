@@ -11,6 +11,9 @@ const fontSerifCJK = !CJK()
 // If loading a variable font, you don't need to specify the font weight
 
 module.exports = {
+  corePlugins: {
+    fontSize: false
+  },
   mode: 'jit',
   content: ['./pages/**/*.js', './components/**/*.js', './layouts/**/*.js'],
   // darkMode: BLOG.appearance === 'auto' ? 'media' : 'class', // or 'media' or 'class'
@@ -21,6 +24,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        transparent: 'transparent',
         day: {
           DEFAULT: BLOG.lightBackground || '#ffffff'
         },
@@ -31,6 +35,8 @@ module.exports = {
       fontFamily: {
         sans: ['var(--inter-font)', ...fontFamily.sans, ...fontSansCJK],
         serif: [...fontFamily.serif, ...fontSerifCJK],
+        display: ['var(--anton-font)', ...fontFamily.sans, ...fontSansCJK],
+
         noEmoji: [
           'ui-sans-serif',
           'system-ui',
@@ -44,5 +50,35 @@ module.exports = {
   variants: {
     extend: {}
   },
-  plugins: []
+  plugins: [
+    require('tailwindcss-fluid-type')({
+        settings: {
+          fontSizeMin: 1,
+          fontSizeMax: 1.25,
+          ratioMin: 1.125,
+          ratioMax: 1.2,
+          screenMin: 20,
+          screenMax: 96,
+          unit: 'rem',
+          prefix: '',
+          extendValues: true
+        },
+        values: {
+          xs: [-2, 1.6],
+          sm: [-1, 1.6],
+          base: [0, 1.6],
+          lg: [1, 1.6],
+          xl: [2, 1.2],
+          '2xl': [3, 1.2],
+          '3xl': [4, 1.2],
+          '4xl': [5, 1.1],
+          '5xl': [6, 1.1],
+          '6xl': [7, 1.1],
+          '7xl': [8, 1],
+          '8xl': [9, 1],
+          '9xl': [10, 1]
+        },
+        variants: ['responsive']
+      })
+  ]
 }

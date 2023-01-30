@@ -23,10 +23,11 @@ import NProgress from 'nprogress'
 import '@/styles/nprogress.css'
 import Header from '@/components/NavBar/Header'
 import Footer from '@/components/NavBar/Footer'
-import { Inter } from '@next/font/google'
+import { Inter, Anton } from '@next/font/google'
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({ subsets: ['latin'], variable: '--inter-font' })
+const anton = Anton({ subsets: ['latin'], variable: '--anton-font', weight: '400' })
 
 const Ackee = dynamic(() => import('@/components/Common/Ackee'), { ssr: false })
 const Gtag = dynamic(() => import('@/components/Common/Gtag'), { ssr: false })
@@ -34,6 +35,10 @@ const Gtag = dynamic(() => import('@/components/Common/Gtag'), { ssr: false })
 function MyApp({ Component, pageProps }) {
   // https://github.com/vercel/next.js/blob/canary/examples/with-loading/pages/_app.js
   const router = useRouter()
+
+  const isHome = router.route === "/" || router.route === ""
+
+  console.log({isHome, router})
 
   useEffect(() => {
     const handleStart = (url) => {
@@ -57,7 +62,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <main className={`${inter.variable} font-sans`}>
+      <main className={`${inter.variable} ${anton.variable} font-sans`}>
         <Scripts />
         {BLOG.isProd && BLOG?.analytics?.provider === 'ackee' && (
           <Ackee
@@ -80,9 +85,9 @@ function MyApp({ Component, pageProps }) {
               <Component {...pageProps} />
             </div>
           </TransitionEffect>
-          <Footer
+          {isHome && <Footer
             fullWidth={pageProps.post ? pageProps.post.fullWidth : false}
-          />
+          />}
         </ThemeProvider>
       </main>
     </>

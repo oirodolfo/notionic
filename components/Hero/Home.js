@@ -35,6 +35,8 @@ const Hero = ({ blockMap }) => {
     <>
       <div className='container mx-auto flex px-5 py-2 mb-10 md:flex-row flex-col items-center'>
         <div className='flex flex-col md:w-3/5 md:items-start mb-6 md:mb-0 text-left'>
+          <h1 className="font-display text-display text-9xl text-3xl leading-[90%]">ROD <br/>KISTEN</h1>
+          <h2 className="leading-[90%] text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-500 to-pink-600 font-display text-display text-6xl">WELCOME TO MY WORLD</h2>
           <NotionRenderer
             className='md:ml-0'
             recordMap={blockMap}
@@ -86,7 +88,9 @@ const Hero = ({ blockMap }) => {
             )}
           </div>
         </div>
-        <div className='w-2/5'>
+        {/*     align-self: flex-start;
+    margin-top: 3rem; */}
+        <div className='w-2/5 self-start md:mt-4'>
           <Image
             src={'/rod-circle-transparent.png'}
             alt={"Rod Kisten's avatar"}
