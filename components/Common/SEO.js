@@ -21,22 +21,26 @@ const SEO = ({ meta }) => {
     <Head>
       <title>{meta.title}</title>
 
-      <meta name="application-name" content="Rod Kisten" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-      <meta name="apple-mobile-web-app-title" content="Rod Kisten" />
+      <meta name='application-name' content='Rod Kisten' />
+      <meta name='apple-mobile-web-app-capable' content='yes' />
+      <meta name='apple-mobile-web-app-status-bar-style' content='default' />
+      <meta name='apple-mobile-web-app-title' content='Rod Kisten' />
       {/* <meta name="description" content={APP_DESCRIPTION} /> */}
-      <meta name="format-detection" content="telephone=no" />
-      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name='format-detection' content='telephone=no' />
+      <meta name='mobile-web-app-capable' content='yes' />
 
-      <meta name="theme-color"
-            content="#e0b0ff"
-            media="(prefers-color-scheme: light)"/>
-        <meta name="theme-color"
-              content="#330099"
-              media="(prefers-color-scheme: dark)"/>
-        <meta name="theme-color" content="#" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta
+        name='theme-color'
+        content='#e0b0ff'
+        media='(prefers-color-scheme: light)'
+      />
+      <meta
+        name='theme-color'
+        content='#330099'
+        media='(prefers-color-scheme: dark)'
+      />
+      <meta name='theme-color' content='#' />
+      <meta name='viewport' content='width=device-width, initial-scale=1' />
 
       <NextSeo
         title={meta.title}

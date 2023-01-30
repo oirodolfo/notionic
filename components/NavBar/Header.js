@@ -13,8 +13,8 @@ import {
   MenuIcon
 } from '@heroicons/react/outline'
 import Social from '../Common/Social.js'
-import ThemeSwitcher from './ThemeSwitcher.js'
-import LangSwitcher from './LangSwitcher.js'
+// import ThemeSwitcher from './ThemeSwitcher.js'
+// import LangSwitcher from './LangSwitcher.js'
 import { motion } from 'framer-motion'
 
 const NavBar = () => {
@@ -74,7 +74,7 @@ const NavBar = () => {
       {/*   <span class=''>Pink to orange</span> */}
       {/* </button> */}
 
-      <ul className='hidden md:flex md:gap-1 p-1 rounded bg-gradient-to-r from-rose-500 to-purple-500'>
+      <ul className='hidden md:flex md:gap-1 p-1 rounded'>
         {links.map(
           (link) =>
             link.show && (
@@ -101,8 +101,8 @@ const NavBar = () => {
         )}
       </ul>
 
-      <ThemeSwitcher />
-      <LangSwitcher />
+      {/* <ThemeSwitcher /> */}
+      {/* <LangSwitcher /> */}
 
       {/* Mobile Phone Menu */}
       <div className='md:hidden mr-2 block '>
@@ -189,11 +189,11 @@ const Header = ({ navBarTitle, fullWidth }) => {
       >
         <div className='flex items-center'>
           <Link passHref href='/' scroll={false} aria-label={BLOG.title}>
-            <motion.div className='h-6 hover:text-blue-500 dark:hover:text-blue-500 fill-current'>
+            <motion.div className='sm:h-6 my-2 hover:text-blue-500 dark:hover:text-blue-500 fill-current'>
               <Image
                 src='/kisten-logo.png'
-                width={24}
-                height={24}
+                width={64}
+                height={64}
                 alt='Rod Kisten'
               />
               {/* <svg */}

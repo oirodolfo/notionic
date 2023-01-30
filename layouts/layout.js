@@ -1,6 +1,6 @@
 import BLOG from '@/blog.config'
 import formatDate from '@/lib/formatDate'
-// import Image from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
@@ -126,6 +126,8 @@ const Layout = ({
   fullWidth = false,
   subPage = false
 }) => {
+  console.log({ blockMap })
+
   const [showSubPageTitle, setShowSubPageTitle] = useState(false)
   const { locale } = useRouter()
 
@@ -204,8 +206,8 @@ const Layout = ({
                 components={{
                   Code,
                   Collection,
-                  nextLink: Link
-                  // nextImage: Image
+                  nextLink: Link,
+                  nextImage: Image
                 }}
               />
             </div>

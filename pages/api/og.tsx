@@ -4,95 +4,96 @@ import { ImageResponse } from '@vercel/og'
 import { NextRequest } from 'next/server'
 
 export const config = {
-    runtime: 'edge'
+  runtime: 'edge'
 }
 
 export default function handler(req: NextRequest) {
-    try {
-        const { searchParams } = new URL(req.url)
+  try {
+    const { searchParams } = new URL(req.url)
 
-        // ?title=<title>
-        const hasTitle = searchParams.has('title')
-        const title = hasTitle
-            ? searchParams.get('title')?.slice(0, 100)
-            : 'rodkisten.com'
+    // ?title=<title>
+    const hasTitle = searchParams.has('title')
+    const title = hasTitle
+      ? searchParams.get('title')?.slice(0, 100)
+      : 'rodkisten.com'
 
-        return new ImageResponse(
-            (
-                <div
-                    style={{
-                        height: '100%',
-                        width: '100%',
-                        display: 'flex',
-                        textAlign: 'center',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexDirection: 'column',
-                        flexWrap: 'nowrap',
-                        backgroundColor: 'rgba(255,255,255, .9)',
-                        backgroundImage: 'radial-gradient(circle at 25px 25px, purple 2%, transparent 0%), radial-gradient(circle at 75px 75px, lightgray 2%, transparent 0%)',
-                        backgroundSize: '100px 100px'
-                    }}
-                >
-                    <div
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center'
-                        }}
-                    >
-                        <img
-                            src="https://res.cloudinary.com/oirodolfo/image/upload/v1675012412/LOGO_K_KISTEN_ky0ypt.svg"
-                            height={180}
-                            style={{ margin: '20px 45px' }}
-                        />
-                    </div>
-                    <div
-                        style={{
-                            display: 'flex',
-                            fontSize: 60,
-                            fontWeight: '700',
-                            fontStyle: 'bold',
-                            color: 'black',
-                            margin: 0,
-                            lineHeight: 1,
-                            // whiteSpace: 'pre-wrap',
-                            minWidth: '100%',
-                            flexGrow: 1,
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            letterSpacing: '-0.081em'
-                        }}
-                    >
-                        Rod Kisten
-                    </div>
+    return new ImageResponse(
+      (
+        <div
+          style={{
+            height: '100%',
+            width: '100%',
+            display: 'flex',
+            textAlign: 'center',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            flexWrap: 'nowrap',
+            backgroundColor: 'rgba(255,255,255, .9)',
+            backgroundImage:
+              'radial-gradient(circle at 25px 25px, purple 2%, transparent 0%), radial-gradient(circle at 75px 75px, lightgray 2%, transparent 0%)',
+            backgroundSize: '100px 100px'
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
+            <img
+              src='https://res.cloudinary.com/oirodolfo/image/upload/v1675012412/LOGO_K_KISTEN_ky0ypt.svg'
+              height={180}
+              style={{ margin: '20px 45px' }}
+            />
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              fontSize: 60,
+              fontWeight: '700',
+              fontStyle: 'bold',
+              color: 'black',
+              margin: 0,
+              lineHeight: 1,
+              // whiteSpace: 'pre-wrap',
+              minWidth: '100%',
+              flexGrow: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+              letterSpacing: '-0.081em'
+            }}
+          >
+            Rod Kisten
+          </div>
 
-                    <div
-                        style={{
-                            display: 'flex',
-                            fontSize: 30,
-                            color: 'purple',
-                            marginTop: 0,
-                            lineHeight: 1,
-                            flexGrow: 1,
-                            justifyContent: 'center',
-                            letterSpacing: 1
-                        }}
-                    >
-                        {title}
-                    </div>
-                </div>
+          <div
+            style={{
+              display: 'flex',
+              fontSize: 30,
+              color: 'purple',
+              marginTop: 0,
+              lineHeight: 1,
+              flexGrow: 1,
+              justifyContent: 'center',
+              letterSpacing: 1
+            }}
+          >
+            {title}
+          </div>
+        </div>
+      ),
 
-            ),
-            {
-                width: 800,
-                height: 400
-            }
-        )
-    } catch (e: any) {
-        console.log(`${e.message}`)
-        return new Response('Failed to generate the image', {
-            status: 500
-        })
-    }
+      {
+        width: 800,
+        height: 400
+      }
+    )
+  } catch (e: any) {
+    console.log(`${e.message}`)
+    return new Response('Failed to generate the image', {
+      status: 500
+    })
+  }
 }

@@ -1,6 +1,6 @@
 import BLOG from '@/blog.config'
 import Link from 'next/link'
-import Avatar from './NotionAvatar.js'
+// import Avatar from './NotionAvatar.js'
 import Social from '../Common/Social.js'
 import { lang } from '@/lib/lang'
 import { useRouter } from 'next/router'
@@ -8,6 +8,7 @@ import { useState } from 'react'
 import { MailIcon, RssIcon, ClipboardCheckIcon } from '@heroicons/react/outline'
 import dynamic from 'next/dynamic'
 import { NotionRenderer } from 'react-notion-x'
+import Image from 'next/image'
 
 const Collection = dynamic(
   () =>
@@ -86,7 +87,13 @@ const Hero = ({ blockMap }) => {
           </div>
         </div>
         <div className='w-2/5'>
-          <Avatar className='text-gray-600 dark:text-gray-300' />
+          <Image
+            src={'/rod-circle-transparent.png'}
+            alt={"Rod Kisten's avatar"}
+            width={500}
+            height={500}
+          />
+          {/* <Avatar className='text-gray-600 dark:text-gray-300' /> */}
         </div>
       </div>
     </>

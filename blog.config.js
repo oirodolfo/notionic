@@ -4,7 +4,7 @@ const BLOG = {
   email: 'hey@rodkisten.com',
   link: 'https://rodkisten.com/',
   newsletter: 'Kisten Weekly',
-  description: 'A static blog build on top of Notion and Next.js',
+  description: 'KSTN Playground',
   lang: 'en-US',
   appearance: 'dark', // ['light', 'dark', 'auto'],
   font: ['sans-serif'], // ['sans-serif', 'serif']

@@ -10,10 +10,32 @@ import {
 } from '@heroicons/react/outline'
 import Social from '../Common/Social.js'
 import { motion } from 'framer-motion'
-import { SocialIcon } from 'react-social-icons'
+// import { SocialIcon } from 'react-social-icons'
 import { links } from '@/lib/links'
 import Script from 'next/script'
 
+const cleanUpUrl = (text) => {
+  if (typeof window === 'undefined') {
+    return text
+  }
+  return (text || '').replace(
+    /\/.*[&?]utm_[medium|source]=([^&]+).*\/i/,
+    document.location.host
+  )
+}
+
+const makeLegibleUrl = (text) => {
+  let url = text
+
+  try {
+    url = new URL(text)
+  } catch (e) {
+    console.log('error', e)
+    return text
+  }
+
+  return `${url.host}${url.pathname}`
+}
 const LinksComponent = (props) => {
   //
   // <Image
@@ -32,25 +54,41 @@ const LinksComponent = (props) => {
         .map((link) => (
           <li key={`${link.id}`}>
             <Link
-              href={link.url}
-              className='flex backdrop-blur flex-row items-center p-2 text-base text-gray-900 rounded-lg bg-fuchsia-50/10 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white'
+              href={cleanUpUrl(link.url)}
+              className='flex backdrop-blur flex-row items-center p-2 text-base text-gray-900 rounded-lg bg-fuchsia-50/10 hover:bg-gray-100 group hover:shadow dark:bg-zinc-600/0.6 dark:hover:bg-gray-500 dark:text-white'
               // className='w-full min-w-[120px] text-base font-medium no-underline dark:text-black text-white border-transparent bg-black dark:bg-white rounded md:leading-6 transition-all duration-300'
             >
               {/* icon */}
 
-              <SocialIcon
-                href={link.url}
-                url={link.url}
-                // src={link.thumbnail}
-                height={16}
-                width={16}
-                bgColor={'#FFFFFF'}
-                alt={link.title}
-              />
+              {/* <SocialIcon */}
+              {/*   // href={link.url} */}
+              {/*   url={cleanUpUrl(link.url)} */}
+              {/*   // src={link.thumbnail} */}
+              {/*   // defaultSVG={<SocialIcon network={"sharethis"}/>} */}
+              {/*   // height={16} */}
+              {/*   // width={16} */}
+              {/*   fgColor={'#FFFFFF'} */}
+              {/*   alt={link.title} */}
+              {/* /> */}
 
-              <span className='flex-1 ml-3 whitespace-nowrap truncate hover:text-clip'>
-                {link.title}
-              </span>
+              {link.url && link.url !== '' && (
+                <img
+                  width='16'
+                  height='16'
+                  src={`${new URL(link.url).origin}/favicon.ico`}
+                />
+              )}
+              {/* <img src={} */}
+              <div className='flex flex-col ml-3 ml-3 whitespace-nowrap truncate hover:text-clip'>
+                <div className=' whitespace-nowrap truncate hover:text-clip'>
+                  {link.title}
+                </div>
+                {link.url && link.url !== '' && (
+                  <div className='text-xs font-medium whitespace-nowrap truncate hover:text-clip text-purple-300'>
+                    {makeLegibleUrl(link.url)}
+                  </div>
+                )}
+              </div>
               {/* <span className='inline-flex items-center justify-center px-2 py-0.5 ml-3 text-xs font-medium text-gray-500 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-400'> */}
               {/*   Popular */}
               {/* </span> */}
@@ -209,7 +247,7 @@ const Footer = ({ fullWidth }) => {
             <p className='text-sm font-normal text-gray-500 dark:text-gray-400'>
               You can find me basically everywhere.
             </p>
-            <ul className='grid grid-cols-2 gap-2 items-stretch w-full'>
+            <ul className='grid grid-cols-2 sm:grid-cols-1 sm:gap-0.5  gap-2 items-stretch w-full'>
               <LinksComponent />
             </ul>
             <div>
@@ -240,9 +278,9 @@ const Footer = ({ fullWidth }) => {
         <div>
           <a
             className='twitter-timeline'
-            data-theme='dark'
+            // data-theme='dark'
             data-tweet-limit='5'
-            data-chrome='nofooter noborders'
+            data-chrome='nofooter noborders transparent'
             href='https://twitter.com/KistenRod?ref_src=twsrc%5Etfw'
           >
             Tweets by KistenRod
@@ -251,10 +289,10 @@ const Footer = ({ fullWidth }) => {
             strategy='lazyOnload'
             src='https://platform.twitter.com/widgets.js'
           />
-          <Script
-            strategy='lazyOnload'
-            src='https://assets.pinterest.com/js/pinit.js'
-          />
+          {/* <Script */}
+          {/*   strategy='lazyOnload' */}
+          {/*   src='https://assets.pinterest.com/js/pinit.js' */}
+          {/* /> */}
         </div>
         {/* <div className="w-full"> */}
 

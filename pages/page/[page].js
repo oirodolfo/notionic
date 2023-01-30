@@ -17,6 +17,8 @@ const Page = ({ postsToShow, page, showNext }) => {
 export async function getStaticProps(context) {
   const { page } = context.params // Get Current Page No.
   const posts = await getAllPosts({ onlyNewsletter: false })
+
+  console.log({ posts })
   const postsToShow = posts.slice(
     BLOG.postsPerPage * (page - 1),
     BLOG.postsPerPage * page

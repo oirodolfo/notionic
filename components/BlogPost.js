@@ -6,9 +6,9 @@ import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 
 const articleTestClassName =
-  'group flex flex-col relative m-5 md:mb-8 p-5 overflow-hidden shadow-xl  bg-slate-800' +
-  'sm:rounded-xl cursor-pointer rounded-lg dark:bg-slate-900/70 dark:backdrop-blur dark:ring-1 dark:ring-inset' +
-  ' dark:ring-white/10 '
+  'group flex flex-col relative m-5 md:mb-8 p-5 overflow-hidden shadow-xl  bg-slate-800 ' +
+  'sm:rounded-xl cursor-pointer rounded-lg backdrop-blur ring-1 ring-inset' +
+  'ring-white/10 '
 
 const BlogPost = ({ post }) => {
   const { locale } = useRouter()
