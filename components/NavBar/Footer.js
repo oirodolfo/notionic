@@ -274,26 +274,6 @@ const Footer = ({ fullWidth }) => {
           {/*   </div> */}
           {/* </div> */}
         </div>
-        {/*  */}
-        <div>
-          <a
-            className='twitter-timeline'
-            data-theme='dark'
-            data-tweet-limit='5'
-            data-chrome='nofooter noborders transparent'
-            href='https://twitter.com/KistenRod?ref_src=twsrc%5Etfw'
-          >
-            Tweets by KistenRod
-          </a>
-          <Script
-            strategy='lazyOnload'
-            src='https://platform.twitter.com/widgets.js'
-          />
-          {/* <Script */}
-          {/*   strategy='lazyOnload' */}
-          {/*   src='https://assets.pinterest.com/js/pinit.js' */}
-          {/* /> */}
-        </div>
         {/* <div className="w-full"> */}
 
         {/*   <div className="relative z-10 -mx-4 shadow-lg ring-1 ring-slate-900/10 sm:mx-0 sm:rounded-3xl lg:w-1/2 lg:flex-none"> */}
