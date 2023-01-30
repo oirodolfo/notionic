@@ -84,7 +84,6 @@ export default function handler(req: NextRequest) {
           </div>
         </div>
       ),
-
       {
         width: 800,
         height: 400

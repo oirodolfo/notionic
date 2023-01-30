@@ -12,7 +12,7 @@ const Container = ({ children, fullWidth, ...customMeta }) => {
     <>
       <SEO meta={meta} />
       <main
-        className={`m-auto flex-grow w-full transition-all ${
+        className={`m-auto w-full flex-grow transition-all ${
           !fullWidth ? 'max-w-2xl px-4' : 'px-4 md:px-24'
         }`}
       >

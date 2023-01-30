@@ -55,7 +55,7 @@ const LinksComponent = (props) => {
           <li key={`${link.id}`}>
             <Link
               href={cleanUpUrl(link.url)}
-              className='flex backdrop-blur flex-row items-center p-2 text-base text-gray-900 rounded-lg bg-fuchsia-50/10 hover:bg-gray-100 group hover:shadow dark:bg-zinc-600/0.6 dark:hover:bg-gray-500 dark:text-white'
+              className='dark:bg-zinc-600/0.6 group flex flex-row items-center rounded-lg bg-fuchsia-50/10 p-2 text-gray-900 backdrop-blur text-base hover:bg-gray-100 hover:shadow dark:text-white dark:hover:bg-gray-500'
               // className='w-full min-w-[120px] text-base font-medium no-underline dark:text-black text-white border-transparent bg-black dark:bg-white rounded md:leading-6 transition-all duration-300'
             >
               {/* icon */}
@@ -79,12 +79,12 @@ const LinksComponent = (props) => {
                 />
               )}
               {/* <img src={} */}
-              <div className='flex flex-col ml-3 ml-3 whitespace-nowrap truncate hover:text-clip'>
-                <div className=' whitespace-nowrap truncate hover:text-clip'>
+              <div className='ml-3 ml-3 flex flex-col truncate whitespace-nowrap hover:text-clip'>
+                <div className=' truncate whitespace-nowrap hover:text-clip'>
                   {link.title}
                 </div>
                 {link.url && link.url !== '' && (
-                  <div className='text-xs font-medium whitespace-nowrap truncate hover:text-clip text-purple-300'>
+                  <div className='truncate whitespace-nowrap font-medium text-purple-300 text-xs hover:text-clip'>
                     {makeLegibleUrl(link.url)}
                   </div>
                 )}
@@ -120,41 +120,41 @@ const Footer = ({ fullWidth }) => {
       id: 0,
       name: t.NAV.ABOUT,
       to: BLOG.path || '/about',
-      icon: <UserIcon className='inline-block mb-1 h-5 w-5' />,
+      icon: <UserIcon className='mb-1 inline-block h-5 w-5' />,
       show: true
     },
     {
       id: 1,
       name: t.NAV.FRINEDS,
       to: '/friends',
-      icon: <UsersIcon className='inline-block mb-1 h-5 w-5' />,
+      icon: <UsersIcon className='mb-1 inline-block h-5 w-5' />,
       show: BLOG.pagesShow.friends
     },
     {
       id: 2,
       name: t.NAV.BOOKS,
       to: '/books',
-      icon: <BookOpenIcon className='inline-block mb-1 h-5 w-5' />,
+      icon: <BookOpenIcon className='mb-1 inline-block h-5 w-5' />,
       show: BLOG.pagesShow.books
     },
     {
       id: 3,
       name: t.NAV.CONTACT,
       to: '/contact',
-      icon: <MailIcon className='inline-block mb-1 h-5 w-5' />,
+      icon: <MailIcon className='mb-1 inline-block h-5 w-5' />,
       show: BLOG.pagesShow.contact
     }
   ]
 
   return (
     <motion.div
-      className={`mt-6 flex-shrink-0 m-auto w-full text-gray-600 dark:text-gray-300 transition-all ${
+      className={`m-auto mt-6 w-full flex-shrink-0 text-gray-600 transition-all dark:text-gray-300 ${
         !fullWidth ? 'max-w-3xl md:px-8' : 'px-4 md:px-24'
       }`}
     >
-      <footer className='px-4 md:px-8 mx-auto w-full'>
+      <footer className='mx-auto w-full px-4 md:px-8'>
         {/* <footer className='max-w-screen-2xl px-4 md:px-8 mx-auto'> */}
-        <div className='flex flex-col md:flex-row justify-between items-center border-b dark:border-gray-600 py-1'>
+        <div className='flex flex-col items-center justify-between border-b py-1 dark:border-gray-600 md:flex-row'>
           <ul className='flex flex-wrap justify-center md:justify-start md:gap-1'>
             {links.map(
               (link) =>
@@ -172,11 +172,11 @@ const Footer = ({ fullWidth }) => {
                         activeMenu === link.to
                           ? 'bg-gray-200 dark:bg-gray-700'
                           : ''
-                      } hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer rounded-lg block py-1 px-2 nav`}
+                      } nav block cursor-pointer rounded-lg py-1 px-2 hover:bg-gray-200 dark:hover:bg-gray-700`}
                     >
                       <div className='font-light'>
                         {link.icon}
-                        <span className='inline-block m-1'>{link.name}</span>
+                        <span className='m-1 inline-block'>{link.name}</span>
                       </div>
                     </li>
                   </Link>
@@ -190,7 +190,7 @@ const Footer = ({ fullWidth }) => {
 
         {/*  */}
         {/* My loved songs Spotify playlist */}
-        <div className='w-full p-4 bg-white border rounded-lg shadow-md sm:p-6 dark:bg-gray-800 dark:border-gray-700'>
+        <div className='w-full rounded-lg border bg-white p-4 shadow-md dark:border-gray-700 dark:bg-gray-800 sm:p-6'>
           {/* <div className='sc-9fa30a12-1 iXFafK'> */}
           {/*   <div className='sc-9fa30a12-3 gPchcu'> */}
           {/*     <h2 className='gradient sunset-2'>Say hi!</h2> */}
@@ -240,20 +240,20 @@ const Footer = ({ fullWidth }) => {
           {/*     </div> */}
           {/*   </div> */}
 
-          <div className='w-full p-4 bg-white border rounded-lg shadow-md sm:p-6 dark:bg-gray-800 dark:border-gray-700'>
-            <h5 className='mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white'>
+          <div className='w-full rounded-lg border bg-white p-4 shadow-md dark:border-gray-700 dark:bg-gray-800 sm:p-6'>
+            <h5 className='mb-3 font-semibold text-gray-900 text-base dark:text-white md:text-xl'>
               My links ✨
             </h5>
-            <p className='text-sm font-normal text-gray-500 dark:text-gray-400'>
+            <p className='font-normal text-gray-500 text-sm dark:text-gray-400'>
               You can find me basically everywhere.
             </p>
-            <ul className='grid grid-cols-2 sm:grid-cols-1 sm:gap-0.5  gap-2 items-stretch w-full'>
+            <ul className='grid w-full grid-cols-2 items-stretch  gap-2 sm:grid-cols-1 sm:gap-0.5'>
               <LinksComponent />
             </ul>
             <div>
               <a
                 href='https://linktr.ee/rodkisten'
-                className='inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400'
+                className='inline-flex items-center font-normal text-gray-500 text-xs hover:underline dark:text-gray-400'
               >
                 Check out my Linktree!
               </a>
@@ -468,7 +468,7 @@ const Footer = ({ fullWidth }) => {
         {/*   </div> */}
 
         {/* </div> */}
-        <div className='text-gray-400 text-xs font-light py-4'>
+        <div className='py-4 font-light text-gray-400 text-xs'>
           © {from === y || !from ? y : `${from} - ${y}`} | {BLOG.author}
           <p className='md:float-right'>
             {t.FOOTER.COPYRIGHT_START}

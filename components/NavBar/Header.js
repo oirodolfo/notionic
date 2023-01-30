@@ -35,35 +35,35 @@ const NavBar = () => {
       id: 0,
       name: t.NAV.INDEX,
       to: BLOG.path || '/',
-      icon: <HomeIcon className='inline-block mb-1 h-5 w-5' />,
+      icon: <HomeIcon className='mb-1 inline-block h-5 w-5' />,
       show: true
     },
     {
       id: 1,
       name: t.NAV.NEWSLETTER,
       to: '/newsletter',
-      icon: <NewspaperIcon className='inline-block mb-1 h-5 w-5' />,
+      icon: <NewspaperIcon className='mb-1 inline-block h-5 w-5' />,
       show: BLOG.pagesShow.newsletter
     },
     {
       id: 2,
       name: t.NAV.NOTES,
       to: '/notes',
-      icon: <CollectionIcon className='inline-block mb-1 h-5 w-5' />,
+      icon: <CollectionIcon className='mb-1 inline-block h-5 w-5' />,
       show: BLOG.pagesShow.notes
     },
     {
       id: 3,
       name: t.NAV.PROJECTS,
       to: '/projects',
-      icon: <SparklesIcon className='inline-block mb-1 h-5 w-5' />,
+      icon: <SparklesIcon className='mb-1 inline-block h-5 w-5' />,
       show: BLOG.pagesShow.projects
     },
     {
       id: 4,
       name: t.NAV.SEARCH,
       to: '/search',
-      icon: <SearchIcon className='inline-block mb-1 h-5 w-5' />,
+      icon: <SearchIcon className='mb-1 inline-block h-5 w-5' />,
       show: true
     }
   ]
@@ -74,7 +74,7 @@ const NavBar = () => {
       {/*   <span class=''>Pink to orange</span> */}
       {/* </button> */}
 
-      <ul className='hidden md:flex md:gap-1 p-1 rounded'>
+      <ul className='hidden rounded p-1 md:flex md:gap-1'>
         {links.map(
           (link) =>
             link.show && (
@@ -89,11 +89,11 @@ const NavBar = () => {
                     activeMenu === link.to
                       ? 'bg-slate-200 dark:bg-gray-700'
                       : ''
-                  } hover:bg-gray-200 dark:hover:bg-zinc-900 cursor-pointer rounded-lg block py-1 px-2 nav`}
+                  } nav block cursor-pointer rounded-lg py-1 px-2 hover:bg-gray-200 dark:hover:bg-zinc-900`}
                 >
                   <div className='font-light'>
                     {link.icon}
-                    <span className='inline-block m-1'>{link.name}</span>
+                    <span className='m-1 inline-block'>{link.name}</span>
                   </div>
                 </li>
               </Link>
@@ -105,17 +105,17 @@ const NavBar = () => {
       {/* <LangSwitcher /> */}
 
       {/* Mobile Phone Menu */}
-      <div className='md:hidden mr-2 block '>
+      <div className='mr-2 block md:hidden '>
         <button
           type='button'
           aria-label='Menu'
           onClick={() => setShowMenu((showMenu) => !showMenu)}
-          className='hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer rounded-lg block p-2 -mr-3 md:pb-3'
+          className='-mr-3 block cursor-pointer rounded-lg p-2 hover:bg-gray-200 dark:hover:bg-gray-700 md:pb-3'
         >
-          <MenuIcon className='inline-block mb-1 h-5 w-5' />
+          <MenuIcon className='mb-1 inline-block h-5 w-5' />
         </button>
         {showMenu && (
-          <div className='absolute right-0 w-40 mr-4 mt-2 origin-top-right bg-white dark:bg-gray-700 divide-y divide-gray-200 dark:divide-gray-600 rounded-md shadow-lg outline-none'>
+          <div className='absolute right-0 mr-4 mt-2 w-40 origin-top-right divide-y divide-gray-200 rounded-md bg-white shadow-lg outline-none dark:divide-gray-600 dark:bg-gray-700'>
             <div className='py-1'>
               {links.map(
                 (link) =>
@@ -126,7 +126,7 @@ const NavBar = () => {
                       href={link.to}
                       scroll={false}
                       onClick={() => setShowMenu((showMenu) => !showMenu)}
-                      className='hover:bg-gray-100 dark:hover:bg-gray-600 font-light block justify-between w-full px-4 py-2 leading-5'
+                      className='block w-full justify-between px-4 py-2 font-light leading-5 hover:bg-gray-100 dark:hover:bg-gray-600'
                     >
                       {link.icon}
                       <span className='m-1'>{link.name}</span>
@@ -181,7 +181,7 @@ const Header = ({ navBarTitle, fullWidth }) => {
     <>
       <div className='observer-element h-4 md:h-12' ref={sentinalRef}></div>
       <div
-        className={`sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-2 md:mb-12 py-8 bg-opacity-60 ${
+        className={`sticky-nav m-auto mb-2 flex h-6 w-full flex-row items-center justify-between bg-opacity-60 py-8 md:mb-12 ${
           !fullWidth ? 'max-w-3xl px-4' : 'px-4 md:px-24'
         }`}
         id='sticky-nav'
@@ -189,7 +189,7 @@ const Header = ({ navBarTitle, fullWidth }) => {
       >
         <div className='flex items-center'>
           <Link passHref href='/' scroll={false} aria-label={BLOG.title}>
-            <motion.div className='sm:h-6 my-2 hover:text-blue-500 dark:hover:text-blue-500 fill-current'>
+            <motion.div className='my-2 fill-current hover:text-blue-500 dark:hover:text-blue-500 sm:h-6'>
               <Image
                 src='/kisten-logo.png'
                 width={64}

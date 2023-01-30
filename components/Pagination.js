@@ -25,7 +25,7 @@ const Pagination = ({ page, showNext }) => {
           }
         >
           <button rel='prev' className='block cursor-pointer'>
-            <ChevronLeftIcon className='inline-block mb-1 h-5 w-5' />{' '}
+            <ChevronLeftIcon className='mb-1 inline-block h-5 w-5' />{' '}
             {t.PAGINATION.PREV}
           </button>
         </Link>
@@ -34,7 +34,7 @@ const Pagination = ({ page, showNext }) => {
         <Link href={`/page/${currentPage + 1}`} scroll={false}>
           <button rel='next' className='block cursor-pointer'>
             {t.PAGINATION.NEXT}{' '}
-            <ChevronRightIcon className='inline-block mb-1 h-5 w-5' />
+            <ChevronRightIcon className='mb-1 inline-block h-5 w-5' />
           </button>
         </Link>
       )}

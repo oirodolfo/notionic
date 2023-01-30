@@ -164,23 +164,23 @@ const Layout = ({
       fullWidth={fullWidth}
     >
       <motion.div className='flex flex-row'>
-        <article className='flex-none md:overflow-x-visible overflow-x-scroll w-full'>
+        <article className='w-full flex-none overflow-x-scroll md:overflow-x-visible'>
           {showSubPageTitle && (
             <Link
               passHref
               href={`${BLOG.path}/${frontMatter.slug}`}
               scroll={false}
-              className='text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition duration-100'
+              className='text-gray-500 transition duration-100 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300'
             >
-              <ChevronLeftIcon className='inline-block mb-1 h-5 w-5' />
+              <ChevronLeftIcon className='mb-1 inline-block h-5 w-5' />
               <span className='m-1'>{frontMatter.title}</span>
             </Link>
           )}
-          <h1 className='font-bold text-3xl text-black dark:text-white'>
+          <h1 className='font-bold text-black text-3xl dark:text-white'>
             {subPageTitle}
           </h1>
           {frontMatter.type[0] !== 'Page' && (
-            <nav className='flex mt-5 mb-10 items-start text-gray-500 dark:text-gray-400'>
+            <nav className='mt-5 mb-10 flex items-start text-gray-500 dark:text-gray-400'>
               <div className='mr-2 mb-4 md:ml-0'>
                 {formatDate(
                   frontMatter?.date?.start_date || frontMatter.createdTime,
@@ -188,7 +188,7 @@ const Layout = ({
                 )}
               </div>
               {frontMatter.tags && (
-                <div className='flex flex-nowrap max-w-full overflow-x-auto article-tags'>
+                <div className='article-tags flex max-w-full flex-nowrap overflow-x-auto'>
                   {frontMatter.tags.map((tag) => (
                     <TagItem key={tag} tag={tag} />
                   ))}

@@ -27,7 +27,11 @@ import { Inter, Anton } from '@next/font/google'
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({ subsets: ['latin'], variable: '--inter-font' })
-const anton = Anton({ subsets: ['latin'], variable: '--anton-font', weight: '400' })
+const anton = Anton({
+  subsets: ['latin'],
+  variable: '--anton-font',
+  weight: '400'
+})
 
 const Ackee = dynamic(() => import('@/components/Common/Ackee'), { ssr: false })
 const Gtag = dynamic(() => import('@/components/Common/Gtag'), { ssr: false })
@@ -36,9 +40,7 @@ function MyApp({ Component, pageProps }) {
   // https://github.com/vercel/next.js/blob/canary/examples/with-loading/pages/_app.js
   const router = useRouter()
 
-  const isHome = router.route === "/" || router.route === ""
-
-  console.log({isHome, router})
+  const isHome = router.route === '/' || router.route === ''
 
   useEffect(() => {
     const handleStart = (url) => {
@@ -85,9 +87,11 @@ function MyApp({ Component, pageProps }) {
               <Component {...pageProps} />
             </div>
           </TransitionEffect>
-          {isHome && <Footer
-            fullWidth={pageProps.post ? pageProps.post.fullWidth : false}
-          />}
+          {isHome && (
+            <Footer
+              fullWidth={pageProps.post ? pageProps.post.fullWidth : false}
+            />
+          )}
         </ThemeProvider>
       </main>
     </>

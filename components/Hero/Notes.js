@@ -18,15 +18,15 @@ const NoteHero = ({ blockMap }) => {
   const t = lang[locale]
   return (
     <>
-      <div className='container mx-auto flex px-5 py-2 mb-10 md:flex-row flex-col items-center'>
-        <div className='flex flex-col md:w-3/5 md:items-start mb-6 md:mb-0 text-left'>
+      <div className='container mx-auto mb-10 flex flex-col items-center px-5 py-2 md:flex-row'>
+        <div className='mb-6 flex flex-col text-left md:mb-0 md:w-3/5 md:items-start'>
           <NotionRenderer
             className='md:ml-0'
             recordMap={blockMap}
             components={{ Collection }}
           />
           <Social />
-          <div className='text-gray-400 text-xs font-light py-4'>
+          <div className='py-4 font-light text-gray-400 text-xs'>
             {t.HERO.NOTES.TEXT_FOOTER}
           </div>
         </div>

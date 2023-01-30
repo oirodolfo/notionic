@@ -43,13 +43,13 @@ function Contact() {
     <>
       {showResult ? (
         <div>
-          <p className='max-w-screen-md font-bold md:text-lg text-center mx-auto'>
+          <p className='mx-auto max-w-screen-md text-center font-bold md:text-lg'>
             {t.CONTACT.SUCCESS_MESSAGE}
           </p>
         </div>
       ) : (
         <form
-          className='max-w-screen-md grid sm:grid-cols-2 gap-4 mx-auto'
+          className='mx-auto grid max-w-screen-md gap-4 sm:grid-cols-2'
           onSubmit={sentMessage}
         >
           <div>
@@ -59,7 +59,7 @@ function Contact() {
               type='text'
               required
               placeholder={t.CONTACT.FORM_USERNAME}
-              className='block w-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-lg py-3 px-4 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-600'
+              className='block w-full rounded-lg bg-gray-100 py-3 px-4 leading-tight text-gray-700 focus:bg-white focus:outline-none dark:bg-gray-700 dark:text-gray-200 dark:focus:bg-gray-600'
             />
           </div>
           <div>
@@ -69,7 +69,7 @@ function Contact() {
               type='text'
               required
               placeholder={t.CONTACT.FORM_EMAIL}
-              className='block w-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-lg py-3 px-4 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-600'
+              className='block w-full rounded-lg bg-gray-100 py-3 px-4 leading-tight text-gray-700 focus:bg-white focus:outline-none dark:bg-gray-700 dark:text-gray-200 dark:focus:bg-gray-600'
             />
           </div>
 
@@ -80,18 +80,18 @@ function Contact() {
               type='text'
               required
               placeholder={t.CONTACT.FORM_CONTENT}
-              className='h-64 block w-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-lg py-3 px-4 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-600'
+              className='block h-64 w-full rounded-lg bg-gray-100 py-3 px-4 leading-tight text-gray-700 focus:bg-white focus:outline-none dark:bg-gray-700 dark:text-gray-200 dark:focus:bg-gray-600'
             ></textarea>
           </div>
 
-          <div className='sm:col-span-2 flex justify-between items-center'>
+          <div className='flex items-center justify-between sm:col-span-2'>
             {submitting ? (
               <button
                 disabled
-                className='cursor-not-allowed inline-block bg-gray-300 dark:bg-gray-600 text-center rounded-lg outline-none transition duration-100 px-8 py-3'
+                className='inline-block cursor-not-allowed rounded-lg bg-gray-300 px-8 py-3 text-center outline-none transition duration-100 dark:bg-gray-600'
               >
                 <svg
-                  className='animate-spin h-5 w-5 text-gray-600 dark:text-day'
+                  className='h-5 w-5 animate-spin text-gray-600 dark:text-day'
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
                   viewBox='0 0 24 24'
@@ -114,9 +114,9 @@ function Contact() {
             ) : (
               <button
                 type='submit'
-                className='inline-block bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-center rounded-lg outline-none transition duration-100 px-8 py-3'
+                className='inline-block rounded-lg bg-gray-100 px-8 py-3 text-center outline-none transition duration-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600'
               >
-                <p className='text-gray-400 h-5'>{t.CONTACT.SEND_BUTTON}</p>
+                <p className='h-5 text-gray-400'>{t.CONTACT.SEND_BUTTON}</p>
               </button>
             )}
             <p className='mb-2 text-gray-400 text-xs'>

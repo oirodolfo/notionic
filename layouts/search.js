@@ -30,7 +30,7 @@ const SearchLayout = ({ tags, posts, currentTag }) => {
               ? `${t.SEARCH.ONLY_SEARCH} #${currentTag}`
               : `${t.SEARCH.PLACEHOLDER}`
           }
-          className='w-full bg-white dark:bg-gray-600 shadow-md rounded-lg outline-none focus:shadow p-3'
+          className='w-full rounded-lg bg-white p-3 shadow-md outline-none focus:shadow dark:bg-gray-600'
           onChange={(e) => setSearchValue(e.target.value)}
         />
         <svg

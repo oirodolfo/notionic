@@ -84,7 +84,7 @@ nav {
   }
   .sticky-nav-full .header-name {
     opacity: 1;
-    @apply dark:text-gray-300 text-gray-600;
+    @apply text-gray-600 dark:text-gray-300;
   }
 }
 
@@ -96,9 +96,9 @@ nav {
 }
 
 .md-cover {
-  @apply bg-gradient-to-r from-zinc-100 to-zinc-100 group-hover:from-zinc-200 group-hover:via-zinc-200 dark:from-zinc-700 dark:to-zinc-700 dark:group-hover:from-zinc-600 dark:group-hover:via-zinc-600 group-hover:to-transparent;
+  @apply bg-gradient-to-r from-zinc-100 to-zinc-100 group-hover:from-zinc-200 group-hover:via-zinc-200 group-hover:to-transparent dark:from-zinc-700 dark:to-zinc-700 dark:group-hover:from-zinc-600 dark:group-hover:via-zinc-600;
 }
 
 .sm-cover {
-  @apply bg-gradient-to-r from-zinc-100 via-zinc-100 group-hover:from-zinc-200 group-hover:via-zinc-200 dark:from-zinc-700 dark:via-zinc-700 dark:group-hover:from-zinc-600 dark:group-hover:via-zinc-600 to-transparent;
+  @apply bg-gradient-to-r from-zinc-100 via-zinc-100 to-transparent group-hover:from-zinc-200 group-hover:via-zinc-200 dark:from-zinc-700 dark:via-zinc-700 dark:group-hover:from-zinc-600 dark:group-hover:via-zinc-600;
 }

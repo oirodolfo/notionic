@@ -13,26 +13,26 @@ const PostFooter = () => {
   const t = lang[locale]
 
   return (
-    <div className='w-full pb-12 justify-between font-medium text-gray-500 dark:text-gray-400'>
-      <div className='flex flex-wrap sm:flex-nowrap sm:justify-between items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 relative gap-3 px-4 py-3'>
-        <div className='w-full sm:w-auto max-w-screen-sm inline-block text-sm font-light md:text-base mb-2 sm:mb-0'>
+    <div className='w-full justify-between pb-12 font-medium text-gray-500 dark:text-gray-400'>
+      <div className='relative flex flex-wrap items-center justify-center gap-3 rounded-lg bg-gray-100 px-4 py-3 dark:bg-gray-700 sm:flex-nowrap sm:justify-between'>
+        <div className='mb-2 inline-block w-full max-w-screen-sm font-light text-sm sm:mb-0 sm:w-auto md:text-base'>
           {t.LAYOUT.NOTICE_TEXT}
         </div>
         <div className='flex flex-wrap gap-3'>
           {BLOG.showWeChatPay && (
             <button
               onClick={() => setShowPay((showPay) => !showPay)}
-              className='flex gap-1 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 hover:text-gray-600 dark:hover:text-gray-300 text-sm rounded-lg px-4 py-2'
+              className='flex gap-1 rounded-lg bg-gray-200 px-4 py-2 text-sm hover:bg-gray-300 hover:text-gray-600 dark:bg-gray-600 dark:hover:bg-gray-500 dark:hover:text-gray-300'
             >
-              <ThumbUpIcon className='flex flex-col justify-center items-center select-none cursor-pointer relative w-5 h-5' />
+              <ThumbUpIcon className='relative flex h-5 w-5 cursor-pointer select-none flex-col items-center justify-center' />
               {t.LAYOUT.PAY_BUTTON}
             </button>
           )}
           <button
             onClick={() => router.push(BLOG.path || '/contact')}
-            className='flex gap-1 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 hover:text-gray-600 dark:hover:text-gray-300 text-sm rounded-lg px-4 py-2'
+            className='flex gap-1 rounded-lg bg-gray-200 px-4 py-2 text-sm hover:bg-gray-300 hover:text-gray-600 dark:bg-gray-600 dark:hover:bg-gray-500 dark:hover:text-gray-300'
           >
-            <MailIcon className='flex flex-col justify-center items-center select-none cursor-pointer relative w-5 h-5' />
+            <MailIcon className='relative flex h-5 w-5 cursor-pointer select-none flex-col items-center justify-center' />
             {t.LAYOUT.NOTICE_BUTTON}
           </button>
         </div>

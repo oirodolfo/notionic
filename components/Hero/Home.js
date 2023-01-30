@@ -33,22 +33,27 @@ const Hero = ({ blockMap }) => {
 
   return (
     <>
-      <div className='container mx-auto flex px-5 py-2 mb-10 md:flex-row flex-col items-center'>
-        <div className='flex flex-col md:w-3/5 md:items-start mb-6 md:mb-0 text-left'>
-          <h1 className="font-display text-display text-9xl text-3xl leading-[90%]">ROD <br/>KISTEN</h1>
-          <h2 className="leading-[90%] text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-500 to-pink-600 font-display text-display text-6xl">WELCOME TO MY WORLD</h2>
+      <div className='container mx-auto mb-10 flex flex-col items-center px-5 py-2 md:flex-row'>
+        <div className='mb-6 flex flex-col text-left md:mb-0 md:w-3/5 md:items-start'>
+          <h1 className='text-display font-display leading-[90%] text-3xl text-9xl'>
+            ROD <br />
+            KISTEN
+          </h1>
+          <h2 className='text-display bg-gradient-to-r from-purple-400 via-blue-500 to-pink-600 bg-clip-text font-display leading-[90%] text-transparent text-6xl'>
+            WELCOME TO MY WORLD
+          </h2>
           <NotionRenderer
             className='md:ml-0'
             recordMap={blockMap}
             components={{ Collection }}
           />
           <Social />
-          <div className='flex flex-col sm:flex-row sm:justify-center gap-4 mt-6'>
+          <div className='mt-6 flex flex-col gap-4 sm:flex-row sm:justify-center'>
             <Link passHref href='/contact' scroll={false} legacyBehavior>
-              <button className='bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 inline-flex py-3 px-5 rounded-lg items-center'>
-                <MailIcon className='inline-block text-gray-600 dark:text-day h-7 w-7' />
-                <span className='ml-4 flex items-start flex-col leading-none'>
-                  <span className='text-xs text-gray-600 dark:text-day mb-1'>
+              <button className='inline-flex items-center rounded-lg bg-gray-100 py-3 px-5 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600'>
+                <MailIcon className='inline-block h-7 w-7 text-gray-600 dark:text-day' />
+                <span className='ml-4 flex flex-col items-start leading-none'>
+                  <span className='mb-1 text-gray-600 text-xs dark:text-day'>
                     {t.HERO.HOME.CONTACT_BUTTON_DES}
                   </span>
                   <span className='font-medium'>
@@ -60,11 +65,11 @@ const Hero = ({ blockMap }) => {
             {showCopied ? (
               <button
                 disabled
-                className='bg-gray-200 dark:bg-gray-600 inline-flex py-3 px-5 rounded-lg items-center'
+                className='inline-flex items-center rounded-lg bg-gray-200 py-3 px-5 dark:bg-gray-600'
               >
-                <ClipboardCheckIcon className='inline-block text-gray-600 dark:text-day h-7 w-7' />
-                <span className='ml-4 flex items-start flex-col leading-none'>
-                  <span className='text-xs text-gray-600 dark:text-day mb-1'>
+                <ClipboardCheckIcon className='inline-block h-7 w-7 text-gray-600 dark:text-day' />
+                <span className='ml-4 flex flex-col items-start leading-none'>
+                  <span className='mb-1 text-gray-600 text-xs dark:text-day'>
                     {t.HERO.RSS_BUTTON_DES_COPIED}
                   </span>
                   <span className='font-medium'>
@@ -75,11 +80,11 @@ const Hero = ({ blockMap }) => {
             ) : (
               <button
                 onClick={() => clickCopy()}
-                className='bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 inline-flex py-3 px-5 rounded-lg items-center'
+                className='inline-flex items-center rounded-lg bg-gray-100 py-3 px-5 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600'
               >
-                <RssIcon className='inline-block text-gray-600 dark:text-day h-7 w-7' />
-                <span className='ml-4 flex items-start flex-col leading-none'>
-                  <span className='text-xs text-gray-600 dark:text-day mb-1'>
+                <RssIcon className='inline-block h-7 w-7 text-gray-600 dark:text-day' />
+                <span className='ml-4 flex flex-col items-start leading-none'>
+                  <span className='mb-1 text-gray-600 text-xs dark:text-day'>
                     {t.HERO.RSS_BUTTON_DES}
                   </span>
                   <span className='font-medium'>{t.HERO.HOME.RSS_BUTTON}</span>

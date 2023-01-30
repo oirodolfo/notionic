@@ -7,8 +7,5 @@
   "bracketSpacing": true,
   "arrowParens": "always",
   "trailingComma": "none",
-  "plugins": [
-    "prettier-plugin-tailwindcss"
-  ],
-  "pluginSearchDirs": false
+  "plugins": ["prettier-plugin-tailwindcss"]
 }

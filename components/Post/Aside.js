@@ -28,15 +28,15 @@ const Aside = ({ subPageTitle, frontMatter }) => {
   }, [frontMatter, subPageTitle])
   return (
     <>
-      <aside className='hidden sticky md:flex md:flex-col md:items-center md:self-start md:ml-8 md:inset-y-1/2'>
+      <aside className='sticky hidden md:inset-y-1/2 md:ml-8 md:flex md:flex-col md:items-center md:self-start'>
         <div className='flex flex-col items-center text-center'>
-          <div className='bg-gray-100 dark:bg-gray-700 grid rounded-lg block p-2 gap-y-5 nav'>
+          <div className='nav block grid gap-y-5 rounded-lg bg-gray-100 p-2 dark:bg-gray-700'>
             {BLOG.showWeChatPay && (
               <button
                 onClick={() => setShowPay((showPay) => !showPay)}
-                className='text-gray-600 dark:text-day hover:text-gray-400 dark:hover:text-gray-400'
+                className='text-gray-600 hover:text-gray-400 dark:text-day dark:hover:text-gray-400'
               >
-                <ThumbUpIcon className='w-5 h-5' />
+                <ThumbUpIcon className='h-5 w-5' />
               </button>
             )}
             {showSubPageTitle && (
@@ -44,17 +44,17 @@ const Aside = ({ subPageTitle, frontMatter }) => {
                 passHref
                 href={`${BLOG.path}/${frontMatter.slug}`}
                 scroll={false}
-                className='text-gray-600 dark:text-day hover:text-gray-400 dark:hover:text-gray-400'
+                className='text-gray-600 hover:text-gray-400 dark:text-day dark:hover:text-gray-400'
               >
-                <ChevronLeftIcon className='w-5 h-5' />
+                <ChevronLeftIcon className='h-5 w-5' />
               </Link>
             )}
             {showButton && (
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className='text-gray-600 dark:text-day hover:text-gray-400 dark:hover:text-gray-400'
+                className='text-gray-600 hover:text-gray-400 dark:text-day dark:hover:text-gray-400'
               >
-                <ArrowUpIcon className='w-5 h-5' />
+                <ArrowUpIcon className='h-5 w-5' />
               </button>
             )}
           </div>
@@ -64,9 +64,9 @@ const Aside = ({ subPageTitle, frontMatter }) => {
       {showButton && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className='md:hidden fixed inline-flex bottom-5 right-5 p-2 rounded-lg z-10 shadow bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600'
+          className='fixed bottom-5 right-5 z-10 inline-flex rounded-lg bg-gray-200 p-2 shadow hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 md:hidden'
         >
-          <ArrowUpIcon className='text-gray-600 dark:text-day w-5 h-5' />
+          <ArrowUpIcon className='h-5 w-5 text-gray-600 dark:text-day' />
         </button>
       )}
     </>

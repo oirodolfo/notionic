@@ -9,18 +9,18 @@ export const Contact = () => {
   const t = lang[locale]
   return (
     <Container title={BLOG.title} description={BLOG.description}>
-      <div className='mb-8 md:mb-16 text-gray-600 dark:text-gray-200'>
-        <h2 className='text-xl lg:text-3xl font-light text-center mb-4'>
+      <div className='mb-8 text-gray-600 dark:text-gray-200 md:mb-16'>
+        <h2 className='mb-4 text-center font-light text-xl lg:text-3xl'>
           {t.CONTACT.TITLE}
         </h2>
-        <p className='max-w-screen-md font-light md:text-lg text-center mx-auto'>
+        <p className='mx-auto max-w-screen-md text-center font-light md:text-lg'>
           {t.CONTACT.DESCRIPTION}
         </p>
-        <p className='max-w-screen-md font-light md:text-lg text-center mx-auto'>
+        <p className='mx-auto max-w-screen-md text-center font-light md:text-lg'>
           {t.CONTACT.TG_DESCRIPTION}
           <a
             href={BLOG.socialLink.telegram}
-            className='hover:text-indigo-500 active:text-indigo-600 underline transition duration-100'
+            className='underline transition duration-100 hover:text-indigo-500 active:text-indigo-600'
           >
             @{BLOG.socialLink.telegram.slice(13)}
           </a>

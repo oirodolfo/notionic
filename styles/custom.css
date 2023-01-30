@@ -500,43 +500,42 @@ a.retro-2 {
 
 @layer components {
   .header-button-container {
-    @apply relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg
-         bg-gradient-to-br from-pink-500 to-orange-400 hover:drop-shadow-[drop-shadow(0_0_3rem_var(--tw-gradient-to,#e60023))]
-        hover:to-pink-500 hover:from-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800
+    @apply relative mb-2 mr-2 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-pink-500 to-orange-400 p-0.5
+         font-medium text-gray-900 shadow-[0_1px_3px_rgba(15,23,42,0.03),0_1px_2px_rgba(15,23,42,0.06)] ring-2
+        ring-slate-600/[0.04] transition text-sm hover:from-orange-400 hover:to-pink-500 hover:text-white hover:drop-shadow-[drop-shadow(0_0_3rem_var(--tw-gradient-to,#e60023))] focus:outline-none
 
-        transition shadow-[0_1px_3px_rgba(15,23,42,0.03),0_1px_2px_rgba(15,23,42,0.06)] ring-2 ring-slate-600/[0.04];
+        focus:ring-4 focus:ring-pink-200 dark:text-white dark:focus:ring-pink-800;
   }
 
   .header-button-container > * {
-    @apply relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md hover:bg-opacity-0;
+    @apply relative rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in hover:bg-opacity-0 dark:bg-gray-900;
   }
 }
 
-
-
 .full-page-gradient {
-background: linear-gradient(115deg, rgb(211, 255, 215) 0%, rgb(0, 0, 0) 100%),
-radial-gradient(
-90% 100% at 50% 0%,
-rgb(200, 200, 200) 0%,
-rgb(22, 0, 45) 100%
-),
-radial-gradient(
-100% 100% at 80% 0%,
-rgb(250, 255, 0) 0%,
-rgb(36, 0, 0) 100%
-),
-radial-gradient(
-150% 210% at 100% 0%,
-rgb(112, 255, 0) 0%,
-rgb(20, 175, 125) 0%,
-rgb(0, 10, 255) 100%
-),
-radial-gradient(
-100% 100% at 100% 30%,
-rgb(255, 77, 0) 0%,
-rgba(0, 200, 255, 1) 100%
-),
-linear-gradient(60deg, rgb(255, 0, 0) 0%, rgb(120, 86, 255) 100%);
-background-blend-mode: overlay, overlay, difference, difference, difference, normal;
+  background: linear-gradient(115deg, rgb(211, 255, 215) 0%, rgb(0, 0, 0) 100%),
+    radial-gradient(
+      90% 100% at 50% 0%,
+      rgb(200, 200, 200) 0%,
+      rgb(22, 0, 45) 100%
+    ),
+    radial-gradient(
+      100% 100% at 80% 0%,
+      rgb(250, 255, 0) 0%,
+      rgb(36, 0, 0) 100%
+    ),
+    radial-gradient(
+      150% 210% at 100% 0%,
+      rgb(112, 255, 0) 0%,
+      rgb(20, 175, 125) 0%,
+      rgb(0, 10, 255) 100%
+    ),
+    radial-gradient(
+      100% 100% at 100% 30%,
+      rgb(255, 77, 0) 0%,
+      rgba(0, 200, 255, 1) 100%
+    ),
+    linear-gradient(60deg, rgb(255, 0, 0) 0%, rgb(120, 86, 255) 100%);
+  background-blend-mode: overlay, overlay, difference, difference, difference,
+    normal;
 }

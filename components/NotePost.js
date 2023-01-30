@@ -9,18 +9,18 @@ const NotePost = ({ note }) => {
       passHref
       href={`/notes/${note.slug}`}
       key={craftSlug}
-      className='mb-10 group h-60 flex items-end bg-gray-100 rounded-lg overflow-hidden relative p-4'
+      className='group relative mb-10 flex h-60 items-end overflow-hidden rounded-lg bg-gray-100 p-4'
     >
       <ImageFallback
-        className='w-full h-full object-cover object-center absolute inset-0 group-hover:scale-105 transition duration-200'
+        className='absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-105'
         src={`https://api.craft.do/render/preview/${craftSlug}`}
         fallbackSrc={BLOG.defaultCover}
         alt={`${note.title}`}
         layout='fill'
       />
-      <div className='md:hidden bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80 absolute inset-0 pointer-events-none'></div>
-      <div className='md:hidden flex flex-col relative'>
-        <span className='text-white text-lg lg:text-xl font-semibold'>
+      <div className='pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80 md:hidden'></div>
+      <div className='relative flex flex-col md:hidden'>
+        <span className='font-semibold text-white text-lg lg:text-xl'>
           {note.title}
         </span>
       </div>
