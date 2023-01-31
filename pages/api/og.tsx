@@ -1,4 +1,5 @@
 // https://og-playground.vercel.app/?share=pVVhb9owEP0rlqWKVkqJw0rbReukrau6immVBhJfkJCJTXBxbMtxgAzx33dOmkGBrlKHROK8u7w7v7tz1jjRjOMYf2JiMVII5a6U_Ga99muEZlykMxejVkTISSuowaVgbraHMZEbSUtAp5KvGtTxlfsiRaoAT7hy3DYW6tEHx7P8wPRU5E5My1sNoPKxX5o9_zdheeKErni1LDK1ax1aasCg9BIWjWFCk3lqdaHYrZbagt2mE3ra6XaD5o_aH88O3R8ymnLvTpmg8jz1d0joNBE2kRxRhzpds6ouATKFNQB2TgLkLFW5oRZ8ETk5C9DrBFeewF8CBLLMHLiUxzgOk-uL3z43qAQwVNfaZ7MZqc9-0ZR1v7CvVeyflXmzNj4sQlVgCC2ytHkvt8nNCM-cM3kchpbn7UTqgglFbdlOdBZqYTXTcqpD4fUOCyM1ZeEiurzqkqhzEXXCH4_3j-PeuPfQH9z9HM9LUhrXzhfpCDdR6m69WUfXpErE_xaCL7_qFUQniIDI6LK7fWEqpATLRIKgW7RRCmXUpsL3WMfLewEFaj1vEaGwljcEfd8p9BRErOt3SV6Aw2borgjZc_fUYJhoybYWmICqoattbOEm-y25FIp_fyaP_qJhiJYz4Xjf0MSTG8vPdycHmIQaHpn5etrurV7u0u21yAjXLTLCxzrsiFVyB4BPRqgUIp6TNrmOeNY60mK_NEM9kUOg3WL8bzk-bBVrpK3nel_bgYZz5i1536fRngrRkc3DwMyrvfsBQrsCNHccYG38MZnjeI2rYxvH14QEuJ4UHF_4B8YnRYpjZwseYJ7pJzEojf8muGX1BDRenLtswlntttn8AQ
+// v2: https://og-playground.vercel.app/?share=nVb_T-IwFP9X6hIDJoNtnJxIzkuM53lE70zUxF9IsGyPUe3W2XZ8kfC_3-sGCBvTyz3CRvs-ff207xsLyxcBWF2LfAvYpB-TjSg953C2WGzPETIGFo51l9Q81z2s2bvKKQv0uEIXMJVwOkftiMOsqNUw0-echTHqfYg1yCIiEYppJgxAAqeaTaAIocZAT0OkVrs0lKZSF2HPqdJsNL8QuE1sjlINNZofTIK_2tkXPI3ifahHSRMExGKKP0oAxvFEXdK3FNWppBrqXrN91LcKuCH1X0Ip0ji4EFzggpoMh7Tearft9Zc0T4-K5rcX3rM3qPDANqwX0dDgUsnrY60T1XUcCarpc5EGLKZy3vRF5AgmRSD4SDjMLHDShAsaOBPv60nb63TarusoiNgIV_BB_MZfZdBM4rDE0HFKe5cABE9LA0Z5IzRvdE3dZ9LnQKgmrXYyyx42SVKZ4GTr0CZa0lglVCKWuIdHNqk2cGIMmIdNMErGGiHzfTY-ZP5-uWgse9a20cvl--j7tqKYWlXJ9VmW_HOIfxzku9ht1gXeyJxFYdG0kv5Z7T-DxvVax17Lubm9uh1cD6579w-XfwYvc3ee6KaahAVq63JztvA67g7N7TskEZUhM-nZMn45RifXCqdCP-46xEGP4Ez-2bFa9tVH_solJ3ADI7zoL27JF5tIynF3eQU9cauQEZ095pW0bx13DktlYi3bRZPj5uUoyOWzoMplhKGSB7hXeQaD-UkjxtHY03msRWyTWvYmdxCmnGLZJrX7hPpArqTQoF5womfquU0UJlpDgWSjpwrzHDQizXIWh0i34TbdNkRVjPFGM9LGN1lbWDHYj8banZXU6ZjpUuvYMGAx_Fq3uNN9NXSzdWYnOypCEwmNfZXfSDEUCylm5Dek2OAgooZAIMgrSYHgHI2ETWKhFD04OChk5iqE32d2g3l3lKMt2xKJaWXK6i6srFtbXe-05dpWnmg4cjs4CmCYhlZ3RLkC24JIPLOHeWL-JuhpNkJL5uovoyEEVlfLFJbLvw
 
 import { ImageResponse } from '@vercel/og'
 import { NextRequest } from 'next/server'
@@ -7,7 +8,12 @@ export const config = {
   runtime: 'edge'
 }
 
-export default function handler(req: NextRequest) {
+const font = fetch(
+    new URL('../../public/fonts/Anton-Regular.ttf', import.meta.url)
+).then((res) => res.arrayBuffer());
+
+
+export default async function handler(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url)
 
@@ -17,76 +23,83 @@ export default function handler(req: NextRequest) {
       ? searchParams.get('title')?.slice(0, 100)
       : 'rodkisten.com'
 
+      const fontData = await font;
+
     return new ImageResponse(
       (
-        <div
-          style={{
-            height: '100%',
-            width: '100%',
-            display: 'flex',
-            textAlign: 'center',
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexDirection: 'column',
-            flexWrap: 'nowrap',
-            backgroundColor: 'rgba(255,255,255, .9)',
-            backgroundImage:
-              'radial-gradient(circle at 25px 25px, purple 2%, transparent 0%), radial-gradient(circle at 75px 75px, lightgray 2%, transparent 0%)',
-            backgroundSize: '100px 100px'
-          }}
-        >
           <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}
+              style={{
+                  height: '100%',
+                  width: '100%',
+                  display: 'flex',
+                  textAlign: 'center',
+                  position: 'relative',
+                  alignItems: 'flex-start',
+                  justifyContent: 'flex-start',
+                  flexDirection: 'column',
+                  flexWrap: 'nowrap',
+                  filter: "saturate(1.5)",
+                  backgroundColor: 'rgba(255,255,255, .9)',
+                  backgroundSize: '100%',
+                  backgroundImage: 'url(https://res.cloudinary.com/oirodolfo/image/upload/v1675188500/semifinal_nzlqrd.png)',
+                  // backgroundImage:
+                  //   'radial-gradient(circle at 25px 25px, purple 2%, transparent 0%), radial-gradient(circle at 75px 75px, lightgray 2%, transparent 0%)',
+                  // backgroundSize: '100px 100px'
+              }}
           >
-            <img
-              src='https://res.cloudinary.com/oirodolfo/image/upload/v1675012412/LOGO_K_KISTEN_ky0ypt.svg'
-              height={180}
-              style={{ margin: '20px 45px' }}
-            />
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              fontSize: 60,
-              fontWeight: '700',
-              fontStyle: 'bold',
-              color: 'black',
-              margin: 0,
-              lineHeight: 1,
-              // whiteSpace: 'pre-wrap',
-              minWidth: '100%',
-              flexGrow: 1,
-              justifyContent: 'center',
-              alignItems: 'center',
-              letterSpacing: '-0.081em'
-            }}
-          >
-            Rod Kisten
-          </div>
+              <div
+                  style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      justifyContent: 'flex-start'
+                  }}
+              >
+                  <img
+                      src='https://res.cloudinary.com/oirodolfo/image/upload/v1675012412/LOGO_K_KISTEN_ky0ypt.svg'
+                      height={180}
+                      style={{ margin: '20px 45px' }}
+                  />
+              </div>
 
-          <div
-            style={{
-              display: 'flex',
-              fontSize: 30,
-              color: 'purple',
-              marginTop: 0,
-              lineHeight: 1,
-              flexGrow: 1,
-              justifyContent: 'center',
-              letterSpacing: 1
-            }}
-          >
-            {title}
+
+
+              {title &&
+              <div
+                  style={{
+                      marginLeft: 30,
+                      // marginRight: 700,
+                      maxWidth: "48%",
+                      textAlign: 'left',
+                      display: 'flex',
+                      fontSize: 130,
+                      fontFamily: `Anton, 'Anton Regular', 'Space Grotesk', Inter, sans-serif`,
+                      letterSpacing: '-0.05em',
+                      // fontStyle: 'regular',
+                      color: 'white',
+                      lineHeight: '90%',
+                      // whiteSpace: 'pre-wrap',
+                  }}
+              >
+                  {title}
+              </div>}
+
+
+
+
+
+
           </div>
-        </div>
       ),
       {
-        width: 800,
-        height: 400
+        width: 1920,
+        height: 1080,
+          fonts: [
+              {
+                  name: 'Anton',
+                  data: fontData,
+                  style: 'normal',
+              },
+          ],
       }
     )
   } catch (e: any) {

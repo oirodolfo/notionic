@@ -1,6 +1,13 @@
+'use client'
+
 import SEO from '@/components/Common/SEO'
 import BLOG from '@/blog.config'
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+
+export type ContainerType = {
+  children?: React.ReactNode
+   fullWidth?: boolean
+} & Record<string, string|number|date|>;
 
 const Container = ({ children, fullWidth, ...customMeta }) => {
   const meta = {
