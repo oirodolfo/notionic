@@ -20,12 +20,9 @@ export async function getPage(context) {
     const totalPosts = posts.length
     const showNext = page * BLOG.postsPerPage < totalPosts
     return {
-        props: {
             page, // Current Page
             postsToShow,
             showNext
-        },
-        revalidate: 1
     }
 }
 const Page = async (params) => {
