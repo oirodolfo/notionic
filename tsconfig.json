@@ -10,7 +10,8 @@
       "@/lib/*": ["lib/*"],
       "@/styles/*": ["styles/*"]
     },
-    "allowJs": true,
+    "allowJs": true,    
+		"checkJs": false,
     "skipLibCheck": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true,
