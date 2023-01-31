@@ -9,7 +9,7 @@ import { MailIcon, RssIcon, ClipboardCheckIcon } from '@heroicons/react/outline'
 import dynamic from 'next/dynamic'
 import { NotionRenderer } from 'react-notion-x'
 import Image from 'next/image'
-//import BlurImage from '@/components/BlurImage'
+import BlurImage from '@/components/BlurImage'
 
 const Collection = dynamic(
   () =>
