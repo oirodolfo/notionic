@@ -4,7 +4,7 @@ import SEO from '@/components/Common/SEO'
 import BLOG from '@/blog.config'
 import PropTypes from 'prop-types';
 
-export type ContainerType = {
+type ContainerType = {
   children?: React.ReactNode
    fullWidth?: boolean
 } & Record<string, string|number|date|>;
