@@ -2,14 +2,14 @@
 
 import SEO from '@/components/Common/SEO'
 import BLOG from '@/blog.config'
-import PropTypes from 'prop-types';
+import type {ReactNode} from "react";
 
-export type ContainerType = {
-  children?: React.ReactNode
+type ContainerType = {
+  children?: ReactNode
    fullWidth?: boolean
-} & Record<string, string|number|date|>;
+} | Record<string, string|number>;
 
-const Container = ({ children, fullWidth, ...customMeta }) => {
+const Container = ({ children, fullWidth, ...customMeta }: ContainerType) => {
   const meta = {
     title: BLOG.title,
     type: 'website',
@@ -27,10 +27,6 @@ const Container = ({ children, fullWidth, ...customMeta }) => {
       </main>
     </>
   )
-}
-
-Container.propTypes = {
-  children: PropTypes.node
 }
 
 export default Container
