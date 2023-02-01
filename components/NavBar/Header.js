@@ -1,9 +1,11 @@
+'use client'
+
 import { useEffect, useState, useRef } from 'react'
 import Link from 'next/link'
 import BLOG from '@/blog.config'
 import Image from 'next/image'
 import { lang } from '@/lib/lang'
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 import {
   HomeIcon,
   NewspaperIcon,
@@ -16,18 +18,26 @@ import Social from '../Common/Social.js'
 // import ThemeSwitcher from './ThemeSwitcher.js'
 // import LangSwitcher from './LangSwitcher.js'
 import { motion } from 'framer-motion'
+import { usePathname } from 'next/navigation'
 
 const NavBar = () => {
-  const router = useRouter()
-  const { locale } = useRouter()
+  // const router = useRouter()
+  let pathname = usePathname();
+  if (pathname.includes('/page/')) {
+    pathname = '/page';
+  }
+
+  const locale = 'en'
+  // const { locale } = useRouter()
   const t = lang[locale]
   const [showMenu, setShowMenu] = useState(false)
 
-  let activeMenu = ''
-  if (router.query.slug) {
-    activeMenu = '/' + router.query.slug
+  let activeMenu = '/'
+
+  if (pathname) {
+    activeMenu = '/' + pathname
   } else {
-    activeMenu = router.pathname
+    activeMenu = pathname
   }
 
   const links = [
@@ -148,7 +158,8 @@ const Header = ({ navBarTitle, fullWidth }) => {
   const [showTitle, setShowTitle] = useState(false)
   const useSticky = !BLOG.autoCollapsedNavBar
   const navRef = useRef(null)
-  const sentinalRef = useRef([])
+  const sentinalRef = useRef(null)
+
   const handler = ([entry]) => {
     if (navRef && navRef.current && useSticky) {
       if (!entry.isIntersecting && entry !== undefined) {
@@ -161,22 +172,21 @@ const Header = ({ navBarTitle, fullWidth }) => {
     }
   }
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 100) {
-        setShowTitle(true)
-      } else {
-        setShowTitle(false)
-      }
-    })
+    // window.addEventListener('scroll', () => {
+    //   if (window.pageYOffset > 100) {
+    //     setShowTitle(true)
+    //   } else {
+    //     setShowTitle(false)
+    //   }
+    // })
 
     const obvserver = new window.IntersectionObserver(handler)
     obvserver.observe(sentinalRef.current)
     // Don't touch this, I have no idea how it works XD
-    // return () => {
-    //   if (sentinalRef.current) obvserver.unobserve(sentinalRef.current)
-    // }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sentinalRef])
+    return () => {
+      sentinalRef.current && obvserver.unobserve(sentinalRef.current)
+    }
+  }, [handler, sentinalRef])
   return (
     <>
       <div className='observer-element h-4 md:h-12' ref={sentinalRef}></div>

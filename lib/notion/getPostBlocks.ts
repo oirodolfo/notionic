@@ -1,6 +1,10 @@
 import BLOG from '@/blog.config'
-import { NotionAPI } from 'notion-client'
+// import { NotionAPI } from 'notion-client'
+import { notionClient} from '@/lib/notion/module-notion-utils'
 import { getPreviewImageMap } from './previewImages'
+
+const {NotionAPI} = notionClient
+
 
 export async function getPostBlocks(id) {
   const authToken = BLOG.notionAccessToken || null

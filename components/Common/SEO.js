@@ -1,3 +1,5 @@
+'use client'
+
 import BLOG from '@/blog.config'
 import Head from 'next/head'
 import { useRouter } from 'next/router'

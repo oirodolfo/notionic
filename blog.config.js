@@ -7,7 +7,7 @@ const BLOG = {
   description: 'KSTN Playground',
   lang: 'en-US',
   appearance: 'dark', // ['light', 'dark', 'auto'],
-  font: ['sans-serif'], // ['sans-serif', 'serif']
+  font: 'sans-serif', // ['sans-serif', 'serif']
   lightBackground: '#F6F8FA', // use hex value, don't forget '#' e.g #fffefc
   darkBackground: '#0a0a0d', // use hex value, don't forget '#'
   path: '', // leave this empty unless you want to deploy Notionic in a folder

@@ -1,9 +1,15 @@
-import { getTextContent, getDateValue } from 'notion-utils'
-import { NotionAPI } from 'notion-client'
-import { defaultMapImageUrl } from 'react-notion-x'
+// import { getTextContent, getDateValue } from 'notion-utils'
+// import { NotionAPI } from 'notion-client'
+// import { defaultMapImageUrl } from 'react-notion-x'
 import BLOG from '@/blog.config'
 
-async function getPageProperties(id, block, schema, authToken) {
+import {notionUtils, notionClient, reactNotionX} from '@/lib/notion/module-notion-utils'
+
+const { getTextContent, getDateValue } = notionUtils
+const {defaultMapImageUrl} = reactNotionX
+const { NotionAPI } = notionClient
+
+async function getPageProperties(id, block, schema, authToken?) {
   const api = new NotionAPI({ authToken })
   const rawProperties = Object.entries(block?.[id]?.value?.properties || [])
   const excludeProperties = ['date', 'select', 'multi_select', 'person']

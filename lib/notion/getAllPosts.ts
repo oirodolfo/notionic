@@ -1,6 +1,12 @@
 import BLOG from '@/blog.config'
-import { NotionAPI } from 'notion-client'
-import { idToUuid } from 'notion-utils'
+
+
+import {notionUtils, notionClient} from '@/lib/notion/module-notion-utils'
+
+const { idToUuid } =  notionUtils
+const { NotionAPI } = notionClient
+
+
 import getAllPageIds from './getAllPageIds'
 import getPageProperties from './getPageProperties'
 import filterPublishedPosts from './filterPublishedPosts'
@@ -10,11 +16,18 @@ import filterPublishedPosts from './filterPublishedPosts'
  * @param {{ onlyPost: boolean }} - false: all types / true: post only
  * @param {{ onlyHidden: boolean }} - false: all types / true: hidden only
  */
+type AllPostsParams = {
+  onlyNewsletter?: boolean
+  onlyPost?: boolean
+  onlyHidden?: boolean
+}
 export async function getAllPosts({
   onlyNewsletter = false,
   onlyPost = false,
   onlyHidden = false
-}) {
+}: AllPostsParams) {
+
+  try {
   let id = BLOG.notionPageId
   const authToken = BLOG.notionAccessToken || null
   const api = new NotionAPI({ authToken })
@@ -41,7 +54,7 @@ export async function getAllPosts({
     const data = []
     for (let i = 0; i < pageIds.length; i++) {
       const id = pageIds[i]
-      const properties = (await getPageProperties(id, block, schema)) || null
+      const properties = (await getPageProperties(id, block, schema)) || {} as Record<string, unknown>
 
       // Add fullwidth, createdtime to properties
       properties.createdTime = new Date(
@@ -65,9 +78,16 @@ export async function getAllPosts({
       posts.sort((a, b) => {
         const dateA = new Date(a?.date?.start_date || a.createdTime)
         const dateB = new Date(b?.date?.start_date || b.createdTime)
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-ignore
         return dateB - dateA
       })
     }
     return posts
+  }
+  }catch (e) {
+    console.log('-------------------- getAllPages error: ', e)
+
+    return null
   }
 }

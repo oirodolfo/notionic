@@ -2,13 +2,13 @@
 
 const BLOG = require('./blog.config')
 const { fontFamily } = require('tailwindcss/defaultTheme')
-const CJK = require('./lib/cjk')
-const fontSansCJK = !CJK()
-  ? []
-  : [`"Noto Sans CJK ${CJK()}"`, `"Noto Sans ${CJK()}"`]
-const fontSerifCJK = !CJK()
-  ? []
-  : [`"Noto Serif CJK ${CJK()}"`, `"Noto Serif ${CJK()}"`]
+// const CJK = require('#/lib/cjk')
+// const fontSansCJK = !CJK()
+//   ? []
+//   : [`"Noto Sans CJK ${CJK()}"`, `"Noto Sans ${CJK()}"`]
+// const fontSerifCJK = !CJK()
+//   ? []
+//   : [`"Noto Serif CJK ${CJK()}"`, `"Noto Serif ${CJK()}"`]
 
 // If loading a variable font, you don't need to specify the font weight
 
@@ -20,7 +20,7 @@ module.exports = {
 
 
   content: [    "./node_modules/@plaiceholder/ui/**/*.{ts,tsx}",
-    './pages/**/*.js', './components/**/*.js', './layouts/**/*.js' ],
+    './pages/**/*.js',  './app/**/*.tsx', './components/**/*.js', './layouts/**/*.js' ],
   // darkMode: BLOG.appearance === 'auto' ? 'media' : 'class', // or 'media' or 'class'
   darkMode: 'class', // or 'media' or 'class'
   future: {
@@ -38,9 +38,9 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: ['var(--inter-font)', ...fontFamily.sans, ...fontSansCJK],
-        serif: [...fontFamily.serif, ...fontSerifCJK],
-        display: ['var(--anton-font)', ...fontFamily.sans, ...fontSansCJK],
+        sans: ['var(--inter-font)', ...fontFamily.sans],
+        serif: [...fontFamily.serif],
+        display: ['var(--anton-font)', ...fontFamily.sans],
 
         noEmoji: [
           'ui-sans-serif',

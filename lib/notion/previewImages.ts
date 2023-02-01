@@ -1,17 +1,19 @@
 import BLOG from '@/blog.config'
 import got from 'got'
-import lqip from '../lqip.js'
+import lqip from '../lqip'
 import pMap from 'p-map'
 import pMemoize from 'p-memoize'
+import {reactNotionX, notionUtils} from '@/lib/notion/module-notion-utils'
 
-import { defaultMapImageUrl } from 'react-notion-x'
-import { getPageImageUrls } from 'notion-utils'
+const { defaultMapImageUrl } =  reactNotionX
+const { getPageImageUrls } =  notionUtils
 
 // NOTE: this is just an example of how to pre-compute preview images.
 // Depending on how many images you're working with, this can potentially be
 // very expensive to recompute, so in production we recommend that you cache
 // the preview image results in a key-value database of your choosing.
 // If you're not sure where to start, check out https://github.com/jaredwray/keyv
+
 
 export async function getPreviewImageMap(recordMap) {
   const urls = getPageImageUrls(recordMap, {

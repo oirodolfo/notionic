@@ -27,7 +27,7 @@ const nextBaseConfig = {
       })
     }
     return config
-  }
+  },
 
   // async headers() {
   //   return [
@@ -42,56 +42,62 @@ const nextBaseConfig = {
   //     }
   //   ]
   // },
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: '/notes/:pathname',
-  //       destination: '/api/htmlrewrite?pathname=:pathname'
-  //     },
-  //     {
-  //       source: '/notes/:pathname/b/:slug*',
-  //       destination: '/api/htmlrewrite?pathname=:pathname&slug=/b/:slug*'
-  //     },
-  //     {
-  //       source: '/notes/:pathname/x/:slug*',
-  //       destination: '/api/htmlrewrite?pathname=:pathname&slug=/x/:slug*'
-  //     },
-  //     {
-  //       source: '/api/:slug*',
-  //       destination: 'https://www.craft.do/api/:slug*'
-  //     },
-  //     {
-  //       source: '/share/static/js/:slug*',
-  //       destination:
-  //         '/api/jsrewrite?url=https://www.craft.do/share/static/js/:slug*'
-  //     },
-  //     {
-  //       source: '/share/static/css/:slug*',
-  //       destination: 'https://www.craft.do/share/static/css/:slug*'
-  //     },
-  //     {
-  //       source: '/share/static/fonts/:slug*',
-  //       destination: 'https://www.craft.do/share/static/fonts/:slug*'
-  //     },
-  //     {
-  //       source: '/share/static/media/:slug*',
-  //       destination: 'https://www.craft.do/share/static/media/:slug*'
-  //     },
-  //     {
-  //       source: '/share/static/craft.webmanifest',
-  //       destination: 'https://www.craft.do/share/static/craft.webmanifest'
-  //     },
-  //     {
-  //       source: '/assets/js/analytics2.js',
-  //       destination: 'https://www.craft.do/404'
-  //     }
-  //   ]
-  // }
+  async rewrites() {
+    return [
+      {
+        source: '/og/:text/:image',
+        destination: '/api/og/?text=:text&image=:image'
+      },
+      {
+        source: '/notes/:pathname',
+        destination: '/api/htmlrewrite?pathname=:pathname'
+      },
+      {
+        source: '/notes/:pathname/b/:slug*',
+        destination: '/api/htmlrewrite?pathname=:pathname&slug=/b/:slug*'
+      },
+      {
+        source: '/notes/:pathname/x/:slug*',
+        destination: '/api/htmlrewrite?pathname=:pathname&slug=/x/:slug*'
+      },
+      {
+        source: '/api/:slug*',
+        destination: 'https://www.craft.do/api/:slug*'
+      },
+      {
+        source: '/share/static/js/:slug*',
+        destination:
+          '/api/jsrewrite?url=https://www.craft.do/share/static/js/:slug*'
+      },
+      {
+        source: '/share/static/css/:slug*',
+        destination: 'https://www.craft.do/share/static/css/:slug*'
+      },
+      {
+        source: '/share/static/fonts/:slug*',
+        destination: 'https://www.craft.do/share/static/fonts/:slug*'
+      },
+      {
+        source: '/share/static/media/:slug*',
+        destination: 'https://www.craft.do/share/static/media/:slug*'
+      },
+      {
+        source: '/share/static/craft.webmanifest',
+        destination: 'https://www.craft.do/share/static/craft.webmanifest'
+      },
+      {
+        source: '/assets/js/analytics2.js',
+        destination: 'https://www.craft.do/404'
+      }
+    ]
+  }
 }
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withPWA({
   // ...nextBaseConfig,
+  pageExtensions: ['tsx', 'mdx'],
+
   i18n: {
     locales: ['en'],
     defaultLocale: 'en',
@@ -108,17 +114,19 @@ const nextConfig = withPWA({
       'onuniverse-assets.imgix.net'
     ]
   },
+  headers: nextBaseConfig.headers,
   experimental: {
-    appDir: true
+    appDir: true,
+    serverComponentsExternalPackages: ['sharp'],
     // swcMinify: true,
+  },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true
   }
-  // typescript: {
-  //   // !! WARN !!
-  //   // Dangerously allow production builds to successfully complete even if
-  //   // your project has type errors.
-  //   // !! WARN !!
-  //   ignoreBuildErrors: true
-  // }
 })
 
 // export default nextConfig

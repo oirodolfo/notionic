@@ -1,3 +1,5 @@
+'use client'
+
 import BLOG from '@/blog.config'
 import Link from 'next/link'
 // import Avatar from './NotionAvatar.js'

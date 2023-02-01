@@ -1,5 +1,7 @@
+'use client'
+
 import { motion, AnimatePresence } from 'framer-motion'
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 
 const variants = {
   in: {
@@ -14,9 +16,9 @@ const variants = {
   out: {
     opacity: 0,
     scale: 1,
-    y: 40,
+    y: 20,
     transition: {
-      duration: 0.25
+      duration: 0.15
     }
   }
 }
@@ -26,7 +28,7 @@ const variants = {
  * https://letsbuildui.dev/articles/animated-page-transitions-in-nextjs
  */
 const TransitionEffect = ({ children }) => {
-  const { asPath } = useRouter()
+  // const { asPath } = useRouter()
 
   return (
     <div className='effect-1'>
@@ -36,7 +38,7 @@ const TransitionEffect = ({ children }) => {
         onExitComplete={() => window.scrollTo(0, 0)}
       >
         <motion.div
-          key={asPath}
+          key={'ROD'}
           variants={variants}
           animate='in'
           initial='out'

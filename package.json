@@ -13,7 +13,7 @@
     "url": "https://zuolan.me"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "format-dev": "pnpm prettier --write .",
@@ -28,7 +28,10 @@
     "sanity:deploy-graphql": "sanity graphql deploy"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.4.9",
     "@ducanh2912/next-pwa": "^7.3.3",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@next/font": "^13.1.2",
     "@plaiceholder/next": "^2.5.0",
     "@plaiceholder/tailwindcss": "^2.5.0",
@@ -48,8 +51,8 @@
     "next-sanity": "^4.1.1",
     "next-seo": "^5.15.0",
     "next-themes": "^0.1.1",
-    "notion-client": "^6.13.0",
-    "notion-utils": "^6.12.9",
+    "notion-client": "^6.15.6",
+    "notion-utils": "^6.15.6",
     "nprogress": "^0.2.0",
     "p-map": "^5.5.0",
     "p-memoize": "^6.0.1",
@@ -60,7 +63,7 @@
     "prism-theme-vars": "^0.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-notion-x": "^6.13.3",
+    "react-notion-x": "^6.15.7",
     "react-social-icons": "^5.15.0",
     "sanity": "^3.0.0",
     "sharp": "^0.30.7",

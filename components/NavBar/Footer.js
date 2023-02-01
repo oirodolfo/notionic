@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import BLOG from '@/blog.config'
 import { lang } from '@/lib/lang'

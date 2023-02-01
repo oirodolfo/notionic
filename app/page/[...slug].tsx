@@ -9,10 +9,10 @@ export type NewPageType = {
     searchParams?: { [key: string]: string | string[] | undefined };
 }
 export async function getPage(context) {
-    const { page } = context.params // Get Current Page No.
-    const posts = await getAllPosts({ onlyNewsletter: false })
+    const {page} = context.params // Get Current Page No.
+    const posts = await getAllPosts({onlyNewsletter: false})
 
-    console.log({ posts })
+    console.log({posts})
     const postsToShow = posts.slice(
         BLOG.postsPerPage * (page - 1),
         BLOG.postsPerPage * page
@@ -20,14 +20,12 @@ export async function getPage(context) {
     const totalPosts = posts.length
     const showNext = page * BLOG.postsPerPage < totalPosts
     return {
-        props: {
-            page, // Current Page
-            postsToShow,
-            showNext
-        },
-        revalidate: 1
+        page, // Current Page
+        postsToShow,
+        showNext
     }
 }
+
 const Page = async (params) => {
     console.log({params})
 

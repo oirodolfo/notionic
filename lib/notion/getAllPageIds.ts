@@ -1,5 +1,8 @@
-import { idToUuid } from 'notion-utils'
-export default function getAllPageIds(collectionQuery, viewId) {
+import {notionUtils} from '@/lib/notion/module-notion-utils'
+
+const { idToUuid } =  notionUtils
+
+export default function getAllPageIds(collectionQuery, viewId?) {
   const views = Object.values(collectionQuery)[0]
   let pageIds = []
   if (viewId) {
