@@ -73,7 +73,7 @@ function MyApp({ Component, pageProps }) {
           />
         )}
         {BLOG.isProd && BLOG?.analytics?.provider === 'ga' && <Gtag />}
-        <ThemeProvider attribute='class'>
+        <ThemeProvider attribute='class' forcedTheme='dark'>
           <Header
             navBarTitle={pageProps.post ? pageProps.post.title : null}
             fullWidth={pageProps.post ? pageProps.post.fullWidth : false}
