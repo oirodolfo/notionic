@@ -58,6 +58,7 @@ specifiers:
   react: ^18.2.0
   react-dom: ^18.2.0
   react-notion-x: ^6.13.3
+  react-parallax-tilt: ^1.7.97
   react-social-icons: ^5.15.0
   sanity: ^3.0.0
   sharp: ^0.30.7
@@ -104,6 +105,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-notion-x: 6.15.7_sjkfibpvkg33iagsiij4zgoske
+  react-parallax-tilt: 1.7.97_biqbaboplfbrettd7655fr4n2y
   react-social-icons: 5.15.0_react@18.2.0
   sanity: 3.2.4_vmhuzlsgouqxb4ajtreo7iwwl4
   sharp: 0.30.7
@@ -9079,6 +9081,16 @@ packages:
       clone: 2.1.2
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /react-parallax-tilt/1.7.97_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-Md3FvfxhkNyhEcE7G7CXEZ7qdG+kiE/hFpT8m2UNmZElc7roUg2B+JJhNz/dgEp7ycfAkF7hqosonanIDFrXcQ==}
+    peerDependencies:
+      react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /react-pdf/5.7.2_sjkfibpvkg33iagsiij4zgoske:
