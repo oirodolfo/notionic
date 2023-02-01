@@ -12,7 +12,8 @@ import Social from '../Common/Social.js'
 import { motion } from 'framer-motion'
 // import { SocialIcon } from 'react-social-icons'
 import { links } from '@/lib/links'
-import Script from 'next/script'
+// import Script from 'next/script'
+import Image from 'next/image'
 
 const cleanUpUrl = (text) => {
   if (typeof window === 'undefined') {
@@ -49,7 +50,7 @@ const LinksComponent = (props) => {
     <>
       {links
         .filter(
-          (link) => !!link.url || link.url === '' || link.type !== 'HEADER'
+          (link) => !!link.url || link.url === '' || link.type !== 'HEADER' && typeof link.url === 'string'
         )
         .map((link) => (
           <li key={`${link.id}`}>
@@ -72,7 +73,8 @@ const LinksComponent = (props) => {
               {/* /> */}
 
               {link.url && link.url !== '' && (
-                <img
+                <Image
+                  alt={`${link.title} icon`}
                   width='16'
                   height='16'
                   src={`${new URL(link.url).origin}/favicon.ico`}

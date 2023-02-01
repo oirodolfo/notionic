@@ -3,6 +3,8 @@
 import withPWAInit from '@ducanh2912/next-pwa'
 // const withPWAInit = require('@ducanh2912/next-pwa').default();
 
+// import ll from './lib/links.js'
+
 const withPWA = withPWAInit({
   disable: process.env.NODE_ENV === 'development',
   dest: 'public'
@@ -11,6 +13,50 @@ const withPWA = withPWAInit({
   // runtimeCaching,
   // buildExcludes: [/middleware-manifest.json$/]
 })
+
+
+const imageOrigins = [
+  "rodkisten.com",
+  "linktr.ee",
+  "twitter.com",
+  "open.spotify.com",
+  "instagram.com",
+  "youtu.be",
+  "www.tiktok.com",
+  "mastodon.lol",
+  "www.facebook.com",
+  "rodkisten.t.me",
+  "www.kooapp.com",
+  "bere.al",
+  "read.cv",
+  "linkr.bio",
+  "nitter.it",
+  "rodkisten.dev",
+  "vsco.co",
+  "www.linkedin.com",
+  "github.com",
+  "poly.me",
+  "codepen.io",
+  "dribbble.com",
+  "soundcloud.com",
+  "www.youtube.com",
+  "rodkisten.medium.com",
+  "stats.fm",
+  "volt.fm",
+  "www.last.fm",
+  "peoople.app",
+  "picsart.com",
+  "opensea.io",
+  "vimeo.com",
+  "taplink.cc"
+]
+
+  // ll.links
+  // .filter(
+  //   (link) => !!link.url || link.url !== '' || link.type !== 'HEADER'
+  // )
+  // .map((link) => ( new URL(link.url).hostname));
+
 
 const nextBaseConfig = {
   // webpack5: true,
@@ -27,71 +73,71 @@ const nextBaseConfig = {
       })
     }
     return config
-  }
+  },
 
-  // async headers() {
-  //   return [
-  //     {
-  //       source: '/:path*{/}?',
-  //       headers: [
-  //         {
-  //           key: 'Permissions-Policy',
-  //           value: 'interest-cohort=()'
-  //         }
-  //       ]
-  //     }
-  //   ]
-  // },
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: '/notes/:pathname',
-  //       destination: '/api/htmlrewrite?pathname=:pathname'
-  //     },
-  //     {
-  //       source: '/notes/:pathname/b/:slug*',
-  //       destination: '/api/htmlrewrite?pathname=:pathname&slug=/b/:slug*'
-  //     },
-  //     {
-  //       source: '/notes/:pathname/x/:slug*',
-  //       destination: '/api/htmlrewrite?pathname=:pathname&slug=/x/:slug*'
-  //     },
-  //     {
-  //       source: '/api/:slug*',
-  //       destination: 'https://www.craft.do/api/:slug*'
-  //     },
-  //     {
-  //       source: '/share/static/js/:slug*',
-  //       destination:
-  //         '/api/jsrewrite?url=https://www.craft.do/share/static/js/:slug*'
-  //     },
-  //     {
-  //       source: '/share/static/css/:slug*',
-  //       destination: 'https://www.craft.do/share/static/css/:slug*'
-  //     },
-  //     {
-  //       source: '/share/static/fonts/:slug*',
-  //       destination: 'https://www.craft.do/share/static/fonts/:slug*'
-  //     },
-  //     {
-  //       source: '/share/static/media/:slug*',
-  //       destination: 'https://www.craft.do/share/static/media/:slug*'
-  //     },
-  //     {
-  //       source: '/share/static/craft.webmanifest',
-  //       destination: 'https://www.craft.do/share/static/craft.webmanifest'
-  //     },
-  //     {
-  //       source: '/assets/js/analytics2.js',
-  //       destination: 'https://www.craft.do/404'
-  //     }
-  //   ]
-  // }
+  async headers() {
+    return [
+      {
+        source: '/:path*{/}?',
+        headers: [
+          {
+            key: 'Permissions-Policy',
+            value: 'interest-cohort=()'
+          }
+        ]
+      }
+    ]
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/notes/:pathname',
+        destination: '/api/htmlrewrite?pathname=:pathname'
+      },
+      {
+        source: '/notes/:pathname/b/:slug*',
+        destination: '/api/htmlrewrite?pathname=:pathname&slug=/b/:slug*'
+      },
+      {
+        source: '/notes/:pathname/x/:slug*',
+        destination: '/api/htmlrewrite?pathname=:pathname&slug=/x/:slug*'
+      },
+      {
+        source: '/api/:slug*',
+        destination: 'https://www.craft.do/api/:slug*'
+      },
+      {
+        source: '/share/static/js/:slug*',
+        destination:
+          '/api/jsrewrite?url=https://www.craft.do/share/static/js/:slug*'
+      },
+      {
+        source: '/share/static/css/:slug*',
+        destination: 'https://www.craft.do/share/static/css/:slug*'
+      },
+      {
+        source: '/share/static/fonts/:slug*',
+        destination: 'https://www.craft.do/share/static/fonts/:slug*'
+      },
+      {
+        source: '/share/static/media/:slug*',
+        destination: 'https://www.craft.do/share/static/media/:slug*'
+      },
+      {
+        source: '/share/static/craft.webmanifest',
+        destination: 'https://www.craft.do/share/static/craft.webmanifest'
+      },
+      {
+        source: '/assets/js/analytics2.js',
+        destination: 'https://www.craft.do/404'
+      }
+    ]
+  }
 }
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withPWA({
-  // ...nextBaseConfig,
+  ...nextBaseConfig,
   i18n: {
     locales: ['en'],
     defaultLocale: 'en',
@@ -105,7 +151,8 @@ const nextConfig = withPWA({
       'images.unsplash.com',
       's3.us-west-2.amazonaws.com',
       'd1fdloi71mui9q.cloudfront.net',
-      'onuniverse-assets.imgix.net'
+      'onuniverse-assets.imgix.net',
+      ...imageOrigins,
     ]
   },
   experimental: {
