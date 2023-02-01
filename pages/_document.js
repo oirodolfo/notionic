@@ -9,7 +9,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang={BLOG.lang}>
+      <Html lang={BLOG.lang} className='dark'>
         <Head>
           <meta
             name='viewport'
