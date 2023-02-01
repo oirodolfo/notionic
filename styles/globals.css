@@ -35,21 +35,31 @@ html::-webkit-scrollbar-thumb {
   top: -1px;
   backdrop-filter: blur(5px);
   transition: all 0.5s cubic-bezier(0.4, 0, 0, 1);
-  border-bottom-color: transparent;
+  /*border-bottom-color: transparent;*/
+
+
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(0.25turn, rgba(255,249,34), rgba(255,0,128), rgba(56,2,155,0));
+  border-image-slice: 1;
 }
 
 .remove-sticky {
   position: unset;
 }
+@layer components {
 
-.sticky-nav-full {
-  @apply border-none;
+  .sticky-nav-full {
+    @apply border-none;
+  }
+
+  .sticky-nav-full img:first-of-type {
+    @apply max-h-[32px]  max-w-[32px];
+  }
+
+  .sticky-nav-full .nav {
+    @apply text-gray-600 dark:text-gray-300;
+  }
 }
-
-.sticky-nav-full .nav {
-  @apply text-gray-600 dark:text-gray-300;
-}
-
 nav {
   flex-wrap: wrap;
   line-height: 1.5em;

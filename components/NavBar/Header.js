@@ -189,7 +189,7 @@ const Header = ({ navBarTitle, fullWidth }) => {
       >
         <div className='flex items-center'>
           <Link passHref href='/' scroll={false} aria-label={BLOG.title}>
-            <motion.div className='my-2 fill-current hover:text-blue-500 dark:hover:text-blue-500 sm:h-6'>
+            <motion.div className='my-2 fill-current hover:text-blue-500 dark:hover:text-blue-500 '>
               <Image
                 src='/kisten-logo.png'
                 width={64}
