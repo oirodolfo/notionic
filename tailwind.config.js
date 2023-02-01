@@ -18,9 +18,12 @@ module.exports = {
   },
   mode: 'jit',
 
-
-  content: [    "./node_modules/@plaiceholder/ui/**/*.{ts,tsx}",
-    './pages/**/*.js', './components/**/*.js', './layouts/**/*.js' ],
+  content: [
+    './node_modules/@plaiceholder/ui/**/*.{ts,tsx}',
+    './pages/**/*.js',
+    './components/**/*.js',
+    './layouts/**/*.js'
+  ],
   // darkMode: BLOG.appearance === 'auto' ? 'media' : 'class', // or 'media' or 'class'
   darkMode: 'class', // or 'media' or 'class'
   future: {
@@ -57,9 +60,9 @@ module.exports = {
   },
   plugins: [
     // eslint-disable-next-line @typescript-eslint/no-var-requires
-    require("@plaiceholder/tailwindcss"),
+    require('@plaiceholder/tailwindcss'),
     // eslint-disable-next-line @typescript-eslint/no-var-requires
-  require('tailwindcss-fluid-type')({
+    require('tailwindcss-fluid-type')({
       settings: {
         fontSizeMin: 1,
         fontSizeMax: 1.25,

@@ -240,7 +240,7 @@ const Footer = ({ fullWidth }) => {
           {/*     </div> */}
           {/*   </div> */}
 
-          <div className='w-full rounded-lg  p-4 shadow-md filter backdrop-blur-1 sm:p-6'>
+          <div className='backdrop-blur-1 w-full  rounded-lg p-4 shadow-md filter sm:p-6'>
             <h5 className='mb-3 font-semibold text-gray-900 text-base dark:text-white md:text-xl'>
               My links ✨
             </h5>

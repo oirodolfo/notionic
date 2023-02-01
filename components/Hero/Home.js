@@ -25,16 +25,20 @@ const Hero = ({ blockMap }) => {
   const { locale } = useRouter()
   const t = lang[locale]
 
+  const [tiltAngleX, setTiltAngleX] = useState(0)
+  const [tiltAngleY, setTiltAngleY] = useState(0)
 
-  const [ tiltAngleX, setTiltAngleX ]  = useState(0)
-  const [ tiltAngleY, setTiltAngleY ]  = useState(0)
-
-
-  const onMove = React.useCallback(({ tiltAngleXPercentageL: tiltAngleX, tiltAngleXPercentage: tiltAngleY }) => {
-    setTiltAngleY(() => tiltAngleY);
-    setTiltAngleX(() => tiltAngleX);
-    // this.setState({ tiltAngleX, tiltAngleY });
-  }, []);
+  const onMove = React.useCallback(
+    ({
+      tiltAngleXPercentageL: tiltAngleX,
+      tiltAngleXPercentage: tiltAngleY
+    }) => {
+      setTiltAngleY(() => tiltAngleY)
+      setTiltAngleX(() => tiltAngleX)
+      // this.setState({ tiltAngleX, tiltAngleY });
+    },
+    []
+  )
 
   const clickCopy = async () => {
     setShowCopied(true)
@@ -49,7 +53,7 @@ const Hero = ({ blockMap }) => {
       <div className='container mx-auto mb-10 flex flex-col items-center px-5 py-2 md:flex-row'>
         <div className='mb-6 flex flex-col text-left md:mb-0 md:w-3/5 md:items-start'>
           <Tilt
-            className="track-on-window"
+            className='track-on-window'
             perspective={500}
             onMove={onMove}
             // glareEnable={true}
@@ -58,18 +62,28 @@ const Hero = ({ blockMap }) => {
             scale={1.02}
             trackOnWindow={true}
             style={{
-            '--tilt--angle-x': tiltAngleX, '--tilt--angle-y': tiltAngleY,
+              '--tilt--angle-x': tiltAngleX,
+              '--tilt--angle-y': tiltAngleY
             }}
           >
-          <h1 className='inner-element text-display font-display leading-[90%] text-3xl text-9xl' style={
-            {'--tilt--angle-x': tiltAngleX, '--tilt--angle-y': tiltAngleY}
-          }>
-            ROD <br />
-            KISTEN
-          </h1>
-          <h2 style={{backgroundPosition: 'var(--tilt--angle-x) var(--tilt--angle-y)'}} className='bg-[center_top_var(--tilt-angle-x)] text-display bg-gradient-to-r from-purple-400 via-blue-500 to-pink-600 bg-clip-text font-display leading-[90%] text-transparent text-6xl'>
-            WELCOME TO MY WORLD
-          </h2>
+            <h1
+              className='inner-element text-display font-display leading-[90%] text-3xl text-9xl'
+              style={{
+                '--tilt--angle-x': tiltAngleX,
+                '--tilt--angle-y': tiltAngleY
+              }}
+            >
+              ROD <br />
+              KISTEN
+            </h1>
+            <h2
+              style={{
+                backgroundPosition: 'var(--tilt--angle-x) var(--tilt--angle-y)'
+              }}
+              className='text-display bg-gradient-to-r from-purple-400 via-blue-500 to-pink-600 bg-clip-text bg-[center_top_var(--tilt-angle-x)] font-display leading-[90%] text-transparent text-6xl'
+            >
+              WELCOME TO MY WORLD
+            </h2>
           </Tilt>
           <NotionRenderer
             className='md:ml-0'
@@ -126,7 +140,7 @@ const Hero = ({ blockMap }) => {
     margin-top: 3rem; */}
         <div className='w-2/5 self-start md:mt-4'>
           <Image
-            className={`w-[500px] relative transform`}
+            className={`relative w-[500px] transform`}
             // className={`w-[500px] h-[500px] relative plaiceholder-[/rod-circle-transparent.png] bg-url-[/rod-circle-transparent.png] transform scale-110 filter blur-2xl z-[-1] `}
             src={'/rod-circle-transparent.png'}
             alt={"Rod Kisten's avatar"}

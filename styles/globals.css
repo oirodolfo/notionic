@@ -37,9 +37,13 @@ html::-webkit-scrollbar-thumb {
   transition: all 0.5s cubic-bezier(0.4, 0, 0, 1);
   /*border-bottom-color: transparent;*/
 
-
   border-bottom: 2px solid transparent;
-  border-image: linear-gradient(0.25turn, rgba(255,249,34), rgba(255,0,128), rgba(56,2,155,0));
+  border-image: linear-gradient(
+    0.25turn,
+    rgba(255, 249, 34),
+    rgba(255, 0, 128),
+    rgba(56, 2, 155, 0)
+  );
   border-image-slice: 1;
 }
 
@@ -47,7 +51,6 @@ html::-webkit-scrollbar-thumb {
   position: unset;
 }
 @layer components {
-
   .sticky-nav-full {
     @apply border-none;
   }
