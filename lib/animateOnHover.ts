@@ -1,3 +1,6 @@
+export {}
+
+
 // const card = document.querySelector(".card");
 // const motionMatchMedia = window.matchMedia("(prefers-reduced-motion)");
 // const THRESHOLD = 15;
