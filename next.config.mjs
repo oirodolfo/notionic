@@ -91,6 +91,10 @@ const nextBaseConfig = {
   async rewrites() {
     return [
       {
+        source: '/social/:title/:image',
+        destination: '/api/og?title=:pathname&image=:image'
+      },
+      {
         source: '/notes/:pathname',
         destination: '/api/htmlrewrite?pathname=:pathname'
       },

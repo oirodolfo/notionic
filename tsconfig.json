@@ -30,6 +30,7 @@
     ]
   },
   "include": [
+    "lib/colors.ts",
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",

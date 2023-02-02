@@ -4,6 +4,7 @@ specifiers:
   '@ducanh2912/next-pwa': ^7.3.3
   '@fullhuman/postcss-purgecss': ^5.0.0
   '@heroicons/react': ^1.0.5
+  '@mertasan/tailwindcss-variables': ^2.5.1
   '@next/font': ^13.1.2
   '@plaiceholder/next': ^2.5.0
   '@plaiceholder/tailwindcss': ^2.5.0
@@ -19,6 +20,8 @@ specifiers:
   '@vercel/og': ^0.0.27
   autoprefixer: ^10.4.0
   clsx: ^1.2.1
+  color: ^4.2.3
+  color2k: ^2.0.2
   date-fns: ^2.29.3
   eslint: ^8.26.0
   eslint-config-next: ^13.1.2
@@ -73,6 +76,7 @@ specifiers:
 
 dependencies:
   '@ducanh2912/next-pwa': 7.3.3_q2pod2ggylfkcfccfmgxtg6fm4
+  '@mertasan/tailwindcss-variables': 2.5.1_gbtt6ss3tbiz4yjtvdr6fbrj44
   '@next/font': 13.1.2
   '@plaiceholder/next': 2.5.0_l6uflxgg34ihjmyjmvq2tqol3e
   '@plaiceholder/tailwindcss': 2.5.0_iqiqpepy3rxllw5k42mfgponfy
@@ -82,6 +86,8 @@ dependencies:
   '@sanity/vision': 3.2.4_2zpt4ilzykmne4yndyzrqd4gdm
   '@vercel/og': 0.0.27
   clsx: 1.2.1
+  color: 4.2.3
+  color2k: 2.0.2
   date-fns: 2.29.3
   feed: 4.2.2
   framer-motion: 6.4.3_biqbaboplfbrettd7655fr4n2y
@@ -2028,6 +2034,18 @@ packages:
     dependencies:
       katex: 0.15.6
       react: 18.2.0
+    dev: false
+
+  /@mertasan/tailwindcss-variables/2.5.1_gbtt6ss3tbiz4yjtvdr6fbrj44:
+    resolution: {integrity: sha512-I1Jvpu5fcinGT/yEDL53dRXznFWV4LoTCUVcTvQqA1YH1iAfs72OO/VZdBKPqcxe/lS2nBr/Ikloe+pLsxemmA==}
+    engines: {node: '>=12.13.0'}
+    peerDependencies:
+      autoprefixer: ^10.0.2
+      postcss: ^8.0.9
+    dependencies:
+      autoprefixer: 10.4.13_postcss@8.4.21
+      lodash: 4.17.21
+      postcss: 8.4.21
     dev: false
 
   /@motionone/animation/10.15.1:
@@ -4387,8 +4405,8 @@ packages:
       color-string: 1.9.1
     dev: false
 
-  /color2k/2.0.1:
-    resolution: {integrity: sha512-iCg+xrEqtYISsSJZN1z44fyhv4EfX8lSkcDhodt6VnMf1+iMwZxAtmGXchTCeMUnTbXunGvUVK6E3skkApPnZw==}
+  /color2k/2.0.2:
+    resolution: {integrity: sha512-kJhwH5nAwb34tmyuqq/lgjEKzlFXn1U99NlnB6Ws4qVaERcRUYeYP1cBw6BJ4vxaWStAUEef4WMr7WjOCnBt8w==}
     dev: false
 
   /combined-stream/1.0.8:
@@ -9572,7 +9590,7 @@ packages:
       chalk: 4.1.2
       chokidar: 3.5.3
       classnames: 2.3.2
-      color2k: 2.0.1
+      color2k: 2.0.2
       configstore: 5.0.1
       connect-history-api-fallback: 1.6.0
       console-table-printer: 2.11.1
