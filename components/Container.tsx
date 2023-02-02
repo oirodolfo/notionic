@@ -25,7 +25,7 @@ const Container = ({ children, fullWidth, ...customMeta }: ContainerType) => {
           !fullWidth ? 'max-w-2xl px-4' : 'px-4 md:px-24'
         }`}
       >
-          {/*{customMeta?.title && <h1>{customMeta.title}</h1>}*/}
+        {/*{customMeta?.title && <h1>{customMeta.title}</h1>}*/}
         {children}
       </main>
     </>

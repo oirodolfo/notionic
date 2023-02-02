@@ -14,49 +14,47 @@ const withPWA = withPWAInit({
   // buildExcludes: [/middleware-manifest.json$/]
 })
 
-
 const imageOrigins = [
-  "rodkisten.com",
-  "linktr.ee",
-  "twitter.com",
-  "open.spotify.com",
-  "instagram.com",
-  "youtu.be",
-  "www.tiktok.com",
-  "mastodon.lol",
-  "www.facebook.com",
-  "rodkisten.t.me",
-  "www.kooapp.com",
-  "bere.al",
-  "read.cv",
-  "linkr.bio",
-  "nitter.it",
-  "rodkisten.dev",
-  "vsco.co",
-  "www.linkedin.com",
-  "github.com",
-  "poly.me",
-  "codepen.io",
-  "dribbble.com",
-  "soundcloud.com",
-  "www.youtube.com",
-  "rodkisten.medium.com",
-  "stats.fm",
-  "volt.fm",
-  "www.last.fm",
-  "peoople.app",
-  "picsart.com",
-  "opensea.io",
-  "vimeo.com",
-  "taplink.cc"
+  'rodkisten.com',
+  'linktr.ee',
+  'twitter.com',
+  'open.spotify.com',
+  'instagram.com',
+  'youtu.be',
+  'www.tiktok.com',
+  'mastodon.lol',
+  'www.facebook.com',
+  'rodkisten.t.me',
+  'www.kooapp.com',
+  'bere.al',
+  'read.cv',
+  'linkr.bio',
+  'nitter.it',
+  'rodkisten.dev',
+  'vsco.co',
+  'www.linkedin.com',
+  'github.com',
+  'poly.me',
+  'codepen.io',
+  'dribbble.com',
+  'soundcloud.com',
+  'www.youtube.com',
+  'rodkisten.medium.com',
+  'stats.fm',
+  'volt.fm',
+  'www.last.fm',
+  'peoople.app',
+  'picsart.com',
+  'opensea.io',
+  'vimeo.com',
+  'taplink.cc'
 ]
 
-  // ll.links
-  // .filter(
-  //   (link) => !!link.url || link.url !== '' || link.type !== 'HEADER'
-  // )
-  // .map((link) => ( new URL(link.url).hostname));
-
+// ll.links
+// .filter(
+//   (link) => !!link.url || link.url !== '' || link.type !== 'HEADER'
+// )
+// .map((link) => ( new URL(link.url).hostname));
 
 const nextBaseConfig = {
   // webpack5: true,
@@ -156,7 +154,7 @@ const nextConfig = withPWA({
       's3.us-west-2.amazonaws.com',
       'd1fdloi71mui9q.cloudfront.net',
       'onuniverse-assets.imgix.net',
-      ...imageOrigins,
+      ...imageOrigins
     ]
   },
   experimental: {

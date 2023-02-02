@@ -10,7 +10,12 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang={BLOG.lang} className='dark dark-mode' data-mode={"dark"} style={{colorScheme: 'dark'}}>
+      <Html
+        lang={BLOG.lang}
+        className='dark dark-mode'
+        data-mode={'dark'}
+        style={{ colorScheme: 'dark' }}
+      >
         <Head>
           <meta
             name='viewport'
@@ -35,12 +40,9 @@ class MyDocument extends Document {
             content={BLOG.darkBackground}
             media='(prefers-color-scheme: dark)'
           />
-          <meta
-            name='theme-color'
-            content={BLOG.darkBackground}
-          />
+          <meta name='theme-color' content={BLOG.darkBackground} />
 
-          <Script id="bcache-check">
+          <Script id='bcache-check'>
             {`
             window.addEventListener('pageshow', (event) => {
                 if (event.persisted) {

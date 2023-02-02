@@ -37,7 +37,8 @@ module.exports = {
   plugins: {
     tailwindcss: {},
     autoprefixer: {},
-    ...(process.env.NODE_ENV === 'production' ? { cssnano: { calc: false} } : {})
-
+    ...(process.env.NODE_ENV === 'production'
+      ? { cssnano: { calc: false } }
+      : {})
   }
 }

@@ -26,14 +26,18 @@ import Footer from '@/components/NavBar/Footer'
 import { Inter, Anton } from '@next/font/google'
 
 // If loading a variable font, you don't need to specify the font weight
-const inter = Inter({ subsets: ['latin'], variable: '--inter-font',   preload: true,
-  display: 'swap', })
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--inter-font',
+  preload: true,
+  display: 'swap'
+})
 const anton = Anton({
   subsets: ['latin'],
   variable: '--anton-font',
   weight: '400',
   preload: true,
-  display: 'swap',
+  display: 'swap'
 })
 //
 // const Ackee = dynamic(() => import('@/components/Common/Ackee'), { ssr: false })
@@ -67,7 +71,9 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <main className={`${inter.variable} ${anton.variable} font-sans max-w-3xl m-auto`}>
+      <main
+        className={`${inter.variable} ${anton.variable} m-auto max-w-3xl font-sans`}
+      >
         <Scripts />
         {/* {BLOG.isProd && BLOG?.analytics?.provider === 'ackee' && ( */}
         {/*   <Ackee */}

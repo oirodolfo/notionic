@@ -14,7 +14,7 @@ import { motion } from 'framer-motion'
 import { links } from '@/lib/links'
 // import Script from 'next/script'
 import Image from 'next/image'
-import classy from  "@/lib/classy"
+import classy from '@/lib/classy'
 
 const cleanUpUrl = (text) => {
   if (typeof window === 'undefined') {
@@ -39,9 +39,7 @@ const makeLegibleUrl = (text) => {
   return `${url.host}${url.pathname}`
 }
 
-const ClassyLink = classy(Link,
-  'links-social'
-)
+const ClassyLink = classy(Link, 'links-social')
 const LinksComponent = (props) => {
   //
   // <Image
@@ -55,7 +53,10 @@ const LinksComponent = (props) => {
     <>
       {links
         .filter(
-          (link) => !!link.url || link.url === '' || link.type !== 'HEADER' && typeof link.url === 'string'
+          (link) =>
+            !!link.url ||
+            link.url === '' ||
+            (link.type !== 'HEADER' && typeof link.url === 'string')
         )
         .map((link) => (
           <li key={`${link.id}`}>
@@ -92,8 +93,6 @@ const LinksComponent = (props) => {
 
                     return
                   }}
-
-
                 />
               )}
               {/* <img src={} */}
