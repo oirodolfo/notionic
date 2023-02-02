@@ -37,7 +37,8 @@ module.exports = {
     'space-before-function-paren': 'off',
     'multiline-ternary': 'off',
     indent: 'off',
-    'no-vars-require': 'off'
+    'no-vars-require': 'off',
+    '@typescript-eslint/no-unnecessary-type-constraint: 'off'
   },
   globals: {
     React: true
