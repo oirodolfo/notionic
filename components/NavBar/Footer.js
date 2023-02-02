@@ -56,7 +56,7 @@ const LinksComponent = (props) => {
           <li key={`${link.id}`}>
             <Link
               href={cleanUpUrl(link.url)}
-              className='dark:bg-zinc-600/0.6 group flex flex-row items-center rounded-lg bg-fuchsia-50/10 p-2 text-gray-900 backdrop-blur text-base hover:bg-gray-100 hover:shadow dark:text-white dark:hover:bg-gray-500'
+              className='dark:bg-zinc-600/0.6 group flex flex-row items-center rounded-lg bg-fuchsia-50/10 p-2 text-zinc-900 backdrop-blur text-base hover:bg-zinc-100 hover:shadow dark:text-white dark:hover:bg-zinc-500'
               // className='w-full min-w-[120px] text-base font-medium no-underline dark:text-black text-white border-transparent bg-black dark:bg-white rounded md:leading-6 transition-all duration-300'
             >
               {/* icon */}
@@ -91,7 +91,7 @@ const LinksComponent = (props) => {
                   </div>
                 )}
               </div>
-              {/* <span className='inline-flex items-center justify-center px-2 py-0.5 ml-3 text-xs font-medium text-gray-500 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-400'> */}
+              {/* <span className='inline-flex items-center justify-center px-2 py-0.5 ml-3 text-xs font-medium text-zinc-500 bg-zinc-200 rounded dark:bg-zinc-700 dark:text-zinc-400'> */}
               {/*   Popular */}
               {/* </span> */}
             </Link>
@@ -150,13 +150,13 @@ const Footer = ({ fullWidth }) => {
 
   return (
     <motion.div
-      className={`m-auto mt-6 w-full flex-shrink-0 text-gray-600 transition-all dark:text-gray-300 ${
+      className={`m-auto mt-6 w-full flex-shrink-0 text-zinc-600 transition-all dark:text-zinc-300 ${
         !fullWidth ? 'max-w-3xl md:px-8' : 'px-4 md:px-24'
       }`}
     >
       <footer className='mx-auto w-full px-4 md:px-8'>
         {/* <footer className='max-w-screen-2xl px-4 md:px-8 mx-auto'> */}
-        <div className='flex flex-col items-center justify-between border-b py-1 dark:border-gray-600 md:flex-row'>
+        <div className='flex flex-col items-center justify-between border-b py-1 dark:border-zinc-600 md:flex-row'>
           <ul className='flex flex-wrap justify-center md:justify-start md:gap-1'>
             {links.map(
               (link) =>
@@ -172,9 +172,9 @@ const Footer = ({ fullWidth }) => {
                       key={link.id}
                       className={`${
                         activeMenu === link.to
-                          ? 'bg-gray-200 dark:bg-gray-700'
+                          ? 'bg-zinc-200 dark:bg-zinc-700'
                           : ''
-                      } nav block cursor-pointer rounded-lg py-1 px-2 hover:bg-gray-200 dark:hover:bg-gray-700`}
+                      } nav block cursor-pointer rounded-lg py-1 px-2 hover:bg-zinc-200 dark:hover:bg-zinc-700`}
                     >
                       <div className='font-light'>
                         {link.icon}
@@ -243,10 +243,10 @@ const Footer = ({ fullWidth }) => {
           {/*   </div> */}
 
           <div className='backdrop-blur-1 w-full  rounded-lg p-4 shadow-md filter sm:p-6'>
-            <h5 className='mb-3 font-semibold text-gray-900 text-base dark:text-white md:text-xl'>
+            <h5 className='mb-3 font-semibold text-zinc-900 text-base dark:text-white md:text-xl'>
               My links ✨
             </h5>
-            <p className='font-normal text-gray-500 text-sm dark:text-gray-400'>
+            <p className='font-normal text-zinc-500 text-sm dark:text-zinc-400'>
               You can find me basically everywhere.
             </p>
             <ul className='grid w-full grid-cols-2 items-stretch  gap-2 sm:grid-cols-1 sm:gap-0.5'>
@@ -255,7 +255,7 @@ const Footer = ({ fullWidth }) => {
             <div>
               <a
                 href='https://linktr.ee/rodkisten'
-                className='inline-flex items-center font-normal text-gray-500 text-xs hover:underline dark:text-gray-400'
+                className='inline-flex items-center font-normal text-zinc-500 text-xs hover:underline dark:text-zinc-400'
               >
                 Check out my Linktree!
               </a>
@@ -450,7 +450,7 @@ const Footer = ({ fullWidth }) => {
         {/*   </div> */}
 
         {/* </div> */}
-        <div className='py-4 font-light text-gray-400 text-xs'>
+        <div className='py-4 font-light text-zinc-400 text-xs'>
           © {from === y || !from ? y : `${from} - ${y}`} | {BLOG.author}
           <p className='md:float-right'>
             {t.FOOTER.COPYRIGHT_START}

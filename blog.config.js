@@ -2,7 +2,7 @@ const BLOG = {
   title: 'Rod Kisten | Rodolfo Costa',
   author: 'Rod Kisten | Rodolfo Costa | KSTN',
   email: 'hey@rodkisten.com',
-  link: 'https://rodkisten.com/',
+  link: 'https://rodkisten.com',
   newsletter: 'Kisten Weekly',
   description: 'KSTN Playground',
   lang: 'en-US',

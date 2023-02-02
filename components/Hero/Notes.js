@@ -4,6 +4,7 @@ import Social from '../Common/Social.js'
 import Avatar from './NotionAvatar.js'
 import dynamic from 'next/dynamic'
 import { NotionRenderer } from 'react-notion-x'
+import Image from 'next/image'
 
 const Collection = dynamic(
   () =>
@@ -26,12 +27,21 @@ const NoteHero = ({ blockMap }) => {
             components={{ Collection }}
           />
           <Social />
-          <div className='py-4 font-light text-gray-400 text-xs'>
-            {t.HERO.NOTES.TEXT_FOOTER}
-          </div>
+          {/* <div className='py-4 font-light text-zinc-400 text-xs'> */}
+          {/*   {t.HERO.NOTES.TEXT_FOOTER} */}
+          {/* </div> */}
         </div>
-        <div className='w-2/5'>
-          <Avatar className='text-gray-600 dark:text-gray-300' />
+        <div className='w-2/5 [rod-added] self-start md:mt-4'>
+            <Image
+              className={`relative w-[500px] transform`}
+              // className={`w-[500px] h-[500px] relative plaiceholder-[/rod-circle-transparent.png] bg-url-[/rod-circle-transparent.png] transform scale-110 filter blur-2xl z-[-1] `}
+              src={'/rod-circle-transparent.png'}
+              alt={"Rod Kisten's avatar"}
+              width={500}
+              height={500}
+              priority={true}
+            />
+          {/* <Avatar className='text-zinc-600 dark:text-zinc-300' /> */}
         </div>
       </div>
     </>

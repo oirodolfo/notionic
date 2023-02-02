@@ -9,7 +9,7 @@ const Social = () => {
         scroll={false}
         target='_blank'
         aria-label='Telegram'
-        className='text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600'
+        className='text-zinc-400 transition duration-100 hover:text-zinc-500 active:text-zinc-600'
       >
         <svg
           className='h-5 w-5'
@@ -28,7 +28,7 @@ const Social = () => {
         scroll={false}
         target='_blank'
         aria-label='Twitter'
-        className='text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600'
+        className='text-zinc-400 transition duration-100 hover:text-zinc-500 active:text-zinc-600'
       >
         <svg
           className='h-5 w-5'
@@ -47,7 +47,7 @@ const Social = () => {
         scroll={false}
         target='_blank'
         aria-label='Github'
-        className='text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600'
+        className='text-zinc-400 transition duration-100 hover:text-zinc-500 active:text-zinc-600'
       >
         <svg
           className='h-5 w-5'

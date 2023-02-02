@@ -36,14 +36,14 @@ const BlogPost = ({ post }) => {
           <div className='sm-cover absolute inset-0 md:hidden'></div>
           <div className='relative mt-auto'>
             <header className='flex flex-col justify-between md:flex-row md:items-baseline'>
-              <h2 className='mb-2 font-medium text-black text-lg dark:text-gray-100 md:text-xl'>
+              <h2 className='mb-2 font-medium text-black text-lg dark:text-zinc-100 md:text-xl'>
                 {post.title}
               </h2>
-              <span className='text-color-fix flex-shrink-0 font-light text-gray-600 dark:text-gray-400'>
+              <span className='text-color-fix flex-shrink-0 font-light text-zinc-600 dark:text-zinc-400'>
                 {formatDate(post?.date?.start_date || post.createdTime, locale)}
               </span>
             </header>
-            <p className='hidden font-light leading-8 text-gray-700 dark:text-gray-300 md:block'>
+            <p className='hidden font-light leading-8 text-zinc-700 dark:text-zinc-300 md:block'>
               {post.summary}
             </p>
             {/* w-4/5  */}

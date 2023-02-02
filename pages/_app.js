@@ -64,7 +64,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <main className={`${inter.variable} ${anton.variable} font-sans`}>
+      <main className={`${inter.variable} ${anton.variable} font-sans max-w-3xl m-auto`}>
         <Scripts />
         {BLOG.isProd && BLOG?.analytics?.provider === 'ackee' && (
           <Ackee

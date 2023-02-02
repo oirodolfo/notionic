@@ -64,8 +64,8 @@ module.exports = {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     require('tailwindcss-fluid-type')({
       settings: {
-        fontSizeMin: 1,
-        fontSizeMax: 1.25,
+        fontSizeMin: 1.25,
+        fontSizeMax: 1.5,
         ratioMin: 1.125,
         ratioMax: 1.2,
         screenMin: 20,

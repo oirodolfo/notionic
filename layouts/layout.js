@@ -150,7 +150,7 @@ const Layout = ({
     if (frontMatter.title !== subPageTitle) {
       setShowSubPageTitle(true)
     }
-    domWatcher(subPage)
+    // domWatcher(subPage)
   }, [frontMatter, subPageTitle, subPage])
 
   return (
@@ -170,7 +170,7 @@ const Layout = ({
               passHref
               href={`${BLOG.path}/${frontMatter.slug}`}
               scroll={false}
-              className='text-gray-500 transition duration-100 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300'
+              className='text-zinc-500 transition duration-100 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300'
             >
               <ChevronLeftIcon className='mb-1 inline-block h-5 w-5' />
               <span className='m-1'>{frontMatter.title}</span>
@@ -180,7 +180,7 @@ const Layout = ({
             {subPageTitle}
           </h1>
           {frontMatter.type[0] !== 'Page' && (
-            <nav className='mt-5 mb-10 flex items-start text-gray-500 dark:text-gray-400'>
+            <nav className='mt-5 mb-10 flex items-start text-zinc-500 dark:text-zinc-400'>
               <div className='mr-2 mb-4 md:ml-0'>
                 {formatDate(
                   frontMatter?.date?.start_date || frontMatter.createdTime,

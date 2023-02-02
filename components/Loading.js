@@ -37,7 +37,7 @@ export default function Loading({ notionSlug }) {
 
           <p className='mb-4 inline-flex items-center font-semibold uppercase text-sm md:text-base'>
             <svg
-              className='-ml-1 mr-3 h-5 w-5 animate-spin text-gray-400'
+              className='-ml-1 mr-3 h-5 w-5 animate-spin text-zinc-400'
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
               viewBox='0 0 24 24'
@@ -63,7 +63,7 @@ export default function Loading({ notionSlug }) {
               passHref
               href={`https://${BLOG.notionDomain}/${notionSlug}`}
               scroll={false}
-              className='text-gray-500 transition duration-100 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300'
+              className='text-zinc-500 transition duration-100 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300'
             >
               <ExternalLinkIcon className='mb-1 inline-block h-5 w-5' />
               <span className='m-1'>{t.ERROR.TIMEOUT_TEXT}</span>

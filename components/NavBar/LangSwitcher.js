@@ -16,7 +16,7 @@ const LangSwitcher = () => {
       >
         <button
           aria-label='LangSwitcher'
-          className='cursor-pointer rounded-lg p-2 hover:bg-gray-200 dark:text-gray-50 dark:hover:bg-gray-700'
+          className='cursor-pointer rounded-lg p-2 hover:bg-zinc-200 dark:text-zinc-50 dark:hover:bg-zinc-700'
         >
           <TranslateIcon className='h-5 w-5' />
         </button>

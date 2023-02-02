@@ -87,9 +87,9 @@ const NavBar = () => {
                 <li
                   className={`${
                     activeMenu === link.to
-                      ? 'bg-slate-200 dark:bg-gray-700'
+                      ? 'bg-slate-200 dark:bg-zinc-700'
                       : ''
-                  } nav block cursor-pointer rounded-lg py-1 px-2 hover:bg-gray-200 dark:hover:bg-zinc-900`}
+                  } nav block cursor-pointer rounded-lg py-1 px-2 hover:bg-zinc-200 dark:hover:bg-zinc-900`}
                 >
                   <div className='font-light'>
                     {link.icon}
@@ -110,7 +110,7 @@ const NavBar = () => {
           type='button'
           aria-label='Menu'
           onClick={() => setShowMenu((showMenu) => !showMenu)}
-          className='-mr-3 block cursor-pointer rounded-lg p-2 hover:bg-gray-200 dark:hover:bg-gray-700 md:pb-3'
+          className='-mr-3 block cursor-pointer rounded-lg p-2 hover:bg-zinc-200 dark:hover:bg-zinc-700 md:pb-3'
         >
           <MenuIcon className='mb-1 inline-block h-5 w-5' />
         </button>
@@ -126,7 +126,7 @@ const NavBar = () => {
                       href={link.to}
                       scroll={false}
                       onClick={() => setShowMenu((showMenu) => !showMenu)}
-                      className='block w-full justify-between px-4 py-2 font-light leading-5 hover:bg-gray-100 dark:hover:bg-gray-600'
+                      className='block w-full justify-between px-4 py-2 font-light leading-5 hover:bg-zinc-100 dark:hover:bg-zinc-600'
                     >
                       {link.icon}
                       <span className='m-1'>{link.name}</span>

@@ -59,7 +59,7 @@ function Contact() {
               type='text'
               required
               placeholder={t.CONTACT.FORM_USERNAME}
-              className='block w-full rounded-lg bg-gray-100 py-3 px-4 leading-tight text-gray-700 focus:bg-white focus:outline-none dark:bg-gray-700 dark:text-gray-200 dark:focus:bg-gray-600'
+              className='block w-full rounded-lg bg-zinc-100 py-3 px-4 leading-tight text-zinc-700 focus:bg-white focus:outline-none dark:bg-zinc-700 dark:text-zinc-200 dark:focus:bg-zinc-600'
             />
           </div>
           <div>
@@ -69,7 +69,7 @@ function Contact() {
               type='text'
               required
               placeholder={t.CONTACT.FORM_EMAIL}
-              className='block w-full rounded-lg bg-gray-100 py-3 px-4 leading-tight text-gray-700 focus:bg-white focus:outline-none dark:bg-gray-700 dark:text-gray-200 dark:focus:bg-gray-600'
+              className='block w-full rounded-lg bg-zinc-100 py-3 px-4 leading-tight text-zinc-700 focus:bg-white focus:outline-none dark:bg-zinc-700 dark:text-zinc-200 dark:focus:bg-zinc-600'
             />
           </div>
 
@@ -80,7 +80,7 @@ function Contact() {
               type='text'
               required
               placeholder={t.CONTACT.FORM_CONTENT}
-              className='block h-64 w-full rounded-lg bg-gray-100 py-3 px-4 leading-tight text-gray-700 focus:bg-white focus:outline-none dark:bg-gray-700 dark:text-gray-200 dark:focus:bg-gray-600'
+              className='block h-64 w-full rounded-lg bg-zinc-100 py-3 px-4 leading-tight text-zinc-700 focus:bg-white focus:outline-none dark:bg-zinc-700 dark:text-zinc-200 dark:focus:bg-zinc-600'
             ></textarea>
           </div>
 
@@ -88,10 +88,10 @@ function Contact() {
             {submitting ? (
               <button
                 disabled
-                className='inline-block cursor-not-allowed rounded-lg bg-gray-300 px-8 py-3 text-center outline-none transition duration-100 dark:bg-gray-600'
+                className='inline-block cursor-not-allowed rounded-lg bg-zinc-300 px-8 py-3 text-center outline-none transition duration-100 dark:bg-zinc-600'
               >
                 <svg
-                  className='h-5 w-5 animate-spin text-gray-600 dark:text-day'
+                  className='h-5 w-5 animate-spin text-zinc-600 dark:text-day'
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
                   viewBox='0 0 24 24'
@@ -114,12 +114,12 @@ function Contact() {
             ) : (
               <button
                 type='submit'
-                className='inline-block rounded-lg bg-gray-100 px-8 py-3 text-center outline-none transition duration-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600'
+                className='inline-block rounded-lg bg-zinc-100 px-8 py-3 text-center outline-none transition duration-100 hover:bg-zinc-200 dark:bg-zinc-700 dark:hover:bg-zinc-600'
               >
-                <p className='h-5 text-gray-400'>{t.CONTACT.SEND_BUTTON}</p>
+                <p className='h-5 text-zinc-400'>{t.CONTACT.SEND_BUTTON}</p>
               </button>
             )}
-            <p className='mb-2 text-gray-400 text-xs'>
+            <p className='mb-2 text-zinc-400 text-xs'>
               {t.CONTACT.FORM_EMAIL_REQUIRED}
             </p>
           </div>

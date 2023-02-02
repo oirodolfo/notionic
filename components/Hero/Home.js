@@ -93,10 +93,10 @@ const Hero = ({ blockMap }) => {
           <Social />
           <div className='mt-6 flex flex-col gap-4 sm:flex-row sm:justify-center'>
             <Link passHref href='/contact' scroll={false} legacyBehavior>
-              <button className='inline-flex items-center rounded-lg bg-gray-100 py-3 px-5 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600'>
-                <MailIcon className='inline-block h-7 w-7 text-gray-600 dark:text-day' />
+              <button className='inline-flex items-center rounded-lg bg-zinc-100 py-3 px-5 hover:bg-zinc-200 dark:bg-zinc-700 dark:hover:bg-zinc-600'>
+                <MailIcon className='inline-block h-7 w-7 text-zinc-600 dark:text-day' />
                 <span className='ml-4 flex flex-col items-start leading-none'>
-                  <span className='mb-1 text-gray-600 text-xs dark:text-day'>
+                  <span className='mb-1 text-zinc-600 text-xs dark:text-day'>
                     {t.HERO.HOME.CONTACT_BUTTON_DES}
                   </span>
                   <span className='font-medium'>
@@ -108,11 +108,11 @@ const Hero = ({ blockMap }) => {
             {showCopied ? (
               <button
                 disabled
-                className='inline-flex items-center rounded-lg bg-gray-200 py-3 px-5 dark:bg-gray-600'
+                className='inline-flex items-center rounded-lg bg-zinc-200 py-3 px-5 dark:bg-zinc-600'
               >
-                <ClipboardCheckIcon className='inline-block h-7 w-7 text-gray-600 dark:text-day' />
+                <ClipboardCheckIcon className='inline-block h-7 w-7 text-zinc-600 dark:text-day' />
                 <span className='ml-4 flex flex-col items-start leading-none'>
-                  <span className='mb-1 text-gray-600 text-xs dark:text-day'>
+                  <span className='mb-1 text-zinc-600 text-xs dark:text-day'>
                     {t.HERO.RSS_BUTTON_DES_COPIED}
                   </span>
                   <span className='font-medium'>
@@ -123,11 +123,11 @@ const Hero = ({ blockMap }) => {
             ) : (
               <button
                 onClick={() => clickCopy()}
-                className='inline-flex items-center rounded-lg bg-gray-100 py-3 px-5 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600'
+                className='inline-flex items-center rounded-lg bg-zinc-100 py-3 px-5 hover:bg-zinc-200 dark:bg-zinc-700 dark:hover:bg-zinc-600'
               >
-                <RssIcon className='inline-block h-7 w-7 text-gray-600 dark:text-day' />
+                <RssIcon className='inline-block h-7 w-7 text-zinc-600 dark:text-day' />
                 <span className='ml-4 flex flex-col items-start leading-none'>
-                  <span className='mb-1 text-gray-600 text-xs dark:text-day'>
+                  <span className='mb-1 text-zinc-600 text-xs dark:text-day'>
                     {t.HERO.RSS_BUTTON_DES}
                   </span>
                   <span className='font-medium'>{t.HERO.HOME.RSS_BUTTON}</span>
@@ -146,8 +146,9 @@ const Hero = ({ blockMap }) => {
             alt={"Rod Kisten's avatar"}
             width={500}
             height={500}
+            priority={true}
           />
-          {/* <Avatar className='text-gray-600 dark:text-gray-300' /> */}
+          {/* <Avatar className='text-zinc-600 dark:text-zinc-300' /> */}
         </div>
       </div>
     </>

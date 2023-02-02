@@ -40,7 +40,7 @@ const Page404 = ({ statusCode }) => {
           <Link
             href='/'
             scroll={false}
-            className='inline-block rounded-lg bg-gray-200 px-8 py-3 text-center font-semibold outline-none text-sm hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 md:text-base'
+            className='inline-block rounded-lg bg-zinc-200 px-8 py-3 text-center font-semibold outline-none text-sm hover:bg-zinc-300 dark:bg-zinc-700 dark:hover:bg-zinc-600 md:text-base'
           >
             {t.ERROR.BACK_TO_HOME}
           </Link>

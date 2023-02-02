@@ -30,11 +30,11 @@ const Aside = ({ subPageTitle, frontMatter }) => {
     <>
       <aside className='sticky hidden md:inset-y-1/2 md:ml-8 md:flex md:flex-col md:items-center md:self-start'>
         <div className='flex flex-col items-center text-center'>
-          <div className='nav block grid gap-y-5 rounded-lg bg-gray-100 p-2 dark:bg-gray-700'>
+          <div className='nav block grid gap-y-5 rounded-lg bg-zinc-100 p-2 dark:bg-zinc-700'>
             {BLOG.showWeChatPay && (
               <button
                 onClick={() => setShowPay((showPay) => !showPay)}
-                className='text-gray-600 hover:text-gray-400 dark:text-day dark:hover:text-gray-400'
+                className='text-zinc-600 hover:text-zinc-400 dark:text-day dark:hover:text-zinc-400'
               >
                 <ThumbUpIcon className='h-5 w-5' />
               </button>
@@ -44,7 +44,7 @@ const Aside = ({ subPageTitle, frontMatter }) => {
                 passHref
                 href={`${BLOG.path}/${frontMatter.slug}`}
                 scroll={false}
-                className='text-gray-600 hover:text-gray-400 dark:text-day dark:hover:text-gray-400'
+                className='text-zinc-600 hover:text-zinc-400 dark:text-day dark:hover:text-zinc-400'
               >
                 <ChevronLeftIcon className='h-5 w-5' />
               </Link>
@@ -52,7 +52,7 @@ const Aside = ({ subPageTitle, frontMatter }) => {
             {showButton && (
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className='text-gray-600 hover:text-gray-400 dark:text-day dark:hover:text-gray-400'
+                className='text-zinc-600 hover:text-zinc-400 dark:text-day dark:hover:text-zinc-400'
               >
                 <ArrowUpIcon className='h-5 w-5' />
               </button>
@@ -64,9 +64,9 @@ const Aside = ({ subPageTitle, frontMatter }) => {
       {showButton && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className='fixed bottom-5 right-5 z-10 inline-flex rounded-lg bg-gray-200 p-2 shadow hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 md:hidden'
+          className='fixed bottom-5 right-5 z-10 inline-flex rounded-lg bg-zinc-200 p-2 shadow hover:bg-zinc-300 dark:bg-zinc-700 dark:hover:bg-zinc-600 md:hidden'
         >
-          <ArrowUpIcon className='h-5 w-5 text-gray-600 dark:text-day' />
+          <ArrowUpIcon className='h-5 w-5 text-zinc-600 dark:text-day' />
         </button>
       )}
     </>
