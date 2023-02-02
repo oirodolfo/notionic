@@ -10,7 +10,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang={BLOG.lang} className='dark' style={{colorScheme: 'dark'}}>
+      <Html lang={BLOG.lang} className='dark dark-mode' data-mode={"dark"} style={{colorScheme: 'dark'}}>
         <Head>
           <meta
             name='viewport'

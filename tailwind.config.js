@@ -25,7 +25,7 @@ module.exports = {
     './layouts/**/*.js'
   ],
   // darkMode: BLOG.appearance === 'auto' ? 'media' : 'class', // or 'media' or 'class'
-  darkMode: 'class', // or 'media' or 'class'
+  darkMode: ['class', '[data-mode="dark"]'],
   future: {
     hoverOnlyWhenSupported: true
   },
