@@ -43,7 +43,7 @@ module.exports = {
       fontFamily: {
         sans: ['var(--inter-font)', ...fontFamily.sans, ...fontSansCJK],
         serif: [...fontFamily.serif, ...fontSerifCJK],
-        display: ['var(--anton-font)', ...fontFamily.sans, ...fontSansCJK],
+        display: ['var(--anton-font)', 'Impact', 'Arial Black', ...fontFamily.sans, ...fontSansCJK],
 
         noEmoji: [
           'ui-sans-serif',
