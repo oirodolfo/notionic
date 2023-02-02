@@ -14,6 +14,7 @@ import { motion } from 'framer-motion'
 import { links } from '@/lib/links'
 // import Script from 'next/script'
 import Image from 'next/image'
+import classy from  "@/lib/classy"
 
 const cleanUpUrl = (text) => {
   if (typeof window === 'undefined') {
@@ -37,6 +38,10 @@ const makeLegibleUrl = (text) => {
 
   return `${url.host}${url.pathname}`
 }
+
+const ClassyLink = classy(Link,
+  'links-social'
+)
 const LinksComponent = (props) => {
   //
   // <Image
@@ -54,9 +59,11 @@ const LinksComponent = (props) => {
         )
         .map((link) => (
           <li key={`${link.id}`}>
-            <Link
+            <ClassyLink
               href={cleanUpUrl(link.url)}
-              className='dark:bg-zinc-600/0.6 group flex flex-row items-center rounded-lg bg-fuchsia-50/10 p-2 text-zinc-900 backdrop-blur text-base hover:bg-zinc-100 hover:shadow dark:text-white dark:hover:bg-zinc-500'
+              target={'_blank'}
+              data-component='ClassyLink'
+              // className='dark:bg-zinc-600/0.6 group flex flex-row items-center rounded-lg bg-fuchsia-50/10 p-2 text-zinc-900 backdrop-blur text-base hover:bg-zinc-100 hover:shadow dark:text-white dark:hover:bg-zinc-500'
               // className='w-full min-w-[120px] text-base font-medium no-underline dark:text-black text-white border-transparent bg-black dark:bg-white rounded md:leading-6 transition-all duration-300'
             >
               {/* icon */}
@@ -74,10 +81,19 @@ const LinksComponent = (props) => {
 
               {link.url && link.url !== '' && (
                 <Image
-                  alt={`${link.title} icon`}
+                  alt={`https://rodkisten.com/favicon.svg`}
                   width='16'
                   height='16'
                   src={`${new URL(link.url).origin}/favicon.ico`}
+                  onError={(error) => {
+                    error.target.src = `https://rodkisten.com/favicon.svg`
+                    //eslint-disable-next-line
+                    delete error.target.srcset
+
+                    return
+                  }}
+
+
                 />
               )}
               {/* <img src={} */}
@@ -94,7 +110,7 @@ const LinksComponent = (props) => {
               {/* <span className='inline-flex items-center justify-center px-2 py-0.5 ml-3 text-xs font-medium text-zinc-500 bg-zinc-200 rounded dark:bg-zinc-700 dark:text-zinc-400'> */}
               {/*   Popular */}
               {/* </span> */}
-            </Link>
+            </ClassyLink>
           </li>
         ))}
     </>

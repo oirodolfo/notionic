@@ -160,23 +160,23 @@ const Header = ({ navBarTitle, fullWidth }) => {
       navRef.current?.classList.add('remove-sticky')
     }
   }
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 100) {
-        setShowTitle(true)
-      } else {
-        setShowTitle(false)
-      }
-    })
-
-    const obvserver = new window.IntersectionObserver(handler)
-    obvserver.observe(sentinalRef.current)
-    // Don't touch this, I have no idea how it works XD
-    // return () => {
-    //   if (sentinalRef.current) obvserver.unobserve(sentinalRef.current)
-    // }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sentinalRef])
+  // useEffect(() => {
+  //   window.addEventListener('scroll', () => {
+  //     if (window.pageYOffset > 100) {
+  //       setShowTitle(true)
+  //     } else {
+  //       setShowTitle(false)
+  //     }
+  //   })
+  //
+  //   // const obvserver = new window.IntersectionObserver(handler)
+  //   // obvserver.observe(sentinalRef.current)
+  //   // Don't touch this, I have no idea how it works XD
+  //   // return () => {
+  //   //   if (sentinalRef.current) obvserver.unobserve(sentinalRef.current)
+  //   // }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [sentinalRef])
   return (
     <>
       <div className='observer-element h-4 md:h-12' ref={sentinalRef}></div>
