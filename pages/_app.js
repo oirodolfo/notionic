@@ -13,7 +13,7 @@ import 'katex/dist/katex.min.css'
 import '@/styles/globals.css'
 import '@/styles/notion.css'
 import BLOG from '@/blog.config'
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
 import Scripts from '@/components/Common/Scripts'
 import { ThemeProvider } from 'next-themes'
 import TransitionEffect from '@/components/Common/TransitionEffect'
@@ -26,15 +26,18 @@ import Footer from '@/components/NavBar/Footer'
 import { Inter, Anton } from '@next/font/google'
 
 // If loading a variable font, you don't need to specify the font weight
-const inter = Inter({ subsets: ['latin'], variable: '--inter-font' })
+const inter = Inter({ subsets: ['latin'], variable: '--inter-font',   preload: true,
+  display: 'swap', })
 const anton = Anton({
   subsets: ['latin'],
   variable: '--anton-font',
-  weight: '400'
+  weight: '400',
+  preload: true,
+  display: 'swap',
 })
-
-const Ackee = dynamic(() => import('@/components/Common/Ackee'), { ssr: false })
-const Gtag = dynamic(() => import('@/components/Common/Gtag'), { ssr: false })
+//
+// const Ackee = dynamic(() => import('@/components/Common/Ackee'), { ssr: false })
+// const Gtag = dynamic(() => import('@/components/Common/Gtag'), { ssr: false })
 
 function MyApp({ Component, pageProps }) {
   // https://github.com/vercel/next.js/blob/canary/examples/with-loading/pages/_app.js
@@ -66,13 +69,13 @@ function MyApp({ Component, pageProps }) {
     <>
       <main className={`${inter.variable} ${anton.variable} font-sans max-w-3xl m-auto`}>
         <Scripts />
-        {BLOG.isProd && BLOG?.analytics?.provider === 'ackee' && (
-          <Ackee
-            ackeeServerUrl={BLOG.analytics.ackeeConfig.dataAckeeServer}
-            ackeeDomainId={BLOG.analytics.ackeeConfig.domainId}
-          />
-        )}
-        {BLOG.isProd && BLOG?.analytics?.provider === 'ga' && <Gtag />}
+        {/* {BLOG.isProd && BLOG?.analytics?.provider === 'ackee' && ( */}
+        {/*   <Ackee */}
+        {/*     ackeeServerUrl={BLOG.analytics.ackeeConfig.dataAckeeServer} */}
+        {/*     ackeeDomainId={BLOG.analytics.ackeeConfig.domainId} */}
+        {/*   /> */}
+        {/* )} */}
+        {/* {BLOG.isProd && BLOG?.analytics?.provider === 'ga' && <Gtag />} */}
         <ThemeProvider attribute='class' forcedTheme='dark'>
           <Header
             navBarTitle={pageProps.post ? pageProps.post.title : null}

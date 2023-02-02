@@ -8,8 +8,5 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="stablo-blog" />
-    <orderEntry type="module" module-name="strapi-my" />
-    <orderEntry type="module" module-name="strapi-next" />
   </component>
 </module>
