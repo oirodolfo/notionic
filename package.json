@@ -41,6 +41,7 @@
     "clsx": "^1.2.1",
     "color": "^4.2.3",
     "color2k": "^2.0.2",
+    "cssnano": "^5.1.14",
     "date-fns": "^2.29.3",
     "feed": "^4.2.2",
     "framer-motion": "6.4.3",
