@@ -61,7 +61,8 @@ const LinksComponent = (props) => {
   //   className='w-[40px] rounded'
   //   alt={link.title}
   // />
-  return (<LinksContainerGrid>
+  return (
+    <LinksContainerGrid>
       {/* <Box display={"grid"}> */}
       {/*   HEY, I'' THE BOXXXX */}
       {/* </Box> */}
@@ -129,7 +130,7 @@ const LinksComponent = (props) => {
           </li>
         ))}
       {/* </LazyLoad> */}
-</LinksContainerGrid>
+    </LinksContainerGrid>
   )
 }
 
@@ -281,7 +282,7 @@ const Footer = ({ fullWidth }) => {
             <p className='font-normal text-zinc-500 text-sm dark:text-zinc-400'>
               You can find me basically everywhere.
             </p>
-              <LinksComponent />
+            <LinksComponent />
             {/* </> */}
             <div>
               <a

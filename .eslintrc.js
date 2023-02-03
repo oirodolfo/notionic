@@ -39,7 +39,8 @@ module.exports = {
     indent: 'off',
     'no-vars-require': 'off',
     '@typescript-eslint/no-unnecessary-type-constraint': 'off',
-    '@typescript-eslint/no-explicit-any': 'off'
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/ban-types': 'off'
   },
   globals: {
     React: true

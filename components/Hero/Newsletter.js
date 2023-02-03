@@ -37,9 +37,7 @@ const NewsletterHero = ({ blockMap }) => {
           <NotionRenderer
             className='md:ml-0'
             recordMap={blockMap}
-            components={{ Collection,                   nextLink: Link,
-              nextImage: Image
-            }}
+            components={{ Collection, nextLink: Link, nextImage: Image }}
           />
           <Social />
           <h2 className='pt-8 pb-4 font-light text-zinc-500 text-xl dark:text-day'>

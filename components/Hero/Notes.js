@@ -25,9 +25,7 @@ const NoteHero = ({ blockMap }) => {
           <NotionRenderer
             className='md:ml-0'
             recordMap={blockMap}
-            components={{ Collection,                  nextLink: Link,
-              nextImage: Image
-            }}
+            components={{ Collection, nextLink: Link, nextImage: Image }}
           />
           <Social />
           {/* <div className='py-4 font-light text-zinc-400 text-xs'> */}
