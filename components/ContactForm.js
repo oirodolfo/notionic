@@ -31,7 +31,7 @@ function Contact() {
     // await res.json()
     const result = await res.json()
     const status = result.status
-    console.log('status:', status)
+   // console.log('status:', status)
     if (status === 'Success') {
       setSubmitting(false)
       setShowResult(true)

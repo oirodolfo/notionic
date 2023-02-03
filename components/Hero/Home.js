@@ -88,7 +88,7 @@ const Hero = ({ blockMap }) => {
           <NotionRenderer
             className='md:ml-0'
             recordMap={blockMap}
-            components={{ Collection, Image: Image }}
+            components={{ Collection, nextImage: Image, nextLink: Link,  }}
           />
           <Social />
           <div className='mt-6 flex flex-col gap-4 sm:flex-row sm:justify-center'>

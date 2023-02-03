@@ -5,6 +5,7 @@ import Avatar from './NotionAvatar.js'
 import dynamic from 'next/dynamic'
 import { NotionRenderer } from 'react-notion-x'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Collection = dynamic(
   () =>
@@ -24,7 +25,9 @@ const NoteHero = ({ blockMap }) => {
           <NotionRenderer
             className='md:ml-0'
             recordMap={blockMap}
-            components={{ Collection }}
+            components={{ Collection,                  nextLink: Link,
+              nextImage: Image
+            }}
           />
           <Social />
           {/* <div className='py-4 font-light text-zinc-400 text-xs'> */}

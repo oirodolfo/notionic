@@ -126,7 +126,7 @@ const Layout = ({
   fullWidth = false,
   subPage = false
 }) => {
-  console.log({ blockMap })
+  //console.log({ blockMap })
 
   const [showSubPageTitle, setShowSubPageTitle] = useState(false)
   const { locale } = useRouter()

@@ -29,6 +29,9 @@
   },
   "dependencies": {
     "@ducanh2912/next-pwa": "^7.3.3",
+    "@emotion/core": "^11.0.0",
+    "@emotion/css": "^11.10.5",
+    "@emotion/react": "^11.10.5",
     "@mertasan/tailwindcss-variables": "^2.5.1",
     "@next/font": "^13.1.2",
     "@plaiceholder/next": "^2.5.0",
@@ -46,6 +49,7 @@
     "feed": "^4.2.2",
     "framer-motion": "6.4.3",
     "got": "^12.0.2",
+    "lodash": "^4.17.21",
     "next": "13.1.6-canary.3",
     "next-optimized-images": "3.0.0-canary.10",
     "next-pwa": "^5.6.0",
@@ -71,6 +75,7 @@
     "sharp": "^0.30.7",
     "simple-icons": "^8.4.0",
     "styled-components": "^5.2.0",
+    "tailwind-merge": "^1.9.0",
     "use-ackee": "^3.0.0"
   },
   "devDependencies": {
@@ -82,6 +87,7 @@
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "autoprefixer": "^10.4.0",
+    "csstype": "^3.1.1",
     "eslint": "^8.26.0",
     "eslint-config-next": "^13.1.2",
     "eslint-config-prettier": "^8.6.0",

@@ -15,6 +15,8 @@ import { links } from '@/lib/links'
 // import Script from 'next/script'
 import Image from 'next/image'
 import classy from '@/lib/classy'
+import { LazyLoad } from '@/lib/hooks/useIntersectionObserver'
+import tw from '@/components/Box'
 
 const cleanUpUrl = (text) => {
   if (typeof window === 'undefined') {
@@ -32,14 +34,24 @@ const makeLegibleUrl = (text) => {
   try {
     url = new URL(text)
   } catch (e) {
-    console.log('error', e)
+    //console.log('error', e)
     return text
   }
 
   return `${url.host}${url.pathname}`
 }
 
-const ClassyLink = classy(Link, 'links-social')
+const Box = tw.div`
+    bg-purple-200 hover:bg-purple-100
+`
+
+const ClassyLink = tw.div`bg-gray-400 links-social`
+
+const LinksContainerGrid = tw.ul`
+  grid w-full grid-cols-2 items-stretch  gap-2 sm:grid-cols-1 sm:gap-0.5
+`
+
+// const ClassyLink = classy(Link, 'links-social')
 const LinksComponent = (props) => {
   //
   // <Image
@@ -49,8 +61,12 @@ const LinksComponent = (props) => {
   //   className='w-[40px] rounded'
   //   alt={link.title}
   // />
-  return (
-    <>
+  return (<LinksContainerGrid>
+      {/* <Box display={"grid"}> */}
+      {/*   HEY, I'' THE BOXXXX */}
+      {/* </Box> */}
+
+      {/* <LazyLoad> */}
       {links
         .filter(
           (link) =>
@@ -112,7 +128,8 @@ const LinksComponent = (props) => {
             </ClassyLink>
           </li>
         ))}
-    </>
+      {/* </LazyLoad> */}
+</LinksContainerGrid>
   )
 }
 
@@ -264,9 +281,8 @@ const Footer = ({ fullWidth }) => {
             <p className='font-normal text-zinc-500 text-sm dark:text-zinc-400'>
               You can find me basically everywhere.
             </p>
-            <ul className='grid w-full grid-cols-2 items-stretch  gap-2 sm:grid-cols-1 sm:gap-0.5'>
               <LinksComponent />
-            </ul>
+            {/* </> */}
             <div>
               <a
                 href='https://linktr.ee/rodkisten'
