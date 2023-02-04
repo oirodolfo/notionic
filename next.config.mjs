@@ -160,7 +160,7 @@ const nextConfig = withPWA({
   experimental: {
     appDir: true
     // swcMinify: true,
-  }
+  },
   typescript: {
   //   // !! WARN !!
   //   // Dangerously allow production builds to successfully complete even if
