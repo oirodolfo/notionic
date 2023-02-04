@@ -58,9 +58,9 @@ const imageOrigins = [
 
 const nextBaseConfig = {
   // webpack5: true,
-  // eslint: {
-  //   dirs: ['components', 'layouts', 'lib', 'pages', 'app']
-  // },
+  eslint: {
+     dirs: ['components', 'layouts', 'pages', 'app']
+  },
   webpack: (config, { dev, isServer }) => {
     // Replace React with Preact only in client production build
     if (!dev && !isServer) {
