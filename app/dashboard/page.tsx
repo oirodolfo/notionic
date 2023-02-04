@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-export function DashboardPage() {
+export default async function DashboardPage() {
   return (
     <ul>
       <li>
