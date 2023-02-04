@@ -161,13 +161,13 @@ const nextConfig = withPWA({
     appDir: true
     // swcMinify: true,
   }
-  // typescript: {
+  typescript: {
   //   // !! WARN !!
   //   // Dangerously allow production builds to successfully complete even if
   //   // your project has type errors.
   //   // !! WARN !!
-  //   ignoreBuildErrors: true
-  // }
+     ignoreBuildErrors: true
+   }
 })
 
 // export default nextConfig
