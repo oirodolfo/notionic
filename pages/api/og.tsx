@@ -46,7 +46,7 @@ export default async function handler(req: NextRequest) {
             backgroundColor: 'rgba(255,255,255, .9)',
             backgroundSize: '100%',
             backgroundImage:
-              'url(https://res.cloudinary.com/oirodolfo/image/upload/v1675188500/semifinal_nzlqrd.png)'
+              'url(https://res.cloudinary.com/oirodolfo/image/upload/v1675514230/semifinal_nzlqrd_yekp9p.jpg)'
             // backgroundImage:
             //   'radial-gradient(circle at 25px 25px, purple 2%, transparent 0%), radial-gradient(circle at 75px 75px, lightgray 2%, transparent 0%)',
             // backgroundSize: '100px 100px'
