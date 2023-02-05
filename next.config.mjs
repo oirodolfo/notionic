@@ -4,6 +4,11 @@ import withPWAInit from '@ducanh2912/next-pwa'
 // const withPWAInit = require('@ducanh2912/next-pwa').default();
 
 // import ll from './lib/links.js'
+import generated from '@next/bundle-analyzer'
+
+const withBundleAnalyzer = generated({
+  enabled: process.env.NODE_ENV !== 'development'
+})
 
 const withPWA = withPWAInit({
   disable: process.env.NODE_ENV === 'development',
@@ -59,7 +64,7 @@ const imageOrigins = [
 const nextBaseConfig = {
   // webpack5: true,
   eslint: {
-     dirs: ['components', 'layouts', 'pages', 'app']
+    dirs: ['components', 'layouts', 'pages', 'app']
   },
   webpack: (config, { dev, isServer }) => {
     // Replace React with Preact only in client production build
@@ -162,15 +167,15 @@ const nextConfig = withPWA({
     // swcMinify: true,
   },
   typescript: {
-  //   // !! WARN !!
-  //   // Dangerously allow production builds to successfully complete even if
-  //   // your project has type errors.
-  //   // !! WARN !!
-     ignoreBuildErrors: true
-   }
+    //   // !! WARN !!
+    //   // Dangerously allow production builds to successfully complete even if
+    //   // your project has type errors.
+    //   // !! WARN !!
+    ignoreBuildErrors: true
+  }
 })
 
 // export default nextConfig
-export default nextConfig
+export default withBundleAnalyzer(nextConfig)
 
 // module.exports = withPWA(nextConfig)

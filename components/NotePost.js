@@ -16,7 +16,6 @@ const NotePost = ({ note }) => {
         src={`https://api.craft.do/render/preview/${craftSlug}`}
         fallbackSrc={BLOG.defaultCover}
         alt={`${note.title}`}
-        layout='fill'
       />
       <div className='pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-80 md:hidden'></div>
       <div className='relative flex flex-col md:hidden'>

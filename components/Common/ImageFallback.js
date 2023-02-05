@@ -10,6 +10,7 @@ export default function ImageFallback({ src, fallbackSrc, alt, ...rest }) {
 
   return (
     <Image
+      fill={true}
       {...rest}
       src={imgSrc}
       alt={alt}

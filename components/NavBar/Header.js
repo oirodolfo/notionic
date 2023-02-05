@@ -74,29 +74,24 @@ const NavBar = () => {
       {/*   <span class=''>Pink to orange</span> */}
       {/* </button> */}
 
-      <ul className='hidden rounded p-1 md:flex md:gap-1'>
+      <ul className='header-button-container hidden rounded p-1 md:flex md:gap-1'>
         {links.map(
           (link) =>
             link.show && (
-              <Link
-                href={link.to}
+              // eslint-disable-next-line react/jsx-key
+              <li
                 key={link.id}
-                scroll={false}
-                className='header-button-container'
+                className={`${
+                  activeMenu === link.to ? 'bg-slate-200 dark:bg-zinc-700' : ''
+                } nav block cursor-pointer rounded-lg py-1 px-2 hover:bg-zinc-200 dark:hover:bg-zinc-900`}
               >
-                <li
-                  className={`${
-                    activeMenu === link.to
-                      ? 'bg-slate-200 dark:bg-zinc-700'
-                      : ''
-                  } nav block cursor-pointer rounded-lg py-1 px-2 hover:bg-zinc-200 dark:hover:bg-zinc-900`}
-                >
+                <Link href={link.to} scroll={false}>
                   <div className='font-light'>
                     {link.icon}
                     <span className='m-1 inline-block'>{link.name}</span>
                   </div>
-                </li>
-              </Link>
+                </Link>
+              </li>
             )
         )}
       </ul>
@@ -195,6 +190,7 @@ const Header = ({ navBarTitle, fullWidth }) => {
                 width={64}
                 height={64}
                 alt='Rod Kisten'
+                priority
               />
               {/* <svg */}
               {/*   xmlns='http://www.w3.org/2000/svg' */}

@@ -47,17 +47,18 @@ const fontSerifCJK = !CJK()
 
 // If loading a variable font, you don't need to specify the font weight
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   corePlugins: {
     fontSize: false
   },
   mode: 'jit',
-
   content: [
     './node_modules/@plaiceholder/ui/**/*.{ts,tsx}',
     './pages/**/*.js',
     './components/**/*.js',
-    './layouts/**/*.js'
+    './layouts/**/*.js',
+    './src/**/*.{html,js}'
   ],
   // darkMode: BLOG.appearance === 'auto' ? 'media' : 'class', // or 'media' or 'class'
   darkMode: ['class', '[data-mode="dark"]'],

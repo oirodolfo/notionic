@@ -17,6 +17,7 @@ import Image from 'next/image'
 import classy from '@/lib/classy'
 import { LazyLoad } from '@/lib/hooks/useIntersectionObserver'
 import tw from '@/components/Box'
+import { withFocusFadeId } from '@/components/NavBar/EnterAnimation'
 
 const cleanUpUrl = (text) => {
   if (typeof window === 'undefined') {
@@ -52,7 +53,7 @@ const LinksContainerGrid = tw.ul`
 `
 
 // const ClassyLink = classy(Link, 'links-social')
-const LinksComponent = (props) => {
+const LinksComponent = withFocusFadeId(function InnerComponent() {
   //
   // <Image
   //   src={link.thumbnail}
@@ -96,7 +97,7 @@ const LinksComponent = (props) => {
               {/*   fgColor={'#FFFFFF'} */}
               {/*   alt={link.title} */}
               {/* /> */}
-              
+
               {/* <img src={} */}
               <div className='ml-3 ml-3 flex flex-col truncate whitespace-nowrap hover:text-clip'>
                 <div className=' truncate whitespace-nowrap hover:text-clip'>
@@ -117,7 +118,7 @@ const LinksComponent = (props) => {
       {/* </LazyLoad> */}
     </LinksContainerGrid>
   )
-}
+})
 
 const Footer = ({ fullWidth }) => {
   const router = useRouter()
