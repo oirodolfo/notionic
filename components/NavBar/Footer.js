@@ -96,22 +96,7 @@ const LinksComponent = (props) => {
               {/*   fgColor={'#FFFFFF'} */}
               {/*   alt={link.title} */}
               {/* /> */}
-
-              {link.url && link.url !== '' && (
-                <Image
-                  alt={`https://rodkisten.com/favicon.svg`}
-                  width='16'
-                  height='16'
-                  src={`${new URL(link.url).origin}/favicon.ico`}
-                  onError={(error) => {
-                    error.target.src = `https://rodkisten.com/favicon.svg`
-                    //eslint-disable-next-line
-                    delete error.target.srcset
-
-                    return
-                  }}
-                />
-              )}
+              
               {/* <img src={} */}
               <div className='ml-3 ml-3 flex flex-col truncate whitespace-nowrap hover:text-clip'>
                 <div className=' truncate whitespace-nowrap hover:text-clip'>
